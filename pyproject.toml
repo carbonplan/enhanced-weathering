@@ -7,8 +7,8 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "carbonplan-project"
-description = "CarbonPlan Python project template"
+name = "enhanced-weathering"
+description = "Enhanced Weathering"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [{name = "CarbonPlan", email = "tech@carbonplan.org"}]
@@ -37,7 +37,7 @@ dynamic = ["version"]
 repository = "https://github.com/carbonplan/python-project-template"
 
 [tool.setuptools.packages.find]
-include = ["carbonplan_project*"]
+include = ["enhanced_weathering*"]
 
 [tool.setuptools_scm]
 local_scheme = "node-and-date"
@@ -102,7 +102,7 @@ select = [
 max-complexity = 18
 
 [tool.ruff.isort]
-known-first-party = ["carbonplan-project"]
+known-first-party = ["enhanced-weathering"]
 
 [tool.pytest.ini_options]
 console_output_style = "count"
