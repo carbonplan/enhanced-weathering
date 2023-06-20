@@ -1,190 +1,178 @@
 [
-    {
-        "id": "EW001",
-        "entity": "Puro",
-        "protocol": "Enhanced Rock Weathering Methodology",
-        "metadata": {
-            "links": {
-                "name": [
-                    "Global Rock C-Sink (v0.9)"
-                ],
-                "href": [
-                    "https://www.carbon-standards.com/docs/adda3fe63b4f158fa7dbc98aeac5e775_Global_Rock_C-Sink_guideline.pdf"
-                ]
-            },
-            "year": 2022.0,
-            "status": "",
-            "notes": "Protocol estimates potential net carbon removal from the application of weathering materials to agricultural soils in the European Union. This version of the protocol was published in 2022. ",
-            "comments": "Protocol is designed to generate ex-ante credits that represent the estimated potential for enhanced rock weathering over 100 years, but can't be used for project certification within the C-Sink registry until v1.0 of the protocol is release. Protocol indicates that these ex-ante credits may be sold, but should not be used as the basis for CO2 emission compensation claims given the unvalidated nature of the quantification approaches employed. "
-        },
-        "timeline": {
-            "application": [
-                0
-            ],
-            "weathering": [
-                0,
-                100
-            ],
-            "registration": "",
-            "measurement": "n/a",
-            "verification": [
-                0
-            ],
-            "crediting": ""
-        },
-        "practices": {
-            "geographies": "European Union",
-            "application_site": "agricultural",
-            "feedstock": "mine tailings or purpose-mined rock",
-            "notes": "Protocol can be used to apply mine tailings or purpose-mined silicate rocks to agricultural soils. Agricultural field eligibility is determined on the basis of pH (<=7.3) and historical aridity. ",
-            "comments": "By default, protocol applies to projects within the European Union. However, projects outside the European Union may apply for certification, which would result in a country-specific annex document. There are no clear criteria for evaluating such applications, and ultimate participation appears to be at the descretion of Carbon Standards International. "
-        },
-        "rigor": {
-            "score": 0,
-            "details": {
-                "regime": "carbon parcel",
-                "rock_characterization": 2,
-                "initial_weathering": "modeling required",
-                "field": "",
-                "watershed": "none",
-                "ocean": "default factor required",
-                "time_dynamics": 0,
-                "empirical_redundancy": "not required",
-                "sampling_approach": 0,
-                "model_validation": 0,
-                "uncertainty": 0,
-                "lca": "required",
-                "notes": "Protocol's quantification approach is centered around a shrinking particle model that estimates rock weathering rates. An ex-ante estimate of weathering potential is made by multiplying the percent of rock estimated to weather over a 100 year timeframe by a theoretical maximum bicarbonate formation based on rock mineralogy. A 10% deduction is applied to account for secondary mineral formation, a 10% deduction is applied to account for potential calcium carbonate precipitation throughout the system, and a 14% deduction is applied to account for equilibration in the ocean.",
-                "comments": "Protocol does not require empirical measurement of rock weathering. Default factors are used to account for all system dynamics after rock dissolution, and are not informed by the specifics of deployment.  Protocol does not require the construction of a baseline, and therefore  a baseline and consider counterfactual weathering of carbonates, such as agricultural lime (see Additionality for a detailed consideration of these components). o consideration of soil carbon interactions and the impact of weathering that is facilitated by non-carbonic acids. "
-            }
-        },
-        "additionality": {
-            "score": 0,
-            "details": {
-                "baseline": "none",
-                "counterfactual_carbonate_weathering": "not required",
-                "tests": 0,
-                "notes": "Protocol does not include any additionality screens or explicit protections against double counting, and does not require any consideration of a baseline weathering scenario.",
-                "comments": "The protocols implicitly deems any modeled enhanced rock weathering potential as additional. However, the protocol does not require the consideration of a baseline scenario, and therefore risks overestimating the benefit of weathering applied rocks."
-            }
-        },
-        "safeguards": {
-            "score": 1,
-            "details": {
-                "application": 1,
-                "toxic_elements": 1,
-                "soil_physical_properties": 0,
-                "yield": 0,
-                "notes": "Protocol requires quantification of heavy metals and compliance with applicable European rules. Protocol also requires that rock dust is actively incorporated into the topsoil. ",
-                "comments": "None"
-            }
-        },
-        "governance": {
-            "score": 0,
-            "details": {
-                "credit_timing": "ex-ante",
-                "data_transparency": 0,
-                "model_transparency": 1,
-                "learning_and_updates": 0,
-                "notes": "Protocol supports ex-ante crediting for carbon drawdown modeled to occur over a 100 year time period. ",
-                "comments": "Protocol does not provide clear requirements around data. [TK: model transparency]. Protocol does not create the expectation or governance structure to ensure that credited enhanced weathering deployments contribute to better understanding of these methods. Although protocol indicates it is provisional and will be revised upon further evidence and model validation, it does not set clear expectations around the cadence or process for such updates. "
-            }
-        },
-        "rating": 2.0,
-        "revisions": ""
+  {
+    "id": "EW001",
+    "entity": "Puro",
+    "protocol": "Enhanced Rock Weathering Methodology",
+    "metadata": {
+      "links": {
+        "name": ["Global Rock C-Sink (v0.9)"],
+        "href": [
+          "https://www.carbon-standards.com/docs/adda3fe63b4f158fa7dbc98aeac5e775_Global_Rock_C-Sink_guideline.pdf"
+        ]
+      },
+      "year": 2022,
+      "status": [],
+      "notes": "Protocol estimates potential net carbon removal from the application of weathering materials to agricultural soils in the European Union. This version of the protocol was published in 2022. ",
+      "comments": "Protocol is designed to generate ex-ante credits that represent the estimated potential for enhanced rock weathering over 100 years, but can't be used for project certification within the C-Sink registry until v1.0 of the protocol is release. Protocol indicates that these ex-ante credits may be sold, but should not be used as the basis for CO2 emission compensation claims given the unvalidated nature of the quantification approaches employed. "
     },
-    {
-        "id": "EW002",
-        "entity": "Carbon Standards International",
-        "protocol": "Global Rock C-Sink",
-        "metadata": {
-            "links": {
-                "name": [
-                    "Global Rock C-Sink (v0.9)"
-                ],
-                "href": [
-                    "https://www.carbon-standards.com/docs/adda3fe63b4f158fa7dbc98aeac5e775_Global_Rock_C-Sink_guideline.pdf"
-                ]
-            },
-            "year": 2022.0,
-            "status": "",
-            "notes": "Protocol estimates potential net carbon removal from the application of weathering materials to agricultural soils in the European Union. This version of the protocol was published in 2022. ",
-            "comments": "Protocol is designed to generate ex-ante credits that represent the estimated potential for enhanced rock weathering over 100 years, but can't be used for project certification within the C-Sink registry until v1.0 of the protocol is release. Protocol indicates that these ex-ante credits may be sold, but should not be used as the basis for CO2 emission compensation claims given the unvalidated nature of the quantification approaches employed. "
-        },
-        "timeline": {
-            "application": [
-                0
-            ],
-            "weathering": [
-                0,
-                100
-            ],
-            "registration": "",
-            "measurement": "n/a",
-            "verification": [
-                0
-            ],
-            "crediting": ""
-        },
-        "practices": {
-            "geographies": "European Union",
-            "application_site": "agricultural",
-            "feedstock": "mine tailings or purpose-mined rock",
-            "notes": "Protocol can be used to apply mine tailings or purpose-mined silicate rocks to agricultural soils. Agricultural field eligibility is determined on the basis of pH (<=7.3) and historical aridity. ",
-            "comments": "By default, protocol applies to projects within the European Union. However, projects outside the European Union may apply for certification, which would result in a country-specific annex document. There are no clear criteria for evaluating such applications, and ultimate participation appears to be at the descretion of Carbon Standards International. "
-        },
-        "rigor": {
-            "score": 0,
-            "details": {
-                "regime": "carbon parcel",
-                "rock_characterization": 2,
-                "initial_weathering": "modeling required",
-                "field": "",
-                "watershed": "none",
-                "ocean": "default factor required",
-                "time_dynamics": 0,
-                "empirical_redundancy": "not required",
-                "sampling_approach": 0,
-                "model_validation": 0,
-                "uncertainty": 0,
-                "lca": "required",
-                "notes": "Protocol's quantification approach is centered around a shrinking particle model that estimates rock weathering rates. An ex-ante estimate of weathering potential is made by multiplying the percent of rock estimated to weather over a 100 year timeframe by a theoretical maximum bicarbonate formation based on rock mineralogy. A 10% deduction is applied to account for secondary mineral formation, a 10% deduction is applied to account for potential calcium carbonate precipitation throughout the system, and a 14% deduction is applied to account for equilibration in the ocean.",
-                "comments": "Protocol does not require empirical measurement of rock weathering. Default factors are used to account for all system dynamics after rock dissolution, and are not informed by the specifics of deployment.  Protocol does not require the construction of a baseline, and therefore  a baseline and consider counterfactual weathering of carbonates, such as agricultural lime (see Additionality for a detailed consideration of these components). o consideration of soil carbon interactions and the impact of weathering that is facilitated by non-carbonic acids. "
-            }
-        },
-        "additionality": {
-            "score": 0,
-            "details": {
-                "baseline": "none",
-                "counterfactual_carbonate_weathering": "not required",
-                "tests": 0,
-                "notes": "Protocol does not include any additionality screens or explicit protections against double counting, and does not require any consideration of a baseline weathering scenario.",
-                "comments": "The protocols implicitly deems any modeled enhanced rock weathering potential as additional. However, the protocol does not require the consideration of a baseline scenario, and therefore risks overestimating the benefit of weathering applied rocks."
-            }
-        },
-        "safeguards": {
-            "score": 1,
-            "details": {
-                "application": 1,
-                "toxic_elements": 1,
-                "soil_physical_properties": 0,
-                "yield": 0,
-                "notes": "Protocol requires quantification of heavy metals and compliance with applicable European rules. Protocol also requires that rock dust is actively incorporated into the topsoil. ",
-                "comments": "None"
-            }
-        },
-        "governance": {
-            "score": 0,
-            "details": {
-                "credit_timing": "ex-ante",
-                "data_transparency": 0,
-                "model_transparency": 1,
-                "learning_and_updates": 0,
-                "notes": "Protocol supports ex-ante crediting for carbon drawdown modeled to occur over a 100 year time period. ",
-                "comments": "Protocol does not provide clear requirements around data. [TK: model transparency]. Protocol does not create the expectation or governance structure to ensure that credited enhanced weathering deployments contribute to better understanding of these methods. Although protocol indicates it is provisional and will be revised upon further evidence and model validation, it does not set clear expectations around the cadence or process for such updates. "
-            }
-        },
-        "rating": 1.0,
-        "revisions": ""
+    "timeline": {
+      "application": [0],
+      "weathering": [0, 100],
+      "registration": [],
+      "measurement": "n/a",
+      "verification": [0],
+      "crediting": []
+    },
+    "practices": {
+      "geographies": "European Union",
+      "application_site": "agricultural",
+      "feedstock": "mine tailings or purpose-mined rock",
+      "notes": "Protocol can be used to apply mine tailings or purpose-mined silicate rocks to agricultural soils. Agricultural field eligibility is determined on the basis of pH (<=7.3) and historical aridity. ",
+      "comments": "By default, protocol applies to projects within the European Union. However, projects outside the European Union may apply for certification, which would result in a country-specific annex document. There are no clear criteria for evaluating such applications, and ultimate participation appears to be at the descretion of Carbon Standards International. "
+    },
+    "rigor": {
+      "score": 0,
+      "details": {
+        "regime": "carbon parcel",
+        "rock_characterization": 2,
+        "initial_weathering": "modeling required",
+        "field": [],
+        "watershed": "none",
+        "ocean": "default factor required",
+        "time_dynamics": 0,
+        "empirical_redundancy": "not required",
+        "sampling_approach": 0,
+        "model_validation": 0,
+        "uncertainty": 0,
+        "lca": "required",
+        "notes": "Protocol's quantification approach is centered around a shrinking particle model that estimates rock weathering rates. An ex-ante estimate of weathering potential is made by multiplying the percent of rock estimated to weather over a 100 year timeframe by a theoretical maximum bicarbonate formation based on rock mineralogy. A 10% deduction is applied to account for secondary mineral formation, a 10% deduction is applied to account for potential calcium carbonate precipitation throughout the system, and a 14% deduction is applied to account for equilibration in the ocean.",
+        "comments": "Protocol does not require empirical measurement of rock weathering. Default factors are used to account for all system dynamics after rock dissolution, and are not informed by the specifics of deployment.  Protocol does not require the construction of a baseline or consideration of counterfactual carbonate weathering (see Additionality). Note that in multiple places, the protocol misleadingly characterizes bicarbonate as a stable form of carbon storage that is not subject to equilibration with the atmosphere. This is incorrect; the relationship between rock weathering and carbon storage in the form of dissolved inorganic carbon (DIC) is contingent on environmental conditions, including pH, salinity, temperature, and pCO2. The quantity of carbon stored as additional bicarbonate in solution can thus vary over space and time. "
+      }
+    },
+    "additionality": {
+      "score": 0,
+      "details": {
+        "baseline": "none",
+        "counterfactual_carbonate_weathering": "not required",
+        "tests": 0,
+        "notes": "Protocol does not include any additionality screens or explicit protections against double counting, and does not require any consideration of a baseline weathering scenario.",
+        "comments": "The protocols implicitly deems any modeled enhanced rock weathering potential as additional. However, the protocol does not require the consideration of a baseline scenario, and therefore risks overestimating the benefit of weathering applied rocks."
+      }
+    },
+    "safeguards": {
+      "score": 1,
+      "details": {
+        "application": 1,
+        "toxic_elements": 1,
+        "soil_physical_properties": 0,
+        "yield": 0,
+        "notes": "Protocol requires quantification of heavy metals and compliance with applicable European rules. Protocol also requires that rock dust is actively incorporated into the topsoil via tillage or liquid injection.",
+        "comments": "Guidelines indicate that a range of trace elements must be quantified, and that rock powder deployment must adhere to \"all relevant national and European regulations on fertilization and soil protections.\" However, the Annex indicated as providing more detail on the analytical methods and threshold values for these trace elements are not complete. "
+      }
+    },
+    "governance": {
+      "score": 0,
+      "details": {
+        "credit_timing": "ex-ante",
+        "data_transparency": 0,
+        "model_transparency": 1,
+        "learning_and_updates": 0,
+        "notes": "Protocol supports ex-ante crediting for carbon drawdown modeled to occur over a 100 year time period. ",
+        "comments": "Protocol does not provide clear requirements around data. [TK: model transparency]. Protocol does not create the expectation or governance structure to ensure that credited enhanced weathering deployments contribute to better understanding of these methods. Although protocol indicates it is provisional and will be revised upon further evidence and model validation, it does not set clear expectations around the cadence or process for such updates. "
+      }
+    },
+    "rating": 2.0,
+    "revisions": {
+      "date": ["TK-TK-2023"],
+      "note": ["First release."]
     }
+  },
+  {
+    "id": "EW002",
+    "entity": "Carbon Standards International",
+    "protocol": "Global Rock C-Sink",
+    "metadata": {
+      "links": {
+        "name": ["Global Rock C-Sink (v0.9)"],
+        "href": [
+          "https://www.carbon-standards.com/docs/adda3fe63b4f158fa7dbc98aeac5e775_Global_Rock_C-Sink_guideline.pdf"
+        ]
+      },
+      "year": 2022,
+      "status": [],
+      "notes": "Protocol estimates potential net carbon removal from the application of weathering materials to agricultural soils in the European Union. This version of the protocol was published in 2022. ",
+      "comments": "Protocol is designed to generate ex-ante credits that represent the estimated potential for enhanced rock weathering over 100 years, but can't be used for project certification within the C-Sink registry until v1.0 of the protocol is release. Protocol indicates that these ex-ante credits may be sold, but should not be used as the basis for CO2 emission compensation claims given the unvalidated nature of the quantification approaches employed. "
+    },
+    "timeline": {
+      "application": [0],
+      "weathering": [0, 100],
+      "registration": [],
+      "measurement": "n/a",
+      "verification": [0],
+      "crediting": []
+    },
+    "practices": {
+      "geographies": "European Union",
+      "application_site": "agricultural",
+      "feedstock": "mine tailings or purpose-mined rock",
+      "notes": "Protocol can be used to apply mine tailings or purpose-mined silicate rocks to agricultural soils. Agricultural field eligibility is determined on the basis of pH (<=7.3) and historical aridity. ",
+      "comments": "By default, protocol applies to projects within the European Union. However, projects outside the European Union may apply for certification, which would result in a country-specific annex document. There are no clear criteria for evaluating such applications, and ultimate participation appears to be at the descretion of Carbon Standards International. "
+    },
+    "rigor": {
+      "score": 0,
+      "details": {
+        "regime": "carbon parcel",
+        "rock_characterization": 2,
+        "initial_weathering": "modeling required",
+        "field": [],
+        "watershed": "none",
+        "ocean": "default factor required",
+        "time_dynamics": 0,
+        "empirical_redundancy": "not required",
+        "sampling_approach": 0,
+        "model_validation": 0,
+        "uncertainty": 0,
+        "lca": "required",
+        "notes": "Protocol's quantification approach is centered around a shrinking particle model that estimates rock weathering rates. An ex-ante estimate of weathering potential is made by multiplying the percent of rock estimated to weather over a 100 year timeframe by a theoretical maximum bicarbonate formation based on rock mineralogy. A 10% deduction is applied to account for secondary mineral formation, a 10% deduction is applied to account for potential calcium carbonate precipitation throughout the system, and a 14% deduction is applied to account for equilibration in the ocean.",
+        "comments": "Protocol does not require empirical measurement of rock weathering. Default factors are used to account for all system dynamics after rock dissolution, and are not informed by the specifics of deployment.  Protocol does not require the construction of a baseline or consideration of counterfactual carbonate weathering (see Additionality). Note that in multiple places, the protocol misleadingly characterizes bicarbonate as a stable form of carbon storage that is not subject to equilibration with the atmosphere. This is incorrect; the relationship between rock weathering and carbon storage in the form of dissolved inorganic carbon (DIC) is contingent on environmental conditions, including pH, salinity, temperature, and pCO2. The quantity of carbon stored as additional bicarbonate in solution can thus vary over space and time. "
+      }
+    },
+    "additionality": {
+      "score": 0,
+      "details": {
+        "baseline": "none",
+        "counterfactual_carbonate_weathering": "not required",
+        "tests": 0,
+        "notes": "Protocol does not include any additionality screens or explicit protections against double counting, and does not require any consideration of a baseline weathering scenario.",
+        "comments": "The protocols implicitly deems any modeled enhanced rock weathering potential as additional. However, the protocol does not require the consideration of a baseline scenario, and therefore risks overestimating the benefit of weathering applied rocks."
+      }
+    },
+    "safeguards": {
+      "score": 1,
+      "details": {
+        "application": 1,
+        "toxic_elements": 1,
+        "soil_physical_properties": 0,
+        "yield": 0,
+        "notes": "Protocol requires quantification of heavy metals and compliance with applicable European rules. Protocol also requires that rock dust is actively incorporated into the topsoil via tillage or liquid injection.",
+        "comments": "Guidelines indicate that a range of trace elements must be quantified, and that rock powder deployment must adhere to \"all relevant national and European regulations on fertilization and soil protections.\" However, the Annex indicated as providing more detail on the analytical methods and threshold values for these trace elements are not complete. "
+      }
+    },
+    "governance": {
+      "score": 0,
+      "details": {
+        "credit_timing": "ex-ante",
+        "data_transparency": 0,
+        "model_transparency": 1,
+        "learning_and_updates": 0,
+        "notes": "Protocol supports ex-ante crediting for carbon drawdown modeled to occur over a 100 year time period. ",
+        "comments": "Protocol does not provide clear requirements around data. [TK: model transparency]. Protocol does not create the expectation or governance structure to ensure that credited enhanced weathering deployments contribute to better understanding of these methods. Although protocol indicates it is provisional and will be revised upon further evidence and model validation, it does not set clear expectations around the cadence or process for such updates. "
+      }
+    },
+    "rating": 1.0,
+    "revisions": {
+      "date": ["TK-TK-2023"],
+      "note": ["First release."]
+    }
+  }
 ]
