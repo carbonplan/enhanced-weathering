@@ -5,8 +5,8 @@ from ast import literal_eval
 import gspread  # type: ignore
 import numpy as np
 import pandas as pd  # type: ignore
-import schemas
 from oauth2client.service_account import ServiceAccountCredentials  # type: ignore
+from schemas import components_dict
 
 # ------------------ Auth -----------------------
 
@@ -167,7 +167,7 @@ def _split_revisions_components_df(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_component_schema(df: pd.DataFrame) -> dict:
-    schema = schemas.components_dict
+    import copy
 
     # Assign each piece of schema
     # Iterate through row by row and assign? yuck...
@@ -175,7 +175,7 @@ def build_component_schema(df: pd.DataFrame) -> dict:
     # return combined dict
     combined = []
     for index, row in df.iterrows():
-        subschema = schema.copy()
+        subschema = copy.deepcopy(components_dict)
 
         subschema["id"] = row["id"]
         subschema["entity"] = row["entity"]
