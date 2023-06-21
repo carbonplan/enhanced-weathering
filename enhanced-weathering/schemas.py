@@ -1,9 +1,44 @@
-components_dict = {
+# qa_dict = {
+#     "id": "",
+#     "target": "",
+#     "tool": "",
+#     "type": [],
+#     "category": [],
+#     "frequency": [],
+#     "notes": "",
+#     "comments": "",
+#     "references": [
+#         {
+#             "name": "",
+#             "href": "",
+#         },
+#     ],
+#     "coverage": {
+#         "rock": "",
+#         "init_weathering": "",
+#         "field": "",
+#         "watershed": "",
+#         "ocean": "",
+#         "baseline": "",
+#         "lca": "",
+#         "impacts": "",
+#     },
+#     "protocols": [
+#         "id": {
+#             "relationship": "",
+#             "citation": "",
+#             "note": ""
+#         }
+# 		]
+# 	}
+
+
+protocols_dict = {
     "id": "",
     "entity": "",
     "protocol": "",
     "metadata": {
-        "links": {"name": "", "href": ""},
+        "links": "",
         "year": "",
         "status": "",
         "notes": "",
@@ -37,7 +72,7 @@ components_dict = {
             "empirical_redundancy": "",
             "sampling_approach": "",
             "model_validation": "",
-            "uncertainty": "",
+            "uncerta" "y": "",
             "lca": "",
             "notes": "",
             "comments": "",

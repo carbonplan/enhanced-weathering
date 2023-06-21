@@ -4,16 +4,10 @@
     "entity": "Puro",
     "protocol": "Enhanced Rock Weathering Methodology",
     "metadata": {
-      "links": {
-        "name": [
-          "Enhanced Rock Weathering Methodology (v1.0)",
-          "Puro Standard General Rules (v3.0)"
-        ],
-        "href": [
-          "https://7518557.fs1.hubspotusercontent-na1.net/hubfs/7518557/Supplier%20Documents/ERW%20methodology.pdf",
-          "https://7518557.fs1.hubspotusercontent-na1.net/hubfs/7518557/General%20Rules/Puro%20Rules%20v3.0.pdf"
-        ]
-      },
+      "links": [
+        "[Enhanced Rock Weathering Methodology (v1.0)](https://7518557.fs1.hubspotusercontent-na1.net/hubfs/7518557/Supplier%20Documents/ERW%20methodology.pdf)",
+        "[Puro Standard General Rules (v3.0)](https://7518557.fs1.hubspotusercontent-na1.net/hubfs/7518557/General%20Rules/Puro%20Rules%20v3.0.pdf)"
+      ],
       "year": 2022,
       "status": "credits issued",
       "notes": "Protocol estimates net carbon removal from the application of weathering materials to any soils. This version of the protocol was published in 2022. ",
@@ -70,10 +64,11 @@
         "empirical_redundancy": "not required",
         "sampling_approach": 0,
         "model_validation": 1,
-        "uncertainty": 1,
+        "uncertay": "",
         "lca": "required",
         "notes": "Quantification is centered around an unspecified modeling approach, which determines what in-field measurements are required for model validation. Modeling approaches are submitted to the Puro Standard for approval. Projects are credited when additional dissolved inorganic carbon formation is observed in the field, and the potential for downstream equilibration dynamics are accounted for through modeling. ",
-        "comments": "Protocol suggests characteristics of an adequate modeling approach, but few modeling requirements. Modelling approaches are subject to approval on a case-by-case basis by the Puro Standard. Field measurements are required both as inputs to the model and to validate the model, but the specific measurements used are contingent on what the approved model requires. Thus, the ultimate rigor of the quantification approach is functionally at the descretion of the Puro Standard's model approval process, which is not clearly described. "
+        "comments": "Protocol suggests characteristics of an adequate modeling approach, but few modeling requirements. Modelling approaches are subject to approval on a case-by-case basis by the Puro Standard. Field measurements are required both as inputs to the model and to validate the model, but the specific measurements used are contingent on what the approved model requires. Thus, the ultimate rigor of the quantification approach is functionally at the descretion of the Puro Standard's model approval process, which is not clearly described. ",
+        "uncertainty": 1
       }
     },
     "additionality": {
@@ -119,12 +114,9 @@
     "entity": "Carbon Standards International",
     "protocol": "Global Rock C-Sink",
     "metadata": {
-      "links": {
-        "name": ["Global Rock C-Sink (v0.9)"],
-        "href": [
-          "https://www.carbon-standards.com/docs/adda3fe63b4f158fa7dbc98aeac5e775_Global_Rock_C-Sink_guideline.pdf"
-        ]
-      },
+      "links": [
+        "[Global Rock C-Sink (v0.9)](https://www.carbon-standards.com/docs/adda3fe63b4f158fa7dbc98aeac5e775_Global_Rock_C-Sink_guideline.pdf)"
+      ],
       "year": 2022,
       "status": "no projects",
       "notes": "Protocol estimates potential net carbon removal from the application of weathering materials to agricultural soils in the European Union. This version of the protocol was published in 2022. ",
@@ -158,10 +150,11 @@
         "empirical_redundancy": "not required",
         "sampling_approach": 0,
         "model_validation": 0,
-        "uncertainty": 0,
+        "uncertay": "",
         "lca": "required",
         "notes": "Protocol's quantification approach is centered around a shrinking particle model that estimates rock weathering rates. An ex-ante estimate of weathering potential is made by multiplying the percent of rock estimated to weather over a 100 year timeframe by a theoretical maximum bicarbonate formation based on rock mineralogy. A 10% deduction is applied to account for secondary mineral formation, a 10% deduction is applied to account for potential calcium carbonate precipitation throughout the system, and a 14% deduction is applied to account for equilibration in the ocean.",
-        "comments": "Protocol does not require empirical measurement of rock weathering. Default factors are used to account for all system dynamics after rock dissolution, and are not informed by the specifics of deployment.  Protocol does not require the construction of a baseline or consideration of counterfactual carbonate weathering (see Additionality). Note that in multiple places, the protocol misleadingly characterizes bicarbonate as a stable form of carbon storage that is not subject to equilibration with the atmosphere. This is incorrect; the relationship between rock weathering and carbon storage in the form of dissolved inorganic carbon (DIC) is contingent on environmental conditions, including pH, salinity, temperature, and pCO2. The quantity of carbon stored as additional bicarbonate in solution can thus vary over space and time. "
+        "comments": "Protocol does not require empirical measurement of rock weathering. Default factors are used to account for all system dynamics after rock dissolution, and are not informed by the specifics of deployment.  Protocol does not require the construction of a baseline or consideration of counterfactual carbonate weathering (see Additionality). Note that in multiple places, the protocol misleadingly characterizes bicarbonate as a stable form of carbon storage that is not subject to equilibration with the atmosphere. This is incorrect; the relationship between rock weathering and carbon storage in the form of dissolved inorganic carbon (DIC) is contingent on environmental conditions, including pH, salinity, temperature, and pCO2. The quantity of carbon stored as additional bicarbonate in solution can thus vary over space and time. ",
+        "uncertainty": 0
       }
     },
     "additionality": {

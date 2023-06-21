@@ -6,7 +6,7 @@ import gspread  # type: ignore
 import numpy as np
 import pandas as pd  # type: ignore
 from oauth2client.service_account import ServiceAccountCredentials  # type: ignore
-from schemas import components_dict
+from schemas import protocols_dict
 
 # ------------------ Auth -----------------------
 
@@ -129,28 +129,14 @@ def _listify_links(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def _split_links_components_df(df: pd.DataFrame) -> pd.DataFrame:
+def _split_links_protocols_df(df: pd.DataFrame) -> pd.DataFrame:
     """Data sheet contains lists of links and references formatted to markdown.
     Split these lists into individual elements and assign to new columns"""
-    df["metadata_name"] = ""
-    df["metadata_href"] = ""
-    for index, row in df.iterrows():
-        name_list = []
-        href_list = []
-        link_list = row["metadata_links"].split(", ")
-        for val in link_list:
-            split_val = val.split("](")
-            name = split_val[0].strip("[")
-            href = split_val[1].strip(")")
-            name_list.append(name)
-            href_list.append(href)
-        df["metadata_name"].iloc[index] = name_list
-        df["metadata_href"].iloc[index] = href_list
-    df.drop(["metadata_links"], axis=1, inplace=True)
+    df["metadata_links"] = df["metadata_links"].str.split(", ")
     return df
 
 
-def _split_revisions_components_df(df: pd.DataFrame) -> pd.DataFrame:
+def _split_revisions_protocols_df(df: pd.DataFrame) -> pd.DataFrame:
     df["revisions_date"] = ""
     df["revisions_note"] = ""
     for index, row in df.iterrows():
@@ -166,7 +152,7 @@ def _split_revisions_components_df(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def build_component_schema(df: pd.DataFrame) -> dict:
+def build_protocol_schema(df: pd.DataFrame) -> dict:
     import copy
 
     # Assign each piece of schema
@@ -175,13 +161,12 @@ def build_component_schema(df: pd.DataFrame) -> dict:
     # return combined dict
     combined = []
     for index, row in df.iterrows():
-        subschema = copy.deepcopy(components_dict)
+        subschema = copy.deepcopy(protocols_dict)
 
         subschema["id"] = row["id"]
         subschema["entity"] = row["entity"]
         subschema["protocol"] = row["protocol"]
-        subschema["metadata"]["links"]["name"] = row["metadata_name"]
-        subschema["metadata"]["links"]["href"] = row["metadata_href"]
+        subschema["metadata"]["links"] = row["metadata_links"]
         subschema["metadata"]["year"] = row["metadata_year"]
         subschema["metadata"]["status"] = row["metadata_status"]
         subschema["metadata"]["notes"] = row["metadata_notes"]
@@ -268,8 +253,8 @@ def write_combined_protocol_list_json(combined_dict_list: list):
 
 
 df = get_component_df(gsheet_doc_name)
-df = _split_links_components_df(df)
-df = _split_revisions_components_df(df)
+df = _split_links_protocols_df(df)
+df = _split_revisions_protocols_df(df)
 df = _listify_links(df)
-combined = build_component_schema(df)
+combined = build_protocol_schema(df)
 write_combined_protocol_list_json(combined)
