@@ -1,36 +1,25 @@
-# qa_dict = {
-#     "id": "",
-#     "target": "",
-#     "tool": "",
-#     "type": [],
-#     "category": [],
-#     "frequency": [],
-#     "notes": "",
-#     "comments": "",
-#     "references": [
-#         {
-#             "name": "",
-#             "href": "",
-#         },
-#     ],
-#     "coverage": {
-#         "rock": "",
-#         "init_weathering": "",
-#         "field": "",
-#         "watershed": "",
-#         "ocean": "",
-#         "baseline": "",
-#         "lca": "",
-#         "impacts": "",
-#     },
-#     "protocols": [
-#         "id": {
-#             "relationship": "",
-#             "citation": "",
-#             "note": ""
-#         }
-# 		]
-# 	}
+qa_dict = {
+    "id": "",
+    "target": "",
+    "tool": "",
+    "type": [],
+    "category": [],
+    "frequency": [],
+    "notes": "",
+    "comments": "",
+    "references": [],
+    "coverage": {
+        "rock": "",
+        "initial_weathering": "",
+        "field": "",
+        "watershed": "",
+        "ocean": "",
+        "lca": "",
+        "impacts": "",
+    },
+    "EW001": {"relationship": "", "citation": "", "comments": ""},
+    "EW002": {"relationship": "", "citation": "", "comments": ""},
+}
 
 
 protocols_dict = {
