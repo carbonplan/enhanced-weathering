@@ -5,9 +5,8 @@
 </picture>
 </p>
 
-# python-project-template
+# Enhanced Weathering
 
-Enhanced Weathering
 
 [![CI](https://github.com/carbonplan/python-project-template/actions/workflows/main.yaml/badge.svg)](https://github.com/carbonplan/python-project-template/actions/workflows/main.yaml)
 [![License](https://img.shields.io/github/license/carbonplan/python-project-template?style=flat)](https://github.com/carbonplan/python-project-template/blob/main/LICENSE)
