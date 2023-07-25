@@ -52,7 +52,21 @@ def munge_qa_df(df: pd.DataFrame) -> pd.DataFrame:
     df["category"] = df["category"].str.strip().str.split(", ")
     df["transient"] = df["transient"].str.strip()
     df["impacts"] = df["impacts"].str.strip().str.split(", ")
-    df["references"] = df["references"].str.split("; ")
+
+    # splits each row into seperate refs, then splits each ref into name, href
+
+    def parse_refs(ref_row):
+        ref_item = [ref.strip() for ref in ref_row]
+        return [
+            {
+                "name": ref[ref.find("[") + 1 : ref.find("]")],
+                "href": ref[ref.find("(") + 1 : ref.find(")")],
+            }
+            for ref in ref_item
+        ]
+
+    df["references"] = df["references"].str.split(r"\),").apply(parse_refs)
+
     return df
 
 
