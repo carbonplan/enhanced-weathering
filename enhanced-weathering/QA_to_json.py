@@ -21,53 +21,37 @@ gsheet_doc_name = "EW Protocol Review"
 
 def get_qa_df(gsheet_doc_name: str) -> pd.DataFrame:
     sh = gc.open(gsheet_doc_name)
-    sheet = sh.worksheet("[Active] Quantification Approaches")
+    sheet = sh.worksheet("[ACTIVE] Quantification Approaches")
     data_dict = sheet.get_all_records()
     cols = [
-        "type",
         "target",
         "tool",
+        "type",
         "category",
-        "frequency",
+        "transient",
+        "impacts",
         "notes",
         "comments",
         "references",
-        "coverage_rock",
-        "coverage_initial_weathering",
-        "coverage_field",
-        "coverage_watershed",
-        "coverage_ocean",
-        "coverage_counterfactual",
-        "coverage_LCA",
-        "coverage_impacts",
-        "EW001_coverage_relationship",
-        "EW001_coverage_citation",
-        "EW001_coverage_comments",
-        "EW002_coverage_relationship",
-        "EW002_coverage_citation",
-        "EW002_coverage_comments",
-        "equilibrium",
-        "carbon_parcel",
-        "Eion",
-        "UNDO",
-        "Silicate",
-        "Lithos",
-        "YCNCC",
+        "carbon_rock",
+        "carbon_initial_weathering",
+        "carbon_field",
+        "carbon_watershed",
+        "carbon_ocean",
     ]
     df = pd.DataFrame(data_dict, columns=cols)
     # Drop first row containing comments
     df.drop(labels=0, inplace=True)
-    df["id"] = df.index.astype(str)
+    # df["id"] = df.index.astype(str)
 
     return df
 
 
 def munge_qa_df(df: pd.DataFrame) -> pd.DataFrame:
-    # import pdb; pdb.set_trace()
     df["type"] = df["type"].str.strip().str.split(", ")
     df["category"] = df["category"].str.strip().str.split(", ")
-    df["frequency"] = df["frequency"].str.strip().str.split(", ")
-    df["tool"] = df["tool"].str.strip()
+    df["transient"] = df["transient"].str.strip()
+    df["impacts"] = df["impacts"].str.strip().str.split(", ")
     df["references"] = df["references"].str.split("; ")
     return df
 
@@ -77,34 +61,22 @@ def build_qa_schema(df: pd.DataFrame) -> dict:
     for index, row in df.iterrows():
         subschema = copy.deepcopy(qa_dict)
 
-        subschema["id"] = row["id"]
-        subschema["target"] = row["target"]
-        subschema["tool"] = row["tool"]
-        subschema["type"] = row["type"]
-        subschema["category"] = row["category"]
-        subschema["frequency"] = row["frequency"]
-        subschema["notes"] = row["notes"]
-        subschema["comments"] = row["comments"]
-        subschema["references"] = row["references"]
-        subschema["coverage"]["rock"] = row["coverage_rock"]
-        subschema["coverage"]["initial_weathering"] = row["coverage_initial_weathering"]
-        subschema["coverage"]["field"] = row["coverage_field"]
-        subschema["coverage"]["watershed"] = row["coverage_watershed"]
-        subschema["coverage"]["ocean"] = row["coverage_ocean"]
-        subschema["coverage"]["lca"] = row["coverage_LCA"]
-        subschema["coverage"]["impacts"] = row["coverage_impacts"]
-
-        # Protocols:
-
-        # EW001
-        subschema["EW001"]["relationship"] = row["EW001_coverage_relationship"]
-        subschema["EW001"]["citation"] = row["EW001_coverage_citation"]
-        subschema["EW001"]["comments"] = row["EW001_coverage_comments"]
-
-        # EW002
-        subschema["EW002"]["relationship"] = row["EW002_coverage_relationship"]
-        subschema["EW002"]["citation"] = row["EW002_coverage_citation"]
-        subschema["EW002"]["comments"] = row["EW002_coverage_comments"]
+        subschema["quant_approach"]["target"] = row["target"]
+        subschema["quant_approach"]["tool"] = row["tool"]
+        subschema["quant_approach"]["type"] = row["type"]
+        subschema["quant_approach"]["category"] = row["category"]
+        subschema["quant_approach"]["transient"] = row["transient"]
+        subschema["quant_approach"]["impacts"] = row["impacts"]
+        subschema["quant_approach"]["notes"] = row["notes"]
+        subschema["quant_approach"]["comments"] = row["comments"]
+        subschema["quant_approach"]["references"] = row["references"]
+        subschema["quant_approach"]["coverage"]["rock"] = row["carbon_rock"]
+        subschema["quant_approach"]["coverage"]["init_weathering"] = row[
+            "carbon_initial_weathering"
+        ]
+        subschema["quant_approach"]["coverage"]["field"] = row["carbon_field"]
+        subschema["quant_approach"]["coverage"]["watershed"] = row["carbon_watershed"]
+        subschema["quant_approach"]["coverage"]["ocean"] = row["carbon_ocean"]
 
         combined.append(subschema)
     return combined
