@@ -39,15 +39,20 @@ def get_qa_df(gsheet_doc_name: str) -> pd.DataFrame:
         "carbon_watershed",
         "carbon_ocean",
     ]
+
     df = pd.DataFrame(data_dict, columns=cols)
     # Drop first row containing comments
     df.drop(labels=0, inplace=True)
+
     # df["id"] = df.index.astype(str)
 
     return df
 
 
 def munge_qa_df(df: pd.DataFrame) -> pd.DataFrame:
+    # apply string stripping to every col
+    df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+
     df["type"] = df["type"].str.strip().str.split(", ")
     df["category"] = df["category"].str.strip().str.split(", ")
     df["transient"] = df["transient"].str.strip()
@@ -56,14 +61,17 @@ def munge_qa_df(df: pd.DataFrame) -> pd.DataFrame:
     # splits each row into seperate refs, then splits each ref into name, href
 
     def parse_refs(ref_row):
-        ref_item = [ref.strip() for ref in ref_row]
-        return [
-            {
-                "name": ref[ref.find("[") + 1 : ref.find("]")],
-                "href": ref[ref.find("(") + 1 : ref.find(")")],
-            }
-            for ref in ref_item
-        ]
+        if ref_row == [""]:
+            return []
+        else:
+            ref_item = [ref.strip() for ref in ref_row]
+            return [
+                {
+                    "name": ref[ref.find("[") + 1 : ref.find("]")],
+                    "href": ref[ref.find("(") + 1 : ref.find(")")],
+                }
+                for ref in ref_item
+            ]
 
     df["references"] = df["references"].str.split(r"\),").apply(parse_refs)
 
@@ -92,7 +100,13 @@ def build_qa_schema(df: pd.DataFrame) -> dict:
         subschema["quant_approach"]["coverage"]["watershed"] = row["carbon_watershed"]
         subschema["quant_approach"]["coverage"]["ocean"] = row["carbon_ocean"]
 
+        # if one of these columns contains any [''], they are replaced with empty lists
+        for list_col in ["type", "category", "impacts", "references"]:
+            if subschema["quant_approach"][list_col] == [""]:
+                subschema["quant_approach"][list_col] = []
+
         combined.append(subschema)
+
     return combined
 
 
