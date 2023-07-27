@@ -5,11 +5,27 @@
 </picture>
 </p>
 
-# Enhanced Weathering
+# carbonplan / enhanced weathering
 
 
 [![CI](https://github.com/carbonplan/python-project-template/actions/workflows/main.yaml/badge.svg)](https://github.com/carbonplan/python-project-template/actions/workflows/main.yaml)
 [![License](https://img.shields.io/github/license/carbonplan/python-project-template?style=flat)](https://github.com/carbonplan/python-project-template/blob/main/LICENSE)
+
+## to build the site locally
+
+Assuming you already have `Node.js` installed, you can install the build dependencies as:
+
+```shell
+npm install .
+```
+
+To start a development version of the site, simply run:
+
+```shell
+npm run dev
+```
+
+and then visit `http://localhost:5001` in your browser.
 
 ## license
 

@@ -1,0 +1,38 @@
+{
+  "name": "enhanced-weathering",
+  "version": "1.0.0",
+  "description": "simple template for a website using our web stack",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development next -p 5001",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carbonplan/enhanced-weathering.git"
+  },
+  "keywords": [
+    "next",
+    "theme-ui",
+    "react"
+  ],
+  "author": "katamartin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carbonplan/enhanced-weathering/issues"
+  },
+  "homepage": "https://github.com/carbonplan/enhanced-weathering#readme",
+  "devDependencies": {
+    "prettier": "2.2.1"
+  },
+  "dependencies": {
+    "@carbonplan/components": "^12.3.0",
+    "@carbonplan/layouts": "^4.0.0",
+    "@carbonplan/theme": "^8.0.0",
+    "next": "^12.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "theme-ui": "^0.15.3"
+  }
+}
