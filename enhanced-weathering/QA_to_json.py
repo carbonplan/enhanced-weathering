@@ -41,6 +41,7 @@ def get_qa_df(gsheet_doc_name: str) -> pd.DataFrame:
     ]
 
     df = pd.DataFrame(data_dict, columns=cols)
+
     # Drop first row containing comments
     df.drop(labels=0, inplace=True)
 
@@ -59,7 +60,6 @@ def munge_qa_df(df: pd.DataFrame) -> pd.DataFrame:
     df["impacts"] = df["impacts"].str.strip().str.split(", ")
 
     # splits each row into seperate refs, then splits each ref into name, href
-
     def parse_refs(ref_row):
         if ref_row == [""]:
             return []

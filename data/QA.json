@@ -7,7 +7,7 @@
       "category": ["soil"],
       "transient": "no",
       "impacts": ["crop health", "ag inputs"],
-      "notes": "Cation exchange capacity (CEC) refers to the negatively charged sites on soil solid surfaces (e.g. clay minerals, organic matter) where cations are attracted, held, and exchanged with soil pore water. Interactions between weathered cations and the soil exchange complex can produce a delay between initial weathering and detectable changes to cation or dissolved inorganic carbon concentrations in soil pore water or field runoff. Characterizing the CEC and changes in base saturation \u2014 which characterizes the type of cations present on the exchange complex \u2014 can critically inform the interpretation of other weathering signals.",
+      "notes": "Cation exchange capacity (CEC) refers to the negatively charged sites on soil solid surfaces (e.g. clay minerals, organic matter) where cations are attracted, held, and exchanged with soil pore water. Interactions between cations (produced from weathering reactions) and the soil exchange complex can produce a delay between initial weathering and detectable changes to cation or dissolved inorganic carbon concentrations in soil pore water or field runoff. Characterizing the CEC and changes in base saturation \u2014 which characterizes the type of cations present on the exchange complex \u2014 can critically inform the interpretation of other weathering signals.",
       "comments": "Changes are most likely to be observed in base saturation. However, cation exchange capacity (CEC) itself could change if secondary clay minerals form or if the system pH changes as a result of weathering, which would impact the fraction of CEC that is pH-dependent.",
       "references": [
         {
@@ -170,7 +170,7 @@
       "transient": "maybe",
       "impacts": [],
       "notes": "Changes in the concentrations of isotopic tracers (e.g. strontium or neodymium) could be used to constrain the initial dissolution of rock dust. Isotopic tracers play a key role in our understanding of weathering dynamics over geologic time, including of source rocks and weathering and erosion rates. Applying this approach to characterize field-scale enhanced weathering requires clearly characterizing baseline isotopic ratios of the rock as well as the soil, soil solution, or downstream export, as applicable.",
-      "comments": "This approach may be more effective if the isotopic signature of the soil is sufficiently differentiated from the rock amendment.",
+      "comments": "This approach may be more effective if the isotopic signature of the soil is sufficiently differentiated from the rock amendment; its efficacy may be limited if they are not significantly differentiated.",
       "references": [
         {
           "name": "Paytan et al., 2021",
@@ -224,7 +224,7 @@
       "transient": "maybe",
       "impacts": ["heavy metals"],
       "notes": "Monitoring changes in trace metal concentrations may inform estimates of initial rock weathering. Measurements of trace metals in the environment should be accompanied by a clear characterization the elemental composition and trace metal content of the applied weathering material (see \"elemental composition\"). Various forms of spectroscopy can be applied to liquid or solid samples to determine the trace metal content.",
-      "comments": "It is important to monitor trace metal concentrations (e.g. Ni, Cr) in soil, water, and crops to ensure safe levels of heavy metals are maintained. Many jurisdiction regulate allowable concentrations of trace metals, and relevant regulations should thus inform rock application, measurement approaches, and threshold concentrations. If a field is subject to repeated applications of weathering material, cumulative levels of trace metals should be monitored.",
+      "comments": "It is important to monitor trace metal concentrations (e.g. Ni, Cr) in soil, water, and crops to ensure safe levels of heavy metals are maintained. Many jurisdictions regulate allowable concentrations of trace metals, and relevant regulations should thus inform rock application, measurement approaches, and threshold concentrations. If a field is subject to repeated applications of weathering material, cumulative levels of trace metals should be monitored.",
       "references": [
         {
           "name": "Haque et al., 2020",
@@ -308,7 +308,7 @@
         "ag inputs"
       ],
       "notes": "Farmers rely on understanding and managing soil pH to ensure healthy crop growth and nutrient availability. Because silicate weathering is a proton-consuming reaction, an increase in pH is expected and could signal weathering has occured, though the magnitude of this change depends on the weathering rate, starting pH of the system, and buffering capacity of the soil. Increasing pH may cause wide-ranging impacts, from altering nutrient availability and trace metal mobility (positively or negatively), to reducing N2O emissions or shifting management practices (e.g. changing liming requirements in an acidic system or acidification of irrigation water in a basic system). Monitoring pH also provides important information for constraining carbon removal \u2014 for example, as an environmental factor that determines carbonate speciation. pH is a routine soil measurement and may be measured on soil or water samples collected for other purposes.",
-      "comments": "Sufficient enhanced rock weathering could shift watershed pH in ways that affect freshwater ecosystems and geochemical processes. For example, changes in system pH as a result of enhanced weathering might also shift the mobilization and bioavailability of potentially toxic trace metals in the environment. Monitoring watershed pH could thus be an important dimension of tracking environmental impacts at scale.",
+      "comments": "Enhanced rock weathering could shift watershed pH in ways that affect freshwater ecosystems and geochemical processes. For example, changes in system pH as a result of enhanced weathering might also shift the mobilization and bioavailability of potentially toxic trace metals in the environment. Monitoring watershed pH could thus be an important dimension of tracking environmental impacts at scale.",
       "references": [
         {
           "name": "Edwards et al., 2017",
@@ -376,7 +376,7 @@
       "category": ["soil"],
       "transient": "no",
       "impacts": ["soil health"],
-      "notes": "Characterizing soil physical properties, like water infiltration or aggregate stability, is likely not essential, but could inform an understanding of initial weathering processes as well as changes to following rock application. It is likely to take time for any changes to soil physical properties to appear. Changes may be more likely if the rock amendment particle size is substantially different from native soil texture (see \"particle size distribution\") or if rock is applied repeatedly (see \"mineral application\"). The appropriate measurement approach may vary depending on soil type, and care must be taken with measurement timing and frequency.",
+      "notes": "Characterizing soil physical properties, like water infiltration or aggregate stability, is likely not essential, but could inform an understanding of initial weathering processes as well as changes to the soil to following rock application. It is likely to take time for any changes to soil physical properties to appear. Changes may be more likely if the rock amendment particle size is substantially different from native soil texture (see \"particle size distribution\") or if rock is applied repeatedly (see \"mineral application\"). The appropriate measurement approach may vary depending on soil type, and care must be taken with measurement timing and frequency.",
       "comments": "None.",
       "references": [
         {
@@ -405,7 +405,7 @@
       "category": ["soil"],
       "transient": "no",
       "impacts": ["soil health"],
-      "notes": "Soil texture measurements are important for characterizing the soil system, including its suitability for enhanced weathering, field processes that may influence net carbon removal, and likely impacts of enhanced weathering for soil health. For example, enhanced weathering could impact soil testure via the rock dust incorparation or secondary mineral formation, but these potential impacts are likely to differ depending on the contrast between the native soil texture and the rock amendment. Soil texture measurements are likely not critical, but may be a key supporting or explanatory measurement for other indicators.",
+      "notes": "Soil texture measurements are important for characterizing the soil system, including its suitability for enhanced weathering, field processes that may influence net carbon removal, and likely impacts of enhanced weathering for soil health. For example, enhanced weathering could impact soil texture via the rock dust incorparation or secondary mineral formation, but these potential impacts are likely to differ depending on the contrast between the native soil texture and the rock amendment. Soil texture measurements are likely not critical, but may be a key supporting or explanatory measurement for other indicators.",
       "comments": "None.",
       "references": [],
       "coverage": {
@@ -424,9 +424,9 @@
       "type": ["measurement"],
       "category": ["soil"],
       "transient": "no",
-      "impacts": ["soil biology", "soil health"],
-      "notes": "Enhanced weathering could have impacts on soil biology, including microbe biodiversity and community composition, for example by changing pH or micronutrient availability (see \"pH\" and \"elemental composition\"). It is also possible that soil biology, including the microbial community, might impact weathering rates or other in-field processes like carbonate precipitation. The interaction between enhanced weathering and soil biology is an area of active research, and could be informed by project-level monitoring. Soil microbes can be characterized by various techniques, including analysis of phospholipid fatty acids (PLFA) or genetic sequencing.",
-      "comments": "Characterizing soil microbes can be intensive from a sampling perspective (e.g. may require -80 C sample storage), and should be guided by an appropriate microbial sampling protocol.",
+      "impacts": ["soil health"],
+      "notes": "Enhanced weathering could have impacts on soil biology, including microbial diversity and functioning, for example by changing pH or micronutrient availability (see \"pH\" and \"elemental composition\"). Changes to soil biology, such as to the microbial community, might impact weathering rates or other in-field processes, like carbonate precipitation. The interaction between enhanced weathering and soil biology is an area of active research, and could be informed by project-level monitoring. The soil microbial community can be characterized by various techniques, including analysis of phospholipid fatty acids (PLFA) or DNA sequencing.",
+      "comments": "Characterizing soil microbes can be intensive from a sampling perspective and require access to specific facilities (e.g. may require -80 C sample storage), and should be guided by an appropriate microbial sampling protocol.",
       "references": [],
       "coverage": {
         "rock": 0,
@@ -546,7 +546,7 @@
       "transient": "no",
       "impacts": [],
       "notes": "If crops engage in luxury consumption of certain nutrients following rock application, this could lead to above-baseline removal of cations at the field scale. Changes in yield could also alter cation concentrations in exported biomass. This loss of cations would reduce the potential carbon dioxide removal of the associated enhanced weathering. Plant cation uptake can be measured using plant biomass samples from treated and control plots, which can then be processed via an appropriate digestion followed ICP-AES, ICP-MS, or AAS analysis. An appropriate sampling scheme and measurement protocols is required.",
-      "comments": "Tracking plant cation uptake may not be necessary unless there is evidence of luxury consumption or changes in yield. Depending on the rock mineralogy (see \"mineralogy\") and elemental composition (see \"elemental composition\"), it's also possible that plants might uptake toxic trace metals which would need to be monitored with similar measurements (see \"trace metals\").",
+      "comments": "Tracking plant cation uptake may not be necessary unless there is evidence of luxury consumption or changes in yield. Depending on the rock mineralogy (see \"mineralogy\") and elemental composition (see \"elemental composition\"), it's also possible that plants might take up toxic trace metals which would need to be monitored with similar measurements (see \"trace metals\").",
       "references": [
         {
           "name": "ten Berge et al., 2012",
@@ -612,7 +612,7 @@
       "transient": "no",
       "impacts": [],
       "notes": "Measuring the inorganic carbon content of soil solids can be used to characterize in-field carbonate precipitation. This is a critical to process understand, as carbonate precipitation affects the net carbon removal. This process may be characterized in the field by analyzing soil samples using tools such as thermogravimetric analysis (TGA), pressure calcimetry, or acid dissolution.",
-      "comments": "Soil inorganic carbon measurements are less commonly processed by commerical or academic labs. Additionally, it may be difficult to detect small changes as a result of carbonate precipitation if absolute concentrations are very low or if carbonates are heterogeneously distributed. Changes to soil carbonates would also be reflected in soil total carbon measurements (see \"soil total carbon\"). Any soil-sample based measurement should be accompanied by measurements of bulk density in order to rigorously extrapolate soil samples to field-scale stock estimates (see \"bulk density\"). The possibility of carbonate precipitation in rivers and oceans must also be accounted for, and will likely be characterized by models.",
+      "comments": "Soil inorganic carbon measurements are less commonly processed by commerical or academic labs. Additionally, it may be difficult to detect small changes as a result of carbonate precipitation if absolute concentrations are very low or if carbonates are heterogeneously distributed. Significant changes to soil carbonates should also be reflected in soil total carbon measurements (see \"soil total carbon\"). Any soil-sample based measurement should be accompanied by measurements of bulk density in order to rigorously extrapolate soil samples to field-scale stock estimates (see \"bulk density\"). The possibility of carbonate precipitation in rivers and oceans must also be accounted for, and will likely be characterized by models.",
       "references": [
         {
           "name": "Khalidy et al., 2021",
@@ -640,8 +640,8 @@
       "category": ["soil"],
       "transient": "no",
       "impacts": [],
-      "notes": "Adding minerals to soils has the potential to induce changes to soil organic carbon, for example by affecting pH or impacting plant or microbial activity. Theoretically, these impacts could increase or decrease SOC storage. There is some limited evidence that addition of silicates may increase mineralization of organic carbon (yielding increased CO\u2082 efflux) which could decrease net carbon removal.",
-      "comments": "There is relatively little research on enhanced weathering's impact on soil organic carbon (SOC), and these potential interactions merit further exploration. Although SOC changes are not the direct focus of enhanced weathering, it's important to monitor SOC for possible changes. There is some limited evidence that addition of silicates may increase mineralization of organic carbon (yielding increased CO\u2082 efflux) which could decrease net carbon removal. If a clear understanding of enhanced weathering's impacts on SOC across weathering material, soil types, and agricultural systems emerges, this monitoring may become less needed. Changes to soil organic carbon would also be reflected in soil total carbon measurements (see \"soil total carbon\"). Any measurement of soil organic carbon should be accompanied by measurements of bulk density in order to rigorously extrapolate soil samples to field-scale stock estimates (see \"bulk density\"). If soil organic carbon is a focus, analysis may be deepened with measurements of soil organic matter.",
+      "notes": "Adding minerals to soils has the potential to induce changes to soil organic carbon, for example by affecting pH, impacting plant or microbial activity, or secondary mineral content. Theoretically, these impacts could increase or decrease SOC storage. There is some limited evidence that addition of silicates may increase mineralization of organic carbon (yielding increased CO\u2082 efflux) which could decrease net carbon removal; though other preliminary evidence suggests neutral to positive effects on SOC.",
+      "comments": "There is relatively little research on enhanced weathering's impact on soil organic carbon (SOC), and these potential interactions merit further exploration. Although SOC changes are not the direct focus of enhanced weathering, it's important to monitor SOC for possible changes. If a clear understanding of enhanced weathering's impacts on SOC across weathering material, soil types, and agricultural systems emerges, this monitoring may become less necessary. Changes to soil organic carbon would also be reflected in soil total carbon measurements (see \"soil total carbon\"). Any measurement of soil organic carbon should be accompanied by measurements of bulk density in order to rigorously extrapolate soil samples to field-scale stock estimates (see \"bulk density\"). If soil organic carbon is a focus, analysis may be deepened with measurements of soil organic matter.",
       "references": [
         {
           "name": "Yan et al., 2023",
@@ -710,7 +710,7 @@
       "category": ["environment"],
       "transient": "yes",
       "impacts": [],
-      "notes": "Precipitation data provides critical context to assess water inputs available for weathering. Determining a water balance for the field is important for converting measurements of weathering products or carbon which are expressed as concentrations (mass / volume) into weathering or carbon removal fluxes (mass / time). This data may be obtained from a local weather monitoring station or site records, if available.",
+      "notes": "Precipitation data provides critical context to assess water inputs available for weathering. Determining a water balance for the field is important for converting measurements of weathering products or carbon, which are expressed as concentrations (mass / volume), into weathering or carbon removal fluxes (mass / time). This data may be obtained from a local weather monitoring station or site records, if available.",
       "comments": "None.",
       "references": [
         {
@@ -822,7 +822,7 @@
       "category": ["other"],
       "transient": "n/a",
       "impacts": [],
-      "notes": "Accounting for project emissions is key to evaluating net carbon removal. Key components to consider include transport and appllication of rock material.",
+      "notes": "Accounting for project emissions is key to evaluating net carbon removal. Key components to consider include transport and application of rock material.",
       "comments": "At present, few LCAs of enhanced weathering exist in the scientific literature.",
       "references": [
         {
