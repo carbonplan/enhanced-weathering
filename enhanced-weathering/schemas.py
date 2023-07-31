@@ -1,24 +1,16 @@
 qa_dict = {
-    "id": "",
-    "target": "",
-    "tool": "",
-    "type": [],
-    "category": [],
-    "frequency": [],
-    "notes": "",
-    "comments": "",
-    "references": [],
-    "coverage": {
-        "rock": "",
-        "initial_weathering": "",
-        "field": "",
-        "watershed": "",
-        "ocean": "",
-        "lca": "",
-        "impacts": "",
-    },
-    "EW001": {"relationship": "", "citation": "", "comments": ""},
-    "EW002": {"relationship": "", "citation": "", "comments": ""},
+    "quant_approach": {
+        "target": "",
+        "tool": "",
+        "type": [],
+        "category": [],
+        "transient": "",
+        "impacts": [],
+        "notes": "",
+        "comments": "",
+        "references": [],
+        "coverage": {"rock": "", "init_weathering": "", "field": "", "watershed": "", "ocean": ""},
+    }
 }
 
 
