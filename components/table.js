@@ -25,19 +25,19 @@ const TableRow = ({
       <Column as="td" start={[3]} width={[3]}>
         {tool}
       </Column>
-      <Column start={[6]} width={[1]}>
+      <Column as="td" start={[6]} width={[1]}>
         <Coverage type="rock" value={rock} />
       </Column>
-      <Column start={[7]} width={[1]}>
+      <Column as="td" start={[7]} width={[1]}>
         <Coverage type="init_weathering" value={init_weathering} />
       </Column>
-      <Column start={[8]} width={[1]}>
+      <Column as="td" start={[8]} width={[1]}>
         <Coverage type="field" value={field} />
       </Column>
-      <Column start={[9]} width={[1]}>
+      <Column as="td" start={[9]} width={[1]}>
         <Coverage type="watershed" value={watershed} />
       </Column>
-      <Column start={[10]} width={[1]}>
+      <Column as="td" start={[10]} width={[1]}>
         <Coverage type="ocean" value={ocean} />
       </Column>
     </Row>
