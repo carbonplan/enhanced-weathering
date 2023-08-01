@@ -1,11 +1,25 @@
-import { Button, Column, Expander, Row } from '@carbonplan/components'
+import { Button, Column, Expander, Link, Row } from '@carbonplan/components'
 import { Box, Flex } from 'theme-ui'
-import { useState } from 'react'
+import { createElement, useState } from 'react'
 import { RotatingArrow } from '@carbonplan/icons'
+import { unified } from 'unified'
+import markdown from 'remark-parse'
+import remark2rehype from 'remark-rehype'
+import rehype2react from 'rehype-react'
 
 import Coverage from './coverage'
 
-const ExpandedContent = ({ label, children, ...props }) => {
+const processor = unified()
+  .use(markdown)
+  .use(remark2rehype)
+  .use(rehype2react, {
+    createElement,
+    components: {
+      a: Link,
+    },
+  })
+
+const ExpandedContent = ({ label, children, mdx = false, ...props }) => {
   return (
     <Column as="td" {...props}>
       <Box
@@ -19,7 +33,9 @@ const ExpandedContent = ({ label, children, ...props }) => {
       >
         {label}
       </Box>
-      <Box sx={{ fontFamily: 'faux', letterSpacing: 'faux' }}>{children}</Box>
+      <Box sx={{ fontFamily: 'faux', letterSpacing: 'faux' }}>
+        {process ? processor.processSync(children).result : children}
+      </Box>
     </Column>
   )
 }
@@ -95,7 +111,13 @@ const Entry = ({
           <ExpandedContent start={[7]} width={[2]} label="Impacts">
             {impacts}
           </ExpandedContent>
-          <ExpandedContent start={1} width={[4]} label="Notes" sx={{ mt: 5 }}>
+          <ExpandedContent
+            start={1}
+            width={[4]}
+            label="Notes"
+            sx={{ mt: 5 }}
+            mdx
+          >
             {notes}
           </ExpandedContent>
 
@@ -106,6 +128,7 @@ const Entry = ({
                 width={[4]}
                 label="Comments"
                 as="div"
+                mdx
                 sx={{ mt: 5 }}
               >
                 {comments}
