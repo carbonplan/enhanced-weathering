@@ -2,45 +2,13 @@ import { Column, Row } from '@carbonplan/components'
 import { Box } from 'theme-ui'
 
 import data from '../data/QA.json'
-import Coverage from './coverage'
+import Entry from './entry'
 
 const TableHead = ({ children, ...props }) => {
   return (
     <Column as="th" {...props} sx={{ textAlign: 'left', fontSize: 1 }}>
       {children}
     </Column>
-  )
-}
-
-const TableRow = ({
-  target,
-  tool,
-  coverage: { rock, init_weathering, field, watershed, ocean },
-}) => {
-  return (
-    <Row as="tr" columns={[6, 8, 10, 10]} sx={{ my: 4 }}>
-      <Column as="td" start={1} width={[2]}>
-        {target}
-      </Column>
-      <Column as="td" start={[3]} width={[3]}>
-        {tool}
-      </Column>
-      <Column as="td" start={[6]} width={[1]}>
-        <Coverage type="rock" value={rock} />
-      </Column>
-      <Column as="td" start={[7]} width={[1]}>
-        <Coverage type="init_weathering" value={init_weathering} />
-      </Column>
-      <Column as="td" start={[8]} width={[1]}>
-        <Coverage type="field" value={field} />
-      </Column>
-      <Column as="td" start={[9]} width={[1]}>
-        <Coverage type="watershed" value={watershed} />
-      </Column>
-      <Column as="td" start={[10]} width={[1]}>
-        <Coverage type="ocean" value={ocean} />
-      </Column>
-    </Row>
   )
 }
 
@@ -75,7 +43,7 @@ const Table = () => {
 
       <Box as="tbody">
         {data.map((d) => (
-          <TableRow
+          <Entry
             key={`${d.quant_approach.target}-${d.quant_approach.tool}`}
             {...d.quant_approach}
           />

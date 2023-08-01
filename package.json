@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@carbonplan/components": "^12.3.0",
+    "@carbonplan/icons": "^2.0.0",
     "@carbonplan/layouts": "^4.0.0",
     "@carbonplan/theme": "^8.0.0",
     "@theme-ui/color": "^0.15.3",
