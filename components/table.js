@@ -1,13 +1,21 @@
 import { Column, Row } from '@carbonplan/components'
-import { Box } from 'theme-ui'
+import { Box, Flex } from 'theme-ui'
 
 import data from '../data/QA.json'
 import Entry from './entry'
 
 const TableHead = ({ children, ...props }) => {
   return (
-    <Column as="th" {...props} sx={{ textAlign: 'left', fontSize: 1 }}>
-      {children}
+    <Column as="th" {...props} sx={{ textAlign: 'left', fontSize: 0 }}>
+      <Flex
+        sx={{
+          height: '100%',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+        }}
+      >
+        {children}
+      </Flex>
     </Column>
   )
 }
@@ -16,7 +24,7 @@ const Table = () => {
   return (
     <Box as="table">
       <Box as="thead">
-        <Row as="tr" columns={[6, 8, 10, 10]}>
+        <Row as="tr" columns={[6, 8, 10, 10]} sx={{ mb: 4 }}>
           <TableHead start={1} width={[2]}>
             Target
           </TableHead>

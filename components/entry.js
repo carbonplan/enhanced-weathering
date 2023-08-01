@@ -61,15 +61,24 @@ const Entry = ({
         columns={[6, 8, 10, 10]}
         onClick={() => setExpanded(!expanded)}
         sx={{
-          my: 4,
+          py: 4,
           cursor: 'pointer',
           '&:hover button': { stroke: 'primary' },
+          borderStyle: 'solid',
+          borderColor: 'muted',
+          borderWidth: 0,
+          borderTopWidth: 1,
         }}
       >
         <Column as="td" start={1} width={[2]} sx={{ position: 'relative' }}>
           <Expander
             value={expanded}
-            sx={{ position: 'absolute', left: -30 }}
+            sx={{
+              position: 'absolute',
+              left: -26,
+              width: '18px',
+              height: '18px',
+            }}
             onClick={() => setExpanded(!expanded)}
           />
           {target}
@@ -97,7 +106,13 @@ const Entry = ({
         <Row
           as="tr"
           columns={[6, 8, 10, 10]}
-          sx={{ px: [4, 5, 5, 6], mx: [-4, -5, -5, -6], py: 4, bg: 'muted' }}
+          sx={{
+            px: [4, 5, 5, 6],
+            mx: [-4, -5, -5, -6],
+            py: 4,
+            mb: 4,
+            bg: 'muted',
+          }}
         >
           <ExpandedContent start={1} width={[2]} label="Transient">
             {transient}
