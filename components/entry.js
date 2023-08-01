@@ -34,7 +34,7 @@ const ExpandedContent = ({ label, children, mdx = false, ...props }) => {
         {label}
       </Box>
       <Box sx={{ fontFamily: 'faux', letterSpacing: 'faux' }}>
-        {process ? processor.processSync(children).result : children}
+        {mdx ? processor.processSync(children).result : children}
       </Box>
     </Column>
   )
