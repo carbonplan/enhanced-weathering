@@ -117,6 +117,29 @@ def write_combined_protocol_list_json(combined_dict_list: list):
         json.dump(combined_dict_list, fp, indent=4)
 
 
+def get_legend_df(gsheet_doc_name: str) -> pd.DataFrame:
+    # Retrieve legend sheet and convert to DataFrame
+
+    sh = gc.open(gsheet_doc_name)
+    sheet = sh.worksheet("[ACTIVE] Legend")
+    data_dict = sheet.get_all_records()
+    cols = ["key", "value"]
+
+    df = pd.DataFrame(data_dict, columns=cols)
+    df["key"] = df["key"].str.strip()
+    df["value"] = df["value"].str.strip()
+
+    return df
+
+
+def write_legend_df(df: pd.DataFrame):
+    # Write legend dataframe to json
+    sample_file = pathlib.Path("../data") / "legend.json"
+    df.set_index("key")["value"].to_json(sample_file, indent=4)
+
+
+ldf = get_legend_df(gsheet_doc_name)
+write_legend_df(ldf)
 df = get_qa_df(gsheet_doc_name)
 df = munge_qa_df(df)
 combined = build_qa_schema(df)
