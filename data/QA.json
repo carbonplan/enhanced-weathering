@@ -465,12 +465,12 @@
   {
     "quant_approach": {
       "target": "mineralogy",
-      "tool": "QEMSCAN / XRD",
+      "tool": "QEMSCAN, XRD",
       "type": ["measurement"],
       "category": ["rock"],
       "transient": "no",
       "impacts": [],
-      "notes": "Mineralogy identifies the relative proportions of minerals within a rock. Since the maximum theorethical potential for enhanced weathering is determined by the mineral composition of the applied rock, this is a critical measurement to place an upper bound mineral weathering outcomes, as well as informing the potential for heavy metal accumulation. Mineralogy helps reveal what fraction of the rock is likely to weather quickly, or if there is a portion (e.g. quartz) that should be considered \"unweatherable,\" given the relevant time scales for enhanced weathering. Rock amendment samples can be characterized using X-ray diffraction (XRD), quantitative evaluation of materials by Scanning Electron Microscopy (QEMSCAN), or similar tools.",
+      "notes": "Mineralogy identifies the relative proportions of minerals within a rock. Since the maximum theoretical potential for enhanced weathering is determined by the mineral composition of the applied rock, this is a critical measurement to place an upper bound mineral weathering outcomes, as well as informing the potential for heavy metal accumulation. Mineralogy helps reveal what fraction of the rock is likely to weather quickly, or if there is a portion (e.g. quartz) that should be considered \"unweatherable,\" given the relevant time scales for enhanced weathering. Rock amendment samples can be characterized using X-ray diffraction (XRD), quantitative evaluation of materials by Scanning Electron Microscopy (QEMSCAN), or similar tools.",
       "comments": "This measurement should be performed prior to applying the weathering material to determine its suitability for enhanced weathering. Care should be taken to construct a sampling regime that appropriately accounts for the potential variability of the weathering material.",
       "references": [
         {
@@ -1073,46 +1073,6 @@
         "field": 0,
         "watershed": 3,
         "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "",
-      "tool": "",
-      "type": [],
-      "category": [],
-      "transient": "",
-      "impacts": [],
-      "notes": "",
-      "comments": "",
-      "references": [],
-      "coverage": {
-        "rock": "",
-        "init_weathering": "",
-        "field": "",
-        "watershed": "",
-        "ocean": ""
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "porosity",
-      "tool": "",
-      "type": [],
-      "category": [],
-      "transient": "",
-      "impacts": [],
-      "notes": "",
-      "comments": "",
-      "references": [],
-      "coverage": {
-        "rock": "",
-        "init_weathering": "",
-        "field": "",
-        "watershed": "",
-        "ocean": ""
       }
     }
   }
