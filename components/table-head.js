@@ -1,4 +1,4 @@
-import { Badge, Column, Expander, Row } from '@carbonplan/components'
+import { Badge, Column, Expander, FadeIn, Row } from '@carbonplan/components'
 import { Triangle } from '@carbonplan/icons'
 import { useState } from 'react'
 import { Box, Flex, IconButton } from 'theme-ui'
@@ -6,6 +6,20 @@ import { Box, Flex, IconButton } from 'theme-ui'
 import legend from '../data/legend.json'
 import { TooltipButton, TooltipContent } from './tooltip'
 import { ExpandedColumn, ExpandedRow } from './expanded'
+import AnimateHeight from 'react-animate-height'
+
+const sx = {
+  reset: {
+    display: 'block',
+    width: 'auto',
+    height: 'auto',
+    borderCollapse: 'inherit',
+    borderSpacing: 0,
+    borderColor: 'inherit',
+    verticalAlign: 'inherit',
+    textAlign: 'left',
+  },
+}
 
 const TableHeader = ({
   info,
@@ -19,11 +33,7 @@ const TableHeader = ({
   ...props
 }) => {
   return (
-    <Column
-      as="th"
-      {...props}
-      sx={{ textAlign: 'left', fontSize: 0, mb: 4, ...sx }}
-    >
+    <Column as="th" {...props} sx={{ textAlign: 'left', fontSize: 0, ...sx }}>
       <Flex
         sx={{
           height: '100%',
@@ -111,6 +121,7 @@ const TableHead = ({ sort, setSort }) => {
           px: [4, 5, 5, 6],
           mx: [-4, -5, -5, -6],
           bg: 'background',
+          pb: 3,
         }}
       >
         <TableHeader
@@ -227,55 +238,55 @@ const TableHead = ({ sort, setSort }) => {
         >
           Ocean storage
         </TableHeader>
-        {!!expanded &&
-          (expanded.start ? (
-            <TableHeader start={expanded.start} width={expanded.width}>
-              <TooltipContent expanded={!!expanded}>
-                {legend[expanded.id]}
-              </TooltipContent>
-            </TableHeader>
-          ) : (
-            <TableHeader start={1} width={[6, 8, 10, 10]} sx={{ mb: 0 }}>
-              <ExpandedRow
-                as="div"
-                accent={[expanded.color]}
-                onClose={() => setExpanded(null)}
-                // sx={{ mt: 3 }}
-              >
-                <ExpandedColumn
-                  as="div"
-                  label="Overview"
-                  start={1}
-                  width={3}
-                  mdx
-                >
-                  {legend[expanded.id]}
-                </ExpandedColumn>
 
-                <ExpandedColumn
-                  as="div"
-                  label="Coverage"
-                  start={[4]}
-                  width={[5]}
+        <Column as="th" start={1} width={[6, 8, 10, 10]} sx={sx.reset}>
+          <AnimateHeight
+            duration={100}
+            height={expanded ? 'auto' : 0}
+            easing={'linear'}
+          >
+            <FadeIn>
+              {expanded && expanded.start && (
+                <Row columns={[6, 8, 10, 10]}>
+                  <Column start={expanded.start} width={expanded.width}>
+                    <TooltipContent expanded={!!expanded}>
+                      {legend[expanded.id]}
+                    </TooltipContent>
+                  </Column>
+                </Row>
+              )}
+
+              {expanded && !expanded.start && (
+                <ExpandedRow
+                  accent={[expanded.color]}
+                  onClose={() => setExpanded(null)}
+                  sx={{ mt: 3, mb: 0 }}
                 >
-                  {['Essential', 'Primary', 'Secondary', 'Extra'].map(
-                    (coverage) => (
-                      <Row key={coverage} columns={[4]} sx={{ mb: 3 }}>
-                        <Column start={1} width={1}>
-                          <Badge sx={{ color: expanded.color }}>
-                            {coverage}
-                          </Badge>
-                        </Column>
-                        <Column start={[2]} width={[4]}>
-                          {legend[coverage.toLowerCase()]}
-                        </Column>
-                      </Row>
-                    ),
-                  )}
-                </ExpandedColumn>
-              </ExpandedRow>
-            </TableHeader>
-          ))}
+                  <ExpandedColumn label="Overview" start={1} width={3} mdx>
+                    {legend[expanded.id]}
+                  </ExpandedColumn>
+
+                  <ExpandedColumn label="Coverage" start={[4]} width={[5]}>
+                    {['Essential', 'Primary', 'Secondary', 'Extra'].map(
+                      (coverage) => (
+                        <Row key={coverage} columns={[4]} sx={{ mb: 3 }}>
+                          <Column start={1} width={1}>
+                            <Badge sx={{ color: expanded.color }}>
+                              {coverage}
+                            </Badge>
+                          </Column>
+                          <Column start={[2]} width={[4]}>
+                            {legend[coverage.toLowerCase()]}
+                          </Column>
+                        </Row>
+                      ),
+                    )}
+                  </ExpandedColumn>
+                </ExpandedRow>
+              )}
+            </FadeIn>
+          </AnimateHeight>
+        </Column>
       </Row>
     </Box>
   )

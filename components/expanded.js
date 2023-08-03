@@ -1,5 +1,5 @@
 import { Column, Link, Row } from '@carbonplan/components'
-import { Box, Flex, IconButton } from 'theme-ui'
+import { Box, IconButton } from 'theme-ui'
 import { createElement } from 'react'
 import { unified } from 'unified'
 import markdown from 'remark-parse'
@@ -27,7 +27,6 @@ export const ExpandedColumn = ({
 }) => {
   return (
     <Column
-      as="td"
       start={Array.isArray(start) ? start.map((s) => s + 1) : start + 1}
       width={width}
       {...props}
@@ -60,7 +59,6 @@ export const ExpandedRow = ({
 }) => {
   return (
     <Row
-      as="tr"
       columns={[6, 8, 10, 10]}
       sx={{
         py: 4,
@@ -71,7 +69,7 @@ export const ExpandedRow = ({
       }}
       {...props}
     >
-      <Column as="td" start={1} width={1}>
+      <Column start={1} width={1}>
         <IconButton
           sx={{
             mt: -2,
