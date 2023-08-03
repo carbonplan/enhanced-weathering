@@ -1,4 +1,4 @@
-import { Button, Column, Expander, Row } from '@carbonplan/components'
+import { Button, Column, Expander, Row, Tag } from '@carbonplan/components'
 import { Flex } from 'theme-ui'
 import { useState } from 'react'
 import { RotatingArrow } from '@carbonplan/icons'
@@ -34,6 +34,7 @@ const Entry = ({
           borderColor: 'muted',
           borderWidth: 0,
           borderBottomWidth: 1,
+          fontSize: [2, 2, 2, 3],
         }}
       >
         <Column as="td" start={1} width={[2]} sx={{ position: 'relative' }}>
@@ -77,10 +78,20 @@ const Entry = ({
             {type}
           </ExpandedColumn>
           <ExpandedColumn start={[5]} width={[2]} label="Category">
-            {category}
+            <Flex sx={{ gap: 2 }}>
+              {category
+                .filter((c) => c !== 'n/a')
+                .map((c) => (
+                  <Tag key={c}>{c}</Tag>
+                ))}
+              {category.length === 1 && category[0] === 'n/a' && 'n/a'}
+            </Flex>
           </ExpandedColumn>
           <ExpandedColumn start={[7]} width={[2]} label="Impacts">
-            {impacts}
+            {impacts.map(
+              (impact, i) => `${impact}${i < impacts.length - 1 ? ', ' : ''}`,
+            )}
+            {impacts.length === 0 && 'n/a'}
           </ExpandedColumn>
           <ExpandedColumn
             start={1}
@@ -114,7 +125,12 @@ const Entry = ({
                 >
                   <Flex sx={{ flexDirection: 'column', gap: 2 }}>
                     {references.map(({ name, href }) => (
-                      <Button key={name} href={href} suffix={<RotatingArrow />}>
+                      <Button
+                        key={name}
+                        href={href}
+                        suffix={<RotatingArrow />}
+                        size="xs"
+                      >
                         {name}
                       </Button>
                     ))}

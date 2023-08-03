@@ -39,7 +39,7 @@ export const ExpandedColumn = ({
           letterSpacing: 'mono',
           textTransform: 'uppercase',
           mb: 2,
-          fontSize: 1,
+          fontSize: [1, 1, 1, 2],
         }}
       >
         {label}
@@ -66,7 +66,7 @@ export const ExpandedRow = ({
         py: 4,
         mb: 4,
         bg: 'muted',
-        fontSize: 1,
+        fontSize: [1, 1, 1, 2],
         ...sx,
       }}
       {...props}
