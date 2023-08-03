@@ -2,11 +2,12 @@ import { Badge, Column, Expander, FadeIn, Row } from '@carbonplan/components'
 import { Triangle } from '@carbonplan/icons'
 import { useState } from 'react'
 import { Box, Flex, IconButton } from 'theme-ui'
+import AnimateHeight from 'react-animate-height'
+import { alpha } from '@theme-ui/color'
 
 import legend from '../data/legend.json'
 import { TooltipButton, TooltipContent } from './tooltip'
 import { ExpandedColumn, ExpandedRow } from './expanded'
-import AnimateHeight from 'react-animate-height'
 
 const sx = {
   reset: {
@@ -282,12 +283,13 @@ const TableHead = ({ sort, setSort }) => {
                 <ExpandedRow
                   accent={[expanded.color]}
                   onClose={() => setExpanded(null)}
-                  sx={{ mt: 3, mb: 0 }}
+                  sx={{ mt: 3, mb: 0, bg: alpha(expanded.color, 0.2) }}
                 >
                   <ExpandedColumn
                     label="Overview"
                     start={1}
                     width={[5, 5, 3, 3]}
+                    sx={{ '& > div:first-of-type': { color: expanded.color } }}
                     mdx
                   >
                     {legend[expanded.id]}
@@ -297,7 +299,10 @@ const TableHead = ({ sort, setSort }) => {
                     label="Coverage"
                     start={[1, 1, 4, 4]}
                     width={[5]}
-                    sx={{ mt: [3, 3, 0, 0] }}
+                    sx={{
+                      mt: [3, 3, 0, 0],
+                      '& > div:first-of-type': { color: expanded.color },
+                    }}
                   >
                     {['Essential', 'Primary', 'Secondary', 'Extra'].map(
                       (coverage) => (
