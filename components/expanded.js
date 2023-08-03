@@ -26,6 +26,7 @@ export const ExpandedColumn = ({ label, children, mdx = false, ...props }) => {
           letterSpacing: 'mono',
           textTransform: 'uppercase',
           mb: 2,
+          fontSize: 1,
         }}
       >
         {label}
@@ -37,7 +38,7 @@ export const ExpandedColumn = ({ label, children, mdx = false, ...props }) => {
   )
 }
 
-export const ExpandedRow = ({ children }) => {
+export const ExpandedRow = ({ children, ...props }) => {
   return (
     <Row
       as="tr"
@@ -48,6 +49,7 @@ export const ExpandedRow = ({ children }) => {
         py: 4,
         mb: 4,
         bg: 'muted',
+        fontSize: 1,
       }}
     >
       {children}
