@@ -33,7 +33,7 @@ const Entry = ({
           borderStyle: 'solid',
           borderColor: 'muted',
           borderWidth: 0,
-          borderTopWidth: 1,
+          borderBottomWidth: 1,
         }}
       >
         <Column as="td" start={1} width={[2]} sx={{ position: 'relative' }}>

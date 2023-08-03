@@ -55,6 +55,7 @@ export const ExpandedRow = ({
   children,
   accent = 'secondary',
   onClose,
+  sx,
   ...props
 }) => {
   return (
@@ -66,6 +67,7 @@ export const ExpandedRow = ({
         mb: 4,
         bg: 'muted',
         fontSize: 1,
+        ...sx,
       }}
       {...props}
     >

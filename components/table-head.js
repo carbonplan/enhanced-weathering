@@ -15,10 +15,15 @@ const TableHeader = ({
   children,
   onClick,
   active,
+  sx,
   ...props
 }) => {
   return (
-    <Column as="th" {...props} sx={{ textAlign: 'left', fontSize: 0 }}>
+    <Column
+      as="th"
+      {...props}
+      sx={{ textAlign: 'left', fontSize: 0, mb: 4, ...sx }}
+    >
       <Flex
         sx={{
           height: '100%',
@@ -86,8 +91,28 @@ const TableHead = ({ sort, setSort }) => {
   const [expanded, setExpanded] = useState(null)
 
   return (
-    <Box as="thead">
-      <Row as="tr" columns={[6, 8, 10, 10]} sx={{ mb: 4 }}>
+    <Box
+      as="thead"
+      sx={{
+        position: 'sticky',
+        top: 56,
+        zIndex: 1,
+        display: 'block',
+        borderStyle: 'solid',
+        borderColor: 'muted',
+        borderWidth: 0,
+        borderBottomWidth: 1,
+      }}
+    >
+      <Row
+        as="tr"
+        columns={[6, 8, 10, 10]}
+        sx={{
+          px: [4, 5, 5, 6],
+          mx: [-4, -5, -5, -6],
+          bg: 'background',
+        }}
+      >
         <TableHeader
           onClick={() => setSort('target')}
           active={sort === 'target'}
@@ -210,11 +235,12 @@ const TableHead = ({ sort, setSort }) => {
               </TooltipContent>
             </TableHeader>
           ) : (
-            <TableHeader start={1} width={[6, 8, 10, 10]}>
+            <TableHeader start={1} width={[6, 8, 10, 10]} sx={{ mb: 0 }}>
               <ExpandedRow
                 as="div"
                 accent={[expanded.color]}
                 onClose={() => setExpanded(null)}
+                // sx={{ mt: 3 }}
               >
                 <ExpandedColumn
                   as="div"
