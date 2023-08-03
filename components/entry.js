@@ -32,10 +32,18 @@ const sx = {
   },
 }
 
+const COVERAGE = [
+  { type: 'rock', label: 'Rock application' },
+  { type: 'init_weathering', label: 'Initial weathering' },
+  { type: 'field', label: 'Field processes' },
+  { type: 'watershed', label: 'Watershed transport' },
+  { type: 'ocean', label: 'Ocean storage' },
+]
+
 const Entry = ({
   target,
   tool,
-  coverage: { rock, init_weathering, field, watershed, ocean },
+  coverage,
   transient,
   type,
   category,
@@ -45,6 +53,7 @@ const Entry = ({
   references,
 }) => {
   const [expanded, setExpanded] = useState(false)
+
   return (
     <>
       <Row
@@ -59,12 +68,17 @@ const Entry = ({
           ...(expanded ? {} : sx.border),
         }}
       >
-        <Column as="td" start={1} width={[2]} sx={{ position: 'relative' }}>
+        <Column
+          as="td"
+          start={1}
+          width={[3, 3, 2, 2]}
+          sx={{ position: 'relative' }}
+        >
           <Expander
             value={expanded}
             sx={{
-              position: 'absolute',
-              left: -26,
+              position: ['relative', 'absolute', 'absolute', 'absolute'],
+              left: [0, -21, -26, -26],
               width: '18px',
               height: '18px',
             }}
@@ -72,24 +86,29 @@ const Entry = ({
           />
           {target}
         </Column>
-        <Column as="td" start={[3]} width={[3]}>
+        <Column
+          as="td"
+          start={[4, 1, 3, 3]}
+          width={[3]}
+          sx={{
+            mt: [0, 2, 0, 0],
+            color: ['primary', 'secondary', 'primary', 'primary'],
+            order: [0, 1, 0, 0],
+          }}
+        >
           {tool}
         </Column>
-        <Column as="td" start={[6]} width={[1]}>
-          <Coverage type="rock" value={rock} />
-        </Column>
-        <Column as="td" start={[7]} width={[1]}>
-          <Coverage type="init_weathering" value={init_weathering} />
-        </Column>
-        <Column as="td" start={[8]} width={[1]}>
-          <Coverage type="field" value={field} />
-        </Column>
-        <Column as="td" start={[9]} width={[1]}>
-          <Coverage type="watershed" value={watershed} />
-        </Column>
-        <Column as="td" start={[10]} width={[1]}>
-          <Coverage type="ocean" value={ocean} />
-        </Column>
+        {COVERAGE.map(({ type }, i) => (
+          <Column
+            key={type}
+            as="td"
+            start={[4, 4, 6, 6].map((d) => d + i)}
+            width={[1]}
+            sx={{ display: ['none', 'inherit', 'inherit', 'inherit'] }}
+          >
+            <Coverage type={type} value={coverage[type]} />
+          </Column>
+        ))}
       </Row>
 
       <Box
@@ -112,13 +131,39 @@ const Entry = ({
           >
             <FadeIn>
               <ExpandedRow onClose={() => setExpanded(false)}>
-                <ExpandedColumn start={1} width={[2]} label="Transient">
+                {COVERAGE.map(({ type, label }, i) => (
+                  <ExpandedColumn
+                    start={i % 2 === 0 ? 1 : 4}
+                    width={2}
+                    sx={{
+                      display: ['inherit', 'none', 'none', 'none'],
+                      mb: 3,
+                    }}
+                    label={label}
+                  >
+                    <Coverage type={type} value={coverage[type]} />
+                  </ExpandedColumn>
+                ))}
+                <ExpandedColumn
+                  start={1}
+                  width={[2, 3, 2, 2]}
+                  label="Transient"
+                >
                   {transient}
                 </ExpandedColumn>
-                <ExpandedColumn start={[3]} width={[2]} label="Type">
+                <ExpandedColumn
+                  start={[4, 4, 3, 3]}
+                  width={[2, 3, 2, 2]}
+                  label="Type"
+                >
                   {type}
                 </ExpandedColumn>
-                <ExpandedColumn start={[5]} width={[2]} label="Category">
+                <ExpandedColumn
+                  start={[1, 1, 5, 5]}
+                  width={[2, 3, 2, 2]}
+                  label="Category"
+                  sx={{ mt: [3, 3, 0, 0] }}
+                >
                   <Flex sx={{ gap: 2 }}>
                     {category
                       .filter((c) => c !== 'n/a')
@@ -128,7 +173,12 @@ const Entry = ({
                     {category.length === 1 && category[0] === 'n/a' && 'n/a'}
                   </Flex>
                 </ExpandedColumn>
-                <ExpandedColumn start={[7]} width={[2]} label="Impacts">
+                <ExpandedColumn
+                  start={[4, 4, 7, 7]}
+                  width={[2, 3, 2, 2]}
+                  label="Impacts"
+                  sx={{ mt: [3, 3, 0, 0] }}
+                >
                   {impacts.map(
                     (impact, i) =>
                       `${impact}${i < impacts.length - 1 ? ', ' : ''}`,
@@ -137,33 +187,31 @@ const Entry = ({
                 </ExpandedColumn>
                 <ExpandedColumn
                   start={1}
-                  width={[4]}
+                  width={[5, 3, 4, 4]}
                   label="Notes"
-                  sx={{ mt: 5 }}
+                  sx={{ mt: [3, 5, 5, 5] }}
                   mdx
                 >
                   {notes}
                 </ExpandedColumn>
 
-                <Column start={[6]} width={[4]}>
-                  <Row columns={[4]}>
+                <Column start={[1, 5, 6, 6]} width={[6, 4, 4, 4]}>
+                  <Row columns={[6, 4, 4, 4]}>
                     <ExpandedColumn
                       start={[1]}
-                      width={[4]}
+                      width={[5, 4, 4, 4]}
                       label="Comments"
-                      // as="div"
                       mdx
-                      sx={{ mt: 5 }}
+                      sx={{ mt: [3, 5, 5, 5] }}
                     >
                       {comments}
                     </ExpandedColumn>
                     {references.length > 0 && (
                       <ExpandedColumn
                         start={[1]}
-                        width={[4]}
+                        width={[6, 4, 4, 4]}
                         label="References"
-                        // as="div"
-                        sx={{ mt: 5 }}
+                        sx={{ mt: [3, 5, 5, 5] }}
                       >
                         <Flex sx={{ flexDirection: 'column', gap: 2 }}>
                           {references.map(({ name, href }) => (

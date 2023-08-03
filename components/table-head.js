@@ -33,7 +33,11 @@ const TableHeader = ({
   ...props
 }) => {
   return (
-    <Column as="th" {...props} sx={{ textAlign: 'left', fontSize: 0, ...sx }}>
+    <Column
+      as="th"
+      {...props}
+      sx={{ textAlign: 'left', fontSize: [0, 0, 0, 1], ...sx }}
+    >
       <Flex
         sx={{
           height: '100%',
@@ -121,21 +125,23 @@ const TableHead = ({ sort, setSort }) => {
           px: [4, 5, 5, 6],
           mx: [-4, -5, -5, -6],
           bg: 'background',
-          pb: 3,
+          pt: [0, 0, 0, 1],
+          pb: [3, 3, 3, 4],
         }}
       >
         <TableHeader
           onClick={() => setSort('target')}
           active={sort === 'target'}
           start={1}
-          width={[2]}
+          width={[3, 3, 2, 2]}
+          sx={{ display: ['inherit', 'none', 'inherit', 'inherit'] }}
           expanded={expanded?.id === 'target'}
-          expander="expanded"
+          expander="tooltip"
           onExpand={() =>
             setExpanded(
               expanded?.id === 'target'
                 ? null
-                : { id: 'target', start: 1, width: [2] },
+                : { id: 'target', start: 1, width: [3, 3, 2, 2] },
             )
           }
         >
@@ -144,10 +150,11 @@ const TableHead = ({ sort, setSort }) => {
         <TableHeader
           onClick={() => setSort('tool')}
           active={sort === 'tool'}
-          start={[3]}
-          width={[3]}
+          start={[4, 1, 3, 3]}
+          width={[3, 0, 3, 3]}
+          sx={{ display: ['inherit', 'none', 'inherit', 'inherit'] }}
           expanded={expanded?.id === 'tool'}
-          expander="expanded"
+          expander="tooltip"
           onExpand={() =>
             setExpanded(
               expanded?.id === 'tool'
@@ -161,8 +168,9 @@ const TableHead = ({ sort, setSort }) => {
         <TableHeader
           onClick={() => setSort('rock')}
           active={sort === 'rock'}
-          start={[6]}
+          start={[4, 4, 6, 6]}
           width={[1]}
+          sx={{ display: ['none', 'inherit', 'inherit', 'inherit'] }}
           expanded={expanded?.id === 'coverage_rock'}
           onExpand={() =>
             setExpanded(
@@ -172,13 +180,16 @@ const TableHead = ({ sort, setSort }) => {
             )
           }
         >
-          Rock application
+          Rock
+          <br />
+          application
         </TableHeader>
         <TableHeader
           onClick={() => setSort('init_weathering')}
           active={sort === 'init_weathering'}
-          start={[7]}
+          start={[5, 5, 7, 7]}
           width={[1]}
+          sx={{ display: ['none', 'inherit', 'inherit', 'inherit'] }}
           expanded={expanded?.id === 'coverage_initial_weathering'}
           onExpand={() =>
             setExpanded(
@@ -188,13 +199,16 @@ const TableHead = ({ sort, setSort }) => {
             )
           }
         >
-          Initial weathering
+          Initial
+          <br />
+          weathering
         </TableHeader>
         <TableHeader
           onClick={() => setSort('field')}
           active={sort === 'field'}
-          start={[8]}
+          start={[6, 6, 8, 8]}
           width={[1]}
+          sx={{ display: ['none', 'inherit', 'inherit', 'inherit'] }}
           expanded={expanded?.id === 'coverage_field'}
           onExpand={() =>
             setExpanded(
@@ -204,13 +218,16 @@ const TableHead = ({ sort, setSort }) => {
             )
           }
         >
-          Field processes
+          Field
+          <br />
+          processes
         </TableHeader>
         <TableHeader
           onClick={() => setSort('watershed')}
           active={sort === 'watershed'}
-          start={[9]}
+          start={[7, 7, 9, 9]}
           width={[1]}
+          sx={{ display: ['none', 'inherit', 'inherit', 'inherit'] }}
           expanded={expanded?.id === 'coverage_watershed'}
           onExpand={() =>
             setExpanded(
@@ -220,13 +237,16 @@ const TableHead = ({ sort, setSort }) => {
             )
           }
         >
-          Watershed transport
+          Watershed
+          <br />
+          transport
         </TableHeader>
         <TableHeader
           onClick={() => setSort('ocean')}
           active={sort === 'ocean'}
-          start={[10]}
+          start={[8, 8, 10, 10]}
           width={[1]}
+          sx={{ display: ['none', 'inherit', 'inherit', 'inherit'] }}
           expanded={expanded?.id === 'coverage_ocean'}
           onExpand={() =>
             setExpanded(
@@ -236,7 +256,9 @@ const TableHead = ({ sort, setSort }) => {
             )
           }
         >
-          Ocean storage
+          Ocean
+          <br />
+          storage
         </TableHeader>
 
         <Column as="th" start={1} width={[6, 8, 10, 10]} sx={sx.reset}>
@@ -262,11 +284,21 @@ const TableHead = ({ sort, setSort }) => {
                   onClose={() => setExpanded(null)}
                   sx={{ mt: 3, mb: 0 }}
                 >
-                  <ExpandedColumn label="Overview" start={1} width={3} mdx>
+                  <ExpandedColumn
+                    label="Overview"
+                    start={1}
+                    width={[5, 5, 3, 3]}
+                    mdx
+                  >
                     {legend[expanded.id]}
                   </ExpandedColumn>
 
-                  <ExpandedColumn label="Coverage" start={[4]} width={[5]}>
+                  <ExpandedColumn
+                    label="Coverage"
+                    start={[1, 1, 4, 4]}
+                    width={[5]}
+                    sx={{ mt: [3, 3, 0, 0] }}
+                  >
                     {['Essential', 'Primary', 'Secondary', 'Extra'].map(
                       (coverage) => (
                         <Row key={coverage} columns={[4]} sx={{ mb: 3 }}>
