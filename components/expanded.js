@@ -6,6 +6,7 @@ import markdown from 'remark-parse'
 import remark2rehype from 'remark-rehype'
 import rehype2react from 'rehype-react'
 import { XCircle } from '@carbonplan/icons'
+import Tooltip from './tooltip'
 
 const processor = unified()
   .use(markdown)
@@ -22,6 +23,7 @@ export const ExpandedColumn = ({
   children,
   start,
   width,
+  tooltip,
   mdx = false,
   ...props
 }) => {
@@ -41,7 +43,7 @@ export const ExpandedColumn = ({
           fontSize: [1, 1, 1, 2],
         }}
       >
-        {label}
+        {tooltip ? <Tooltip tooltip={tooltip}>{label}</Tooltip> : label}
       </Box>
       <Box sx={{ fontFamily: 'faux', letterSpacing: 'faux' }}>
         {mdx ? processor.processSync(children).result : children}

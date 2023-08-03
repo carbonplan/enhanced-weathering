@@ -68,7 +68,17 @@ export const TooltipContent = ({ expanded, children, sx }) => {
       height={expanded ? 'auto' : 0}
       easing={'linear'}
     >
-      <Box sx={{ py: 1, fontSize: [1, 1, 1, 2], color: 'secondary', ...sx }}>
+      <Box
+        sx={{
+          py: 1,
+          fontSize: [1, 1, 1, 2],
+          color: 'secondary',
+          fontFamily: 'body',
+          letterSpacing: 'body',
+          textTransform: 'none',
+          ...sx,
+        }}
+      >
         {children}
       </Box>
     </AnimateHeight>

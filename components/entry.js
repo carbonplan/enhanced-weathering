@@ -9,10 +9,11 @@ import {
 import { Box, Flex } from 'theme-ui'
 import { useState } from 'react'
 import { RotatingArrow } from '@carbonplan/icons'
+import AnimateHeight from 'react-animate-height'
 
 import Coverage from './coverage'
 import { ExpandedColumn, ExpandedRow } from './expanded'
-import AnimateHeight from 'react-animate-height'
+import legend from '../data/legend.json'
 
 const sx = {
   reset: {
@@ -148,6 +149,7 @@ const Entry = ({
                   start={1}
                   width={[2, 3, 2, 2]}
                   label="Transient"
+                  tooltip={legend.transient}
                 >
                   {transient}
                 </ExpandedColumn>
@@ -155,6 +157,7 @@ const Entry = ({
                   start={[4, 4, 3, 3]}
                   width={[2, 3, 2, 2]}
                   label="Type"
+                  tooltip={legend.type}
                 >
                   {type}
                 </ExpandedColumn>
@@ -162,6 +165,7 @@ const Entry = ({
                   start={[1, 1, 5, 5]}
                   width={[2, 3, 2, 2]}
                   label="Category"
+                  tooltip={legend.category}
                   sx={{ mt: [3, 3, 0, 0] }}
                 >
                   <Flex sx={{ gap: 2 }}>
@@ -177,6 +181,7 @@ const Entry = ({
                   start={[4, 4, 7, 7]}
                   width={[2, 3, 2, 2]}
                   label="Impacts"
+                  tooltip={legend.impacts}
                   sx={{ mt: [3, 3, 0, 0] }}
                 >
                   {impacts.map(
