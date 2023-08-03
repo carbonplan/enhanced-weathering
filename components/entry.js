@@ -69,7 +69,7 @@ const Entry = ({
         </Column>
       </Row>
       {expanded && (
-        <ExpandedRow>
+        <ExpandedRow onClose={() => setExpanded(false)}>
           <ExpandedColumn start={1} width={[2]} label="Transient">
             {transient}
           </ExpandedColumn>

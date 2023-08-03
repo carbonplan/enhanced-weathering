@@ -1,10 +1,11 @@
 import { Column, Link, Row } from '@carbonplan/components'
-import { Box } from 'theme-ui'
+import { Box, Flex, IconButton } from 'theme-ui'
 import { createElement } from 'react'
 import { unified } from 'unified'
 import markdown from 'remark-parse'
 import remark2rehype from 'remark-rehype'
 import rehype2react from 'rehype-react'
+import { XCircle } from '@carbonplan/icons'
 
 const processor = unified()
   .use(markdown)
@@ -16,9 +17,21 @@ const processor = unified()
     },
   })
 
-export const ExpandedColumn = ({ label, children, mdx = false, ...props }) => {
+export const ExpandedColumn = ({
+  label,
+  children,
+  start,
+  width,
+  mdx = false,
+  ...props
+}) => {
   return (
-    <Column as="td" {...props}>
+    <Column
+      as="td"
+      start={Array.isArray(start) ? start.map((s) => s + 1) : start + 1}
+      width={width}
+      {...props}
+    >
       <Box
         sx={{
           color: 'secondary',
@@ -38,20 +51,38 @@ export const ExpandedColumn = ({ label, children, mdx = false, ...props }) => {
   )
 }
 
-export const ExpandedRow = ({ children, ...props }) => {
+export const ExpandedRow = ({
+  children,
+  accent = 'secondary',
+  onClose,
+  ...props
+}) => {
   return (
     <Row
       as="tr"
       columns={[6, 8, 10, 10]}
       sx={{
-        px: [4, 5, 5, 6],
-        mx: [-4, -5, -5, -6],
         py: 4,
         mb: 4,
         bg: 'muted',
         fontSize: 1,
       }}
+      {...props}
     >
+      <Column as="td" start={1} width={1}>
+        <IconButton
+          sx={{
+            mt: -2,
+            ml: 3,
+            p: 0,
+            cursor: 'pointer',
+            '&:hover svg': { stroke: 'primary' },
+          }}
+          onClick={onClose}
+        >
+          <XCircle sx={{ stroke: accent, transition: 'stroke 0.15s' }} />
+        </IconButton>
+      </Column>
       {children}
     </Row>
   )

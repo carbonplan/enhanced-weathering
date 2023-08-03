@@ -222,12 +222,16 @@ const Table = () => {
               </TableHead>
             ) : (
               <TableHead start={1} width={[6, 8, 10, 10]}>
-                <ExpandedRow as="div">
+                <ExpandedRow
+                  as="div"
+                  accent={[tooltip.color]}
+                  onClose={() => setTooltip(null)}
+                >
                   <ExpandedColumn
                     as="div"
                     label="Overview"
                     start={1}
-                    width={5}
+                    width={3}
                     mdx
                   >
                     {legend[tooltip.id]}
@@ -236,8 +240,8 @@ const Table = () => {
                   <ExpandedColumn
                     as="div"
                     label="Coverage"
-                    start={[6]}
-                    width={[4]}
+                    start={[4]}
+                    width={[5]}
                   >
                     {['Essential', 'Primary', 'Secondary', 'Extra'].map(
                       (coverage) => (
@@ -247,7 +251,7 @@ const Table = () => {
                               {coverage}
                             </Badge>
                           </Column>
-                          <Column start={[2]} width={[3]}>
+                          <Column start={[2]} width={[4]}>
                             {legend[coverage.toLowerCase()]}
                           </Column>
                         </Row>
