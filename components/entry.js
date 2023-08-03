@@ -1,44 +1,10 @@
-import { Button, Column, Expander, Link, Row } from '@carbonplan/components'
-import { Box, Flex } from 'theme-ui'
-import { createElement, useState } from 'react'
+import { Button, Column, Expander, Row } from '@carbonplan/components'
+import { Flex } from 'theme-ui'
+import { useState } from 'react'
 import { RotatingArrow } from '@carbonplan/icons'
-import { unified } from 'unified'
-import markdown from 'remark-parse'
-import remark2rehype from 'remark-rehype'
-import rehype2react from 'rehype-react'
 
 import Coverage from './coverage'
-
-const processor = unified()
-  .use(markdown)
-  .use(remark2rehype)
-  .use(rehype2react, {
-    createElement,
-    components: {
-      a: Link,
-    },
-  })
-
-const ExpandedContent = ({ label, children, mdx = false, ...props }) => {
-  return (
-    <Column as="td" {...props}>
-      <Box
-        sx={{
-          color: 'secondary',
-          fontFamily: 'mono',
-          letterSpacing: 'mono',
-          textTransform: 'uppercase',
-          mb: 2,
-        }}
-      >
-        {label}
-      </Box>
-      <Box sx={{ fontFamily: 'faux', letterSpacing: 'faux' }}>
-        {mdx ? processor.processSync(children).result : children}
-      </Box>
-    </Column>
-  )
-}
+import { ExpandedColumn, ExpandedRow } from './expanded'
 
 const Entry = ({
   target,
@@ -103,30 +69,20 @@ const Entry = ({
         </Column>
       </Row>
       {expanded && (
-        <Row
-          as="tr"
-          columns={[6, 8, 10, 10]}
-          sx={{
-            px: [4, 5, 5, 6],
-            mx: [-4, -5, -5, -6],
-            py: 4,
-            mb: 4,
-            bg: 'muted',
-          }}
-        >
-          <ExpandedContent start={1} width={[2]} label="Transient">
+        <ExpandedRow>
+          <ExpandedColumn start={1} width={[2]} label="Transient">
             {transient}
-          </ExpandedContent>
-          <ExpandedContent start={[3]} width={[2]} label="Type">
+          </ExpandedColumn>
+          <ExpandedColumn start={[3]} width={[2]} label="Type">
             {type}
-          </ExpandedContent>
-          <ExpandedContent start={[5]} width={[2]} label="Category">
+          </ExpandedColumn>
+          <ExpandedColumn start={[5]} width={[2]} label="Category">
             {category}
-          </ExpandedContent>
-          <ExpandedContent start={[7]} width={[2]} label="Impacts">
+          </ExpandedColumn>
+          <ExpandedColumn start={[7]} width={[2]} label="Impacts">
             {impacts}
-          </ExpandedContent>
-          <ExpandedContent
+          </ExpandedColumn>
+          <ExpandedColumn
             start={1}
             width={[4]}
             label="Notes"
@@ -134,11 +90,11 @@ const Entry = ({
             mdx
           >
             {notes}
-          </ExpandedContent>
+          </ExpandedColumn>
 
           <Column as="td" start={[6]} width={[4]}>
             <Row columns={[4]}>
-              <ExpandedContent
+              <ExpandedColumn
                 start={[1]}
                 width={[4]}
                 label="Comments"
@@ -147,9 +103,9 @@ const Entry = ({
                 sx={{ mt: 5 }}
               >
                 {comments}
-              </ExpandedContent>
+              </ExpandedColumn>
               {references.length > 0 && (
-                <ExpandedContent
+                <ExpandedColumn
                   start={[1]}
                   width={[4]}
                   label="References"
@@ -163,11 +119,11 @@ const Entry = ({
                       </Button>
                     ))}
                   </Flex>
-                </ExpandedContent>
+                </ExpandedColumn>
               )}
             </Row>
           </Column>
-        </Row>
+        </ExpandedRow>
       )}
     </>
   )
