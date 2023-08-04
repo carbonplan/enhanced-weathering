@@ -42,7 +42,10 @@ Once this has been created, you can activate it with:
 
 Then run the following python script to generate json data for the legend and quantification approach json data.
 
-```python enhanced-weathering/QA_to_json.py```
+```
+cd enhanced-weathering
+python QA_to_json.py
+```
 
 Once you have re-generated the .json data. You can create a new branch and push to the repo.
 
