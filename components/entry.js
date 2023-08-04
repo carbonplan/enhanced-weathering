@@ -151,7 +151,7 @@ const Entry = ({
                   label="Transient"
                   tooltip={legend.transient}
                 >
-                  {transient}
+                  {transient === 'n/a' ? 'n/a' : <Tag>{transient}</Tag>}
                 </ExpandedColumn>
                 <ExpandedColumn
                   start={[4, 4, 3, 3]}
@@ -159,7 +159,14 @@ const Entry = ({
                   label="Type"
                   tooltip={legend.type}
                 >
-                  {type}
+                  <Flex sx={{ gap: 2 }}>
+                    {type
+                      .filter((t) => t !== 'n/a')
+                      .map((t) => (
+                        <Tag key={t}>{t}</Tag>
+                      ))}
+                    {type.length === 1 && type[0] === 'n/a' && 'n/a'}
+                  </Flex>
                 </ExpandedColumn>
                 <ExpandedColumn
                   start={[1, 1, 5, 5]}
