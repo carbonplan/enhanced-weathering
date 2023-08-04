@@ -40,18 +40,11 @@ const TableHeader = ({
       sx={{ textAlign: 'left', fontSize: [0, 0, 0, 1], ...sx }}
     >
       <Flex
-        onClick={() => {
-          if (expander === 'expander' && onExpand) {
-            onExpand()
-          }
-        }}
         sx={{
           height: '100%',
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'space-between',
-          '&:hover .highlight svg': { stroke: 'primary' },
-          cursor: expander === 'expander' ? 'pointer' : 'inherit',
         }}
       >
         {onClick && (
@@ -79,17 +72,22 @@ const TableHeader = ({
         )}
 
         <Flex
-          className={expander === 'expander' ? 'highlight' : null}
           sx={{
             gap: expander === 'expander' ? 1 : 2,
             alignItems: 'flex-end',
             flexDirection: ['row-reverse', 'row', 'row', 'row'],
+            '&:hover svg': expander === 'expander' ? { stroke: 'primary' } : {},
+            cursor: expander === 'expander' ? 'pointer' : 'inherit',
+          }}
+          onClick={() => {
+            if (expander === 'expander' && onExpand) {
+              onExpand()
+            }
           }}
         >
           {onExpand &&
             (expander === 'expander' ? (
               <Expander
-                className="highlight"
                 value={expanded}
                 sx={{
                   flexShrink: 0,
