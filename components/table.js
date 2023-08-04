@@ -32,8 +32,8 @@ const Table = () => {
       <TableHead sort={sort} setSort={setSort} />
 
       <Box as="tbody" sx={sx.reset}>
-        {sortedData.map((d) => (
-          <Entry key={`${d.target}-${d.tool}`} {...d} />
+        {sortedData.map((d, i) => (
+          <Entry key={`${d.target}-${d.tool}`} border={i > 0} {...d} />
         ))}
       </Box>
     </Box>

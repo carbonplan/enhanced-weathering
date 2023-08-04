@@ -29,7 +29,7 @@ const sx = {
     borderStyle: 'solid',
     borderColor: 'muted',
     borderWidth: 0,
-    borderBottomWidth: 1,
+    borderTopWidth: 1,
   },
 }
 
@@ -52,6 +52,7 @@ const Entry = ({
   notes,
   comments,
   references,
+  border,
 }) => {
   const [expanded, setExpanded] = useState(false)
 
@@ -66,7 +67,7 @@ const Entry = ({
           cursor: 'pointer',
           '&:hover button': { stroke: 'primary' },
           fontSize: [2, 2, 2, 3],
-          ...(expanded ? {} : sx.border),
+          ...(border ? sx.border : {}),
         }}
       >
         <Column
@@ -112,18 +113,7 @@ const Entry = ({
         ))}
       </Row>
 
-      <Box
-        as="tr"
-        sx={{
-          ...sx.reset,
-          ...(expanded
-            ? {
-                ...sx.border,
-                mb: 3,
-              }
-            : {}),
-        }}
-      >
+      <Box as="tr" sx={sx.reset}>
         <td>
           <AnimateHeight
             duration={100}
