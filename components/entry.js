@@ -124,6 +124,7 @@ const Entry = ({
               <ExpandedRow onClose={() => setExpanded(false)}>
                 {COVERAGE.map(({ type, label }, i) => (
                   <ExpandedColumn
+                    key={type}
                     start={i % 2 === 0 ? 1 : 4}
                     width={2}
                     sx={{
