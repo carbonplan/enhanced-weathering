@@ -73,7 +73,7 @@ const TableHeader = ({
           sx={{
             gap: expander === 'expander' ? 1 : 2,
             alignItems: 'flex-end',
-            flexDirection: expander === 'expander' ? 'row' : 'row-reverse',
+            flexDirection: ['row-reverse', 'row', 'row', 'row'],
           }}
         >
           {onExpand &&
@@ -90,9 +90,10 @@ const TableHeader = ({
               />
             ) : (
               <TooltipButton
+                color="muted"
                 expanded={expanded}
                 setExpanded={onExpand}
-                sx={{ mb: -1 }}
+                sx={{ mb: -1, ml: [0, '-24px', '-24px', '-24px'] }}
               />
             ))}
           {children}

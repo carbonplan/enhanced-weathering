@@ -3,7 +3,13 @@ import { useState } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { Info } from '@carbonplan/icons'
 
-export const TooltipButton = ({ mt, expanded, setExpanded, sx }) => {
+export const TooltipButton = ({
+  mt,
+  expanded,
+  setExpanded,
+  color = 'secondary',
+  sx,
+}) => {
   return (
     <IconButton
       onClick={(e) => {
@@ -34,7 +40,7 @@ export const TooltipButton = ({ mt, expanded, setExpanded, sx }) => {
         height="16px"
         width="16px"
         sx={{
-          stroke: expanded ? 'primary' : 'secondary',
+          stroke: expanded ? 'primary' : color,
           transition: '0.1s',
         }}
       />
@@ -43,6 +49,7 @@ export const TooltipButton = ({ mt, expanded, setExpanded, sx }) => {
 }
 export const TooltipWrapper = ({
   align,
+  color,
   mt,
   justify,
   children,
@@ -56,6 +63,7 @@ export const TooltipWrapper = ({
         sx={{ mt }}
         expanded={expanded}
         setExpanded={setExpanded}
+        color={color}
       />
     </Flex>
   )
@@ -71,7 +79,7 @@ export const TooltipContent = ({ expanded, children, sx }) => {
       <Box
         sx={{
           py: 1,
-          fontSize: [1, 1, 1, 2],
+          fontSize: [0, 0, 0, 1],
           color: 'secondary',
           fontFamily: 'body',
           letterSpacing: 'body',
@@ -87,6 +95,7 @@ export const TooltipContent = ({ expanded, children, sx }) => {
 const Tooltip = ({
   children,
   tooltip,
+  color,
   mt = '6px',
   sx,
   align = 'flex-start',
@@ -102,6 +111,7 @@ const Tooltip = ({
         align={align}
         justify={justify}
         mt={mt}
+        color={color}
       >
         {children}
       </TooltipWrapper>
