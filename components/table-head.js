@@ -156,7 +156,7 @@ const TableHead = ({ sort, setSort }) => {
             )
           }
         >
-          Target
+          Variable
         </TableHeader>
         <TableHeader
           onClick={() => setSort('tool')}
@@ -174,7 +174,7 @@ const TableHead = ({ sort, setSort }) => {
             )
           }
         >
-          Tool
+          Method
         </TableHeader>
         <TableHeader
           onClick={() => setSort('rock')}
@@ -306,7 +306,7 @@ const TableHead = ({ sort, setSort }) => {
                   </ExpandedColumn>
 
                   <ExpandedColumn
-                    label="Coverage"
+                    label="Relevance"
                     start={[1, 1, 4, 4]}
                     width={[5]}
                     sx={{
