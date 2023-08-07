@@ -10,17 +10,16 @@ const meta = {
   card: 'TK',
   path: 'TK',
   color: 'grey',
-  quickLook: 'TK',
+  quickLook:
+    'A resource for exploring different tools that could be used in enhanced weathering MRV',
   summary: 'TK',
 }
 
 const description = (
   <>
-    This resource allows users to explore what kinds of quantification tools
-    might play a role in estimating carbon removal from enhanced weathering on
-    agricultural soils. It is designed to help a wider community interpret and
-    evaluate proposed approaches to enhanced weathering MRV. Read more in the
-    accompanying <Link href="TK">explainer</Link>.
+    Below, you can explore what kinds of tools — e.g. measurements, models, or
+    records — might play a role in quantifying net carbon removal from enhanced
+    weathering. Read more in the accompanying <Link href="TK">explainer</Link>.
   </>
 )
 
