@@ -8,6 +8,7 @@ import { alpha } from '@theme-ui/color'
 import legend from '../data/legend.json'
 import { TooltipButton, TooltipContent } from './tooltip'
 import { ExpandedColumn, ExpandedRow } from './expanded'
+import Filter from './filter'
 
 const sx = {
   reset: {
@@ -112,7 +113,7 @@ const TableHeader = ({
   )
 }
 
-const TableHead = ({ sort, setSort }) => {
+const TableHead = ({ search, setSearch, sort, setSort }) => {
   const [expanded, setExpanded] = useState(null)
 
   return (
@@ -140,6 +141,14 @@ const TableHead = ({ sort, setSort }) => {
           pb: [3, 3, 3, 4],
         }}
       >
+        <Column
+          as="th"
+          start={1}
+          width={[6, 8, 10, 10]}
+          sx={{ textAlign: 'left', fontSize: [0, 0, 0, 1], ...sx }}
+        >
+          <Filter search={search} setSearch={setSearch} />
+        </Column>
         <TableHeader
           onClick={() => setSort('target')}
           active={sort === 'target'}
@@ -261,7 +270,6 @@ const TableHead = ({ sort, setSort }) => {
         >
           Ocean
         </TableHeader>
-
         <Column as="th" start={1} width={[6, 8, 10, 10]} sx={sx.reset}>
           <AnimateHeight
             duration={100}
