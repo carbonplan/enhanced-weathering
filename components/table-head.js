@@ -8,6 +8,7 @@ import { alpha } from '@theme-ui/color'
 import legend from '../data/legend.json'
 import { TooltipButton, TooltipContent } from './tooltip'
 import { ExpandedColumn, ExpandedRow } from './expanded'
+import Filter from './filter'
 
 const sx = {
   reset: {
@@ -112,7 +113,7 @@ const TableHeader = ({
   )
 }
 
-const TableHead = ({ sort, setSort }) => {
+const TableHead = ({ search, setSearch, sort, setSort }) => {
   const [expanded, setExpanded] = useState(null)
 
   return (
@@ -140,6 +141,7 @@ const TableHead = ({ sort, setSort }) => {
           pb: [3, 3, 3, 4],
         }}
       >
+        <Filter search={search} setSearch={setSearch} />
         <TableHeader
           onClick={() => setSort('target')}
           active={sort === 'target'}
@@ -192,8 +194,6 @@ const TableHead = ({ sort, setSort }) => {
           }
         >
           Rock
-          <br />
-          application
         </TableHeader>
         <TableHeader
           onClick={() => setSort('init_weathering')}
@@ -210,9 +210,7 @@ const TableHead = ({ sort, setSort }) => {
             )
           }
         >
-          Initial
-          <br />
-          weathering
+          Weathering
         </TableHeader>
         <TableHeader
           onClick={() => setSort('field')}
@@ -230,8 +228,6 @@ const TableHead = ({ sort, setSort }) => {
           }
         >
           Field
-          <br />
-          processes
         </TableHeader>
         <TableHeader
           onClick={() => setSort('watershed')}
@@ -249,8 +245,6 @@ const TableHead = ({ sort, setSort }) => {
           }
         >
           Watershed
-          <br />
-          transport
         </TableHeader>
         <TableHeader
           onClick={() => setSort('ocean')}
@@ -268,10 +262,7 @@ const TableHead = ({ sort, setSort }) => {
           }
         >
           Ocean
-          <br />
-          storage
         </TableHeader>
-
         <Column as="th" start={1} width={[6, 8, 10, 10]} sx={sx.reset}>
           <AnimateHeight
             duration={100}
