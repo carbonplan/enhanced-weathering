@@ -141,14 +141,7 @@ const TableHead = ({ search, setSearch, sort, setSort }) => {
           pb: [3, 3, 3, 4],
         }}
       >
-        <Column
-          as="th"
-          start={1}
-          width={[6, 8, 10, 10]}
-          sx={{ textAlign: 'left', fontSize: [0, 0, 0, 1], ...sx }}
-        >
-          <Filter search={search} setSearch={setSearch} />
-        </Column>
+        <Filter search={search} setSearch={setSearch} />
         <TableHeader
           onClick={() => setSort('target')}
           active={sort === 'target'}
