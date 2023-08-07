@@ -2,12 +2,12 @@
   {
     "quant_approach": {
       "target": "Cation exchange capacity (CEC) and exchange complex cations",
-      "tool": "NH4OAc, BaCl2 or appropriate extraction for given soil",
+      "tool": "NH\u2084OAc, BaCl\u2082 or appropriate extraction for given soil",
       "type": ["measurement"],
       "category": ["soil"],
       "transient": "no",
       "impacts": ["Crop health", "ag inputs"],
-      "notes": "Cation exchange capacity (CEC) refers to the negatively charged sites on soil solid surfaces (e.g. clay minerals, organic matter) where cations are attracted, held, and exchanged with soil pore water. Interactions between cations (produced from weathering reactions) and the soil exchange complex can produce a delay between initial weathering and detectable changes to cation or dissolved inorganic carbon concentrations in soil pore water or field runoff. Characterizing the CEC and changes in base saturation (the type of cations present on the exchange complex) can be important for interpreting of other weathering signals.",
+      "notes": "Cation exchange capacity (CEC) refers to the negatively charged sites on soil solid surfaces (e.g. clay minerals, organic matter) where cations are attracted, held, and exchanged with soil pore water. Interactions between cations (produced from weathering reactions) and the soil exchange complex can produce a delay between initial weathering and detectable changes to cation or dissolved inorganic carbon concentrations in soil pore water or field runoff. Characterizing the CEC and changes in base saturation (the type of cations present on the exchange complex) can be important for interpreting other weathering signals.",
       "comments": "Changes are most likely to be observed in base saturation/exchange complex cations. However, cation exchange capacity (CEC) itself could change if secondary clay minerals form or if the system pH changes as a result of weathering, which would impact the fraction of CEC that is pH-dependent.",
       "references": [
         {
@@ -33,7 +33,7 @@
       "transient": "yes",
       "impacts": [],
       "notes": "Direct measurements of ions in soil water or downstream export can provide evidence of weathering at the field or watershed scale. These measurements require samples from soil pore water (e.g. from a lysimeter) or downstream waters, as well as specific sampling techniques (e.g. sample acidification with nitric acid).",
-      "comments": "Measuring cations can also provide the basis for estimating total alkalinity; however, in contrast to measuring alkalinity or DIC, the cations associated with rock weathering (e.g. Na+, Ca2+, Mg2+) are conserved and not subject to the same dynamic shifts as carbonate species, for example. The additional flux of ions as a result of enhanced weathering is a continuous process and can be highly variable over time. As a result, there are major challenges associated with taking intermittent measurements and trying to integrate them to characterize overall ion flux. In the absence of a rigorously constructed baseline, isolating the effects of rock weathering on ion fluxes may be difficult.",
+      "comments": "Measuring cations can provide the basis for estimating total alkalinity. In contrast to measuring alkalinity or DIC, however, the cations associated with rock weathering (e.g. Na+, Ca2+, Mg2+) are conserved and not subject to the same dynamic shifts as carbonate species. The additional flux of ions as a result of enhanced weathering is a continuous process and can be highly variable over time. As a result, there are major challenges associated with taking intermittent measurements and trying to integrate them to characterize overall ion flux. Isolating the effects of rock weathering on ion fluxes requires a rigorously constructed baseline and counterfactual scenario.",
       "references": [
         {
           "name": "Calabrese et al., 2022",
@@ -138,13 +138,13 @@
   },
   {
     "quant_approach": {
-      "target": "Greenhouse gas fluxes (CO2, CH4, N2O)",
+      "target": "Greenhouse gas fluxes (CO\u2082, CH\u2084, N\u2082O)",
       "tool": "Various (e.g. chamber, Eddy covariance flux tower, remote sensing)",
       "type": ["measurement"],
       "category": ["gas"],
       "transient": "yes",
       "impacts": [],
-      "notes": "Fluxes of greenhouse gases may change in response to rock weathering at various points in the system (field, watershed, ocean). Gas flux measurements could inform understanding of the effects of enhanced weathering on the total carbon budget of the ecosystem, or indicated changes to other gases fluxes such as N2O emissions, which may be reduced as a result of pH increases from enhanced weathering. GHG fluxes may be measured directly at field scale and should be compared to areas without rock application.",
+      "notes": "Fluxes of greenhouse gases may change in response to rock weathering at various points in the system (field, watershed, ocean). Gas flux measurements could inform understanding of the effects of enhanced weathering on the total carbon budget of the ecosystem, or indicated changes to other gases fluxes such as N\u2082O emissions, which may be reduced as a result of pH increases from enhanced weathering. GHG fluxes may be measured directly at field scale and should be compared to areas without rock application.",
       "comments": "Gas fluxes can be highly variable over time and in response to environmental conditions. Measurement and modeling approaches must take into account the potential for cycles of absorption and outgassing happening over different timescales, as well as tracking environmental conditions such as temperature and moisture measurements. Ideally, automated chambers are used to capture temporal variability. This approach is likely to be expensive and labor intensive, and should likely be used alongside other quantification approaches to bound weathering outcomes.",
       "references": [
         {
@@ -315,7 +315,7 @@
         "freshwater biology",
         "ag inputs"
       ],
-      "notes": "Farmers rely on understanding and managing soil pH to ensure healthy crop growth and nutrient availability. Because silicate weathering is a proton-consuming reaction, an increase in pH is expected and could signal weathering has occured, though the magnitude of this change depends on the weathering rate, starting pH of the system, and buffering capacity of the soil. Increasing pH may cause wide-ranging impacts, from altering nutrient availability and trace metal mobility (positively or negatively), to reducing N2O emissions or shifting management practices (e.g. changing liming requirements in an acidic system or acidification of irrigation water in a basic system). Monitoring pH also provides important information for constraining carbon removal \u2014 for example, as an environmental factor that determines carbonate speciation. pH is a routine soil measurement and may be measured on soil or water samples collected for other purposes.",
+      "notes": "Farmers rely on understanding and managing soil pH to ensure healthy crop growth and nutrient availability. Because silicate weathering is a proton-consuming reaction, an increase in pH is expected and could signal weathering has occured, though the magnitude of this change depends on the weathering rate, starting pH of the system, and buffering capacity of the soil. Increasing pH may cause wide-ranging impacts, from altering nutrient availability and trace metal mobility (positively or negatively), to reducing N\u2082O emissions or shifting management practices (e.g. changing liming requirements in an acidic system or acidification of irrigation water in a basic system). Monitoring pH also provides important information for constraining carbon removal \u2014 for example, as an environmental factor that determines carbonate speciation. pH is a routine soil measurement and may be measured on soil or water samples collected for other purposes.",
       "comments": "Enhanced rock weathering could shift watershed pH in ways that affect freshwater ecosystems and geochemical processes. For example, changes in system pH as a result of enhanced weathering might also shift the mobilization and bioavailability of potentially toxic trace metals in the environment. Monitoring watershed pH could thus be an important dimension of tracking environmental impacts at scale.",
       "references": [
         {
@@ -744,7 +744,7 @@
       "transient": "no",
       "impacts": ["Ag inputs"],
       "notes": "Field management affects the field system, and should inform estimates of initial weathering and other field-scale processes. In addition to records characterizing the application of the weathering material (see \"rock application\"), it is important to track more field management practices such as the application of agricultural lime and fertilizer, tillage patterns, and crop type and rotation.",
-      "comments": "Tracking liming practices is especially important for understanding if the application of the weathering material substitutes for the application of agricultural lime, and how that potential substitution may impact net carbon removal. Tracking fertilizer application is important for understanding the prevalence of fertilizer-derived ions and the likelhood that applied rock is weathered by strong acids rather than carbon acid.  A system for record keeping should be established up front, as commerical farm record keeping priorities may differ from enhanced weathering needs.",
+      "comments": "Tracking liming practices is especially important for understanding if the application of the weathering material substitutes for the application of agricultural lime, and how that potential substitution may impact net carbon removal. Tracking fertilizer application is important for understanding the prevalence of fertilizer-derived ions and the likelhood that applied rock is weathered by strong acids rather than carbonic acid.  A system for record keeping should be established up front, as commerical farm record keeping priorities may differ from enhanced weathering needs.",
       "references": [
         {
           "name": "Oh and Raymond, 2006",
