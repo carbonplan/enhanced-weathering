@@ -27,14 +27,14 @@ const Filter = ({ search, setSearch }) => {
         borderWidth: 0,
         borderBottomWidth: 1,
         justifyContent: 'flex-end',
-        pt: 2,
-        pb: 1,
+        pt: [2, 2, 2, 3],
+        pb: [1, 1, 1, 2],
       }}
     >
       <Row columns={[6, 8, 10, 10]}>
         <Column
-          start={[1, 5, 8, 8]}
-          width={[6, 4, 3, 3]}
+          start={[1, 5, 8, 9]}
+          width={[6, 4, 3, 2]}
           sx={{ position: 'relative', minHeight: 34 }}
         >
           <IconButton
