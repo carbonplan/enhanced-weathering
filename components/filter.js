@@ -1,13 +1,21 @@
-import { useEffect, useRef, useState } from 'react'
-import { Flex, IconButton } from 'theme-ui'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { Box, IconButton } from 'theme-ui'
 
-import { Search } from '@carbonplan/icons'
+import { Search, X } from '@carbonplan/icons'
 import { Column, Input, Row } from '@carbonplan/components'
 
 const Filter = ({ search, setSearch }) => {
   const input = useRef(null)
   const [expanded, setExpanded] = useState(false)
 
+  const handleExpand = useCallback(() => {
+    if (expanded) {
+      setExpanded(false)
+      setSearch('')
+    } else {
+      setExpanded(true)
+    }
+  }, [expanded])
   useEffect(() => {
     if (expanded) {
       input.current.focus()
@@ -45,24 +53,46 @@ const Filter = ({ search, setSearch }) => {
               position: 'absolute',
               ...(expanded ? { left: -30 } : { right: 0 }),
             }}
-            onClick={() => {
-              if (expanded) {
-                setExpanded(false)
-                setSearch('')
-              } else {
-                setExpanded(true)
-              }
-            }}
+            onClick={handleExpand}
           >
-            <Search sx={{ width: 16, left: 0, stroke: 'secondary' }} />
+            <Search
+              sx={{
+                width: 16,
+                left: 0,
+                stroke: expanded ? 'primary' : 'secondary',
+                transition: 'stroke 0.15s',
+              }}
+            />
           </IconButton>
           {expanded && (
-            <Input
-              ref={input}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              sx={{ width: '100%' }}
-            />
+            <Box sx={{ position: 'relative' }}>
+              <Input
+                ref={input}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                sx={{ width: '100%' }}
+              />
+              <IconButton
+                aria-label="Close"
+                sx={{
+                  top: 0,
+                  right: 0,
+                  cursor: 'pointer',
+                  position: 'absolute',
+                }}
+                onClick={handleExpand}
+              >
+                <X
+                  sx={{
+                    width: 16,
+                    mr: -3,
+                    mb: 1,
+                    stroke: 'secondary',
+                    transition: 'stroke 0.15s',
+                  }}
+                />
+              </IconButton>
+            </Box>
           )}
         </Column>
       </Row>
