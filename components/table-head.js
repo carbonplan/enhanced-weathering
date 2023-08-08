@@ -31,6 +31,7 @@ const TableHeader = ({
   onClick,
   active,
   sx,
+  color = 'primary',
   ...props
 }) => {
   return (
@@ -77,7 +78,7 @@ const TableHeader = ({
             gap: expander === 'expander' ? 1 : 2,
             alignItems: 'flex-end',
             flexDirection: ['row-reverse', 'row', 'row', 'row'],
-            '&:hover svg': expander === 'expander' ? { stroke: 'primary' } : {},
+            '&:hover svg': expander === 'expander' ? { stroke: color } : {},
             cursor: expander === 'expander' ? 'pointer' : 'inherit',
           }}
           onClick={() => {
@@ -95,6 +96,9 @@ const TableHeader = ({
                   ml: '-22px',
                   width: '18px',
                   height: '18px',
+                  '&:hover svg': {
+                    stroke: color,
+                  },
                 }}
                 onClick={onExpand}
               />
@@ -173,6 +177,7 @@ const TableHead = ({ sort, setSort }) => {
                 : { id: 'coverage_rock', color: 'purple' },
             )
           }
+          color="purple"
         >
           Rock
           <br />
@@ -192,6 +197,7 @@ const TableHead = ({ sort, setSort }) => {
                 : { id: 'coverage_initial_weathering', color: 'grey' },
             )
           }
+          color="grey"
         >
           Initial
           <br />
@@ -211,6 +217,7 @@ const TableHead = ({ sort, setSort }) => {
                 : { id: 'coverage_field', color: 'yellow' },
             )
           }
+          color="yellow"
         >
           Field
           <br />
@@ -230,6 +237,7 @@ const TableHead = ({ sort, setSort }) => {
                 : { id: 'coverage_watershed', color: 'green' },
             )
           }
+          color="green"
         >
           Watershed
           <br />
@@ -249,6 +257,7 @@ const TableHead = ({ sort, setSort }) => {
                 : { id: 'coverage_ocean', color: 'teal' },
             )
           }
+          color="teal"
         >
           Ocean
           <br />

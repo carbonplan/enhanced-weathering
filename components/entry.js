@@ -90,7 +90,7 @@ const Entry = ({
         sx={{
           py: 4,
           cursor: 'pointer',
-          '&:hover button': { stroke: 'primary' },
+          '&:hover button': { stroke: color },
           fontSize: [2, 2, 2, 3],
           ...(border ? sx.border : {}),
         }}
@@ -104,6 +104,9 @@ const Entry = ({
           <Expander
             value={expanded}
             sx={{
+              '&:hover svg': {
+                stroke: color,
+              },
               position: ['relative', 'absolute', 'absolute', 'absolute'],
               left: [0, -21, -26, -26],
               width: '18px',
