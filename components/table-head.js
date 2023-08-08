@@ -147,15 +147,6 @@ const TableHead = ({ sort, setSort }) => {
           start={1}
           width={[3, 3, 2, 2]}
           sx={{ display: ['inherit', 'none', 'inherit', 'inherit'] }}
-          expanded={expanded?.id === 'target'}
-          expander="tooltip"
-          onExpand={() =>
-            setExpanded(
-              expanded?.id === 'target'
-                ? null
-                : { id: 'target', start: 1, width: [3, 3, 2, 2] },
-            )
-          }
         >
           Variable
         </TableHeader>
@@ -165,15 +156,6 @@ const TableHead = ({ sort, setSort }) => {
           start={[4, 1, 3, 3]}
           width={[3, 0, 3, 3]}
           sx={{ display: ['inherit', 'none', 'inherit', 'inherit'] }}
-          expanded={expanded?.id === 'tool'}
-          expander="tooltip"
-          onExpand={() =>
-            setExpanded(
-              expanded?.id === 'tool'
-                ? null
-                : { id: 'tool', start: [3], width: [3] },
-            )
-          }
         >
           Method
         </TableHeader>
