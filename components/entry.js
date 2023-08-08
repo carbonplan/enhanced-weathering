@@ -214,12 +214,13 @@ const Entry = ({
                   {notes}
                 </ExpandedColumn>
 
-                <Column start={[1, 5, 6, 6]} width={[6, 4, 4, 4]}>
-                  <Row columns={[6, 4, 4, 4]}>
+                <Column start={[2, 5, 6, 6]} width={[5, 3, 4, 4]}>
+                  <Row columns={[5, 3, 4, 4]}>
                     <ExpandedColumn
                       color={color}
+                      offset={0}
                       start={[1]}
-                      width={[5, 4, 4, 4]}
+                      width={[5, 3, 4, 4]}
                       label="Comments"
                       mdx
                       sx={{ mt: [3, 5, 5, 5] }}
@@ -229,8 +230,9 @@ const Entry = ({
                     {references.length > 0 && (
                       <ExpandedColumn
                         color={color}
+                        offset={0}
                         start={[1]}
-                        width={[6, 4, 4, 4]}
+                        width={[5, 3, 4, 4]}
                         label="References"
                         sx={{ mt: [3, 5, 5, 5] }}
                       >

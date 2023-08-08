@@ -28,11 +28,14 @@ export const ExpandedColumn = ({
   tooltip,
   color = 'secondary',
   mdx = false,
+  offset = 1,
   ...props
 }) => {
   return (
     <Column
-      start={Array.isArray(start) ? start.map((s) => s + 1) : start + 1}
+      start={
+        Array.isArray(start) ? start.map((s) => s + offset) : start + offset
+      }
       width={width}
       {...props}
     >
