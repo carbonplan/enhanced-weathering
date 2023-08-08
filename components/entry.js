@@ -223,6 +223,11 @@ const Entry = ({
                               href={href}
                               suffix={<RotatingArrow />}
                               size="xs"
+                              sx={{
+                                fontFamily: 'faux',
+                                letterSpacing: 'faux',
+                                fontSize: [1, 1, 1, 2],
+                              }}
                             >
                               {name}
                             </Button>
