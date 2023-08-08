@@ -1,6 +1,6 @@
 import { Button, Column, Expander, FadeIn, Row } from '@carbonplan/components'
 import { Box, Flex } from 'theme-ui'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { RotatingArrow } from '@carbonplan/icons'
 import AnimateHeight from 'react-animate-height'
 
@@ -27,11 +27,11 @@ const sx = {
 }
 
 const COVERAGE = [
-  { type: 'rock', label: 'Rock application' },
-  { type: 'init_weathering', label: 'Initial weathering' },
-  { type: 'field', label: 'Field processes' },
-  { type: 'watershed', label: 'Watershed transport' },
-  { type: 'ocean', label: 'Ocean storage' },
+  { type: 'rock', label: 'Rock application', color: 'purple' },
+  { type: 'init_weathering', label: 'Initial weathering', color: 'grey' },
+  { type: 'field', label: 'Field processes', color: 'yellow' },
+  { type: 'watershed', label: 'Watershed transport', color: 'green' },
+  { type: 'ocean', label: 'Ocean storage', color: 'teal' },
 ]
 
 const List = ({ values }) => {
@@ -67,6 +67,19 @@ const Entry = ({
   border,
 }) => {
   const [expanded, setExpanded] = useState(false)
+  const color = useMemo(() => {
+    const result = COVERAGE.reduce(
+      (max, { type, color }) => {
+        if (coverage[type] > max.value) {
+          return { value: coverage[type], color }
+        } else {
+          return max
+        }
+      },
+      { value: 0, color: 'grey' },
+    )
+    return result.color
+  }, [coverage])
 
   return (
     <>
@@ -133,9 +146,10 @@ const Entry = ({
             easing={'linear'}
           >
             <FadeIn>
-              <ExpandedRow onClose={() => setExpanded(false)}>
+              <ExpandedRow onClose={() => setExpanded(false)} color={color}>
                 {COVERAGE.map(({ type, label }, i) => (
                   <ExpandedColumn
+                    color={color}
                     key={type}
                     start={i % 2 === 0 ? 1 : 4}
                     width={2}
@@ -149,6 +163,7 @@ const Entry = ({
                   </ExpandedColumn>
                 ))}
                 <ExpandedColumn
+                  color={color}
                   start={1}
                   width={[2, 3, 2, 2]}
                   label="Transient"
@@ -157,6 +172,7 @@ const Entry = ({
                   <List values={[transient]} />
                 </ExpandedColumn>
                 <ExpandedColumn
+                  color={color}
                   start={[4, 4, 3, 3]}
                   width={[2, 3, 2, 2]}
                   label="Type"
@@ -165,6 +181,7 @@ const Entry = ({
                   <List values={type} />
                 </ExpandedColumn>
                 <ExpandedColumn
+                  color={color}
                   start={[1, 1, 5, 5]}
                   width={[2, 3, 2, 2]}
                   label="Category"
@@ -174,6 +191,7 @@ const Entry = ({
                   <List values={category} />
                 </ExpandedColumn>
                 <ExpandedColumn
+                  color={color}
                   start={[4, 4, 7, 7]}
                   width={[2, 3, 2, 2]}
                   label="Impacts"
@@ -183,6 +201,7 @@ const Entry = ({
                   <List values={impacts} />
                 </ExpandedColumn>
                 <ExpandedColumn
+                  color={color}
                   start={1}
                   width={[5, 3, 4, 4]}
                   label="Notes"
@@ -195,6 +214,7 @@ const Entry = ({
                 <Column start={[1, 5, 6, 6]} width={[6, 4, 4, 4]}>
                   <Row columns={[6, 4, 4, 4]}>
                     <ExpandedColumn
+                      color={color}
                       start={[1]}
                       width={[5, 4, 4, 4]}
                       label="Comments"
@@ -205,6 +225,7 @@ const Entry = ({
                     </ExpandedColumn>
                     {references.length > 0 && (
                       <ExpandedColumn
+                        color={color}
                         start={[1]}
                         width={[6, 4, 4, 4]}
                         label="References"

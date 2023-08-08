@@ -6,6 +6,8 @@ import markdown from 'remark-parse'
 import remark2rehype from 'remark-rehype'
 import rehype2react from 'rehype-react'
 import { XCircle } from '@carbonplan/icons'
+import { alpha } from '@theme-ui/color'
+
 import Tooltip from './tooltip'
 
 const processor = unified()
@@ -24,6 +26,7 @@ export const ExpandedColumn = ({
   start,
   width,
   tooltip,
+  color = 'secondary',
   mdx = false,
   ...props
 }) => {
@@ -35,7 +38,7 @@ export const ExpandedColumn = ({
     >
       <Box
         sx={{
-          color: 'secondary',
+          color,
           fontFamily: 'mono',
           letterSpacing: 'mono',
           textTransform: 'uppercase',
@@ -43,7 +46,13 @@ export const ExpandedColumn = ({
           fontSize: [1, 1, 1, 2],
         }}
       >
-        {tooltip ? <Tooltip tooltip={tooltip}>{label}</Tooltip> : label}
+        {tooltip ? (
+          <Tooltip color={color} tooltip={tooltip}>
+            {label}
+          </Tooltip>
+        ) : (
+          label
+        )}
       </Box>
       <Box sx={{ fontFamily: 'faux', letterSpacing: 'faux' }}>
         {mdx ? processor.processSync(children).result : children}
@@ -54,7 +63,7 @@ export const ExpandedColumn = ({
 
 export const ExpandedRow = ({
   children,
-  accent = 'secondary',
+  color = 'secondary',
   onClose,
   sx,
   ...props
@@ -68,6 +77,7 @@ export const ExpandedRow = ({
         mb: 4,
         bg: 'muted',
         fontSize: [1, 1, 1, 2],
+        bg: alpha(color, 0.2),
         ...sx,
       }}
       {...props}
@@ -83,7 +93,7 @@ export const ExpandedRow = ({
           }}
           onClick={onClose}
         >
-          <XCircle sx={{ stroke: accent, transition: 'stroke 0.15s' }} />
+          <XCircle sx={{ stroke: color, transition: 'stroke 0.15s' }} />
         </IconButton>
       </Column>
       {children}

@@ -274,15 +274,15 @@ const TableHead = ({ sort, setSort }) => {
 
               {expanded && !expanded.start && (
                 <ExpandedRow
-                  accent={[expanded.color]}
+                  color={expanded.color}
                   onClose={() => setExpanded(null)}
-                  sx={{ mt: 3, mb: 0, bg: alpha(expanded.color, 0.2) }}
+                  sx={{ mt: 3, mb: 0 }}
                 >
                   <ExpandedColumn
                     label="Overview"
                     start={1}
                     width={[5, 5, 3, 3]}
-                    sx={{ '& > div:first-of-type': { color: expanded.color } }}
+                    color={expanded.color}
                     mdx
                   >
                     {legend[expanded.id]}
@@ -292,10 +292,8 @@ const TableHead = ({ sort, setSort }) => {
                     label="Relevance"
                     start={[1, 1, 4, 4]}
                     width={[5]}
-                    sx={{
-                      mt: [3, 3, 0, 0],
-                      '& > div:first-of-type': { color: expanded.color },
-                    }}
+                    color={expanded.color}
+                    sx={{ mt: [3, 3, 0, 0] }}
                   >
                     {['Essential', 'Primary', 'Secondary', 'Extra'].map(
                       (coverage) => (
