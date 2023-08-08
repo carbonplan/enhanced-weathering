@@ -1,11 +1,4 @@
-import {
-  Button,
-  Column,
-  Expander,
-  FadeIn,
-  Row,
-  Tag,
-} from '@carbonplan/components'
+import { Button, Column, Expander, FadeIn, Row } from '@carbonplan/components'
 import { Box, Flex } from 'theme-ui'
 import { useState } from 'react'
 import { RotatingArrow } from '@carbonplan/icons'
@@ -40,6 +33,25 @@ const COVERAGE = [
   { type: 'watershed', label: 'Watershed transport' },
   { type: 'ocean', label: 'Ocean storage' },
 ]
+
+const List = ({ values }) => {
+  if (values.length === 0) {
+    return 'N/A'
+  }
+
+  return (
+    <Flex sx={{ flexDirection: 'column' }}>
+      {values.map((value, i) => (
+        <Box as="span" key={value}>
+          {value !== 'n/a'
+            ? `${value[0].toUpperCase()}${value.slice(1)}`
+            : 'N/A'}
+          {i < values.length - 1 ? ', ' : ''}
+        </Box>
+      ))}
+    </Flex>
+  )
+}
 
 const Entry = ({
   target,
@@ -142,7 +154,7 @@ const Entry = ({
                   label="Transient"
                   tooltip={legend.transient}
                 >
-                  {transient === 'n/a' ? 'n/a' : <Tag>{transient}</Tag>}
+                  <List values={[transient]} />
                 </ExpandedColumn>
                 <ExpandedColumn
                   start={[4, 4, 3, 3]}
@@ -150,14 +162,7 @@ const Entry = ({
                   label="Type"
                   tooltip={legend.type}
                 >
-                  <Flex sx={{ gap: 2 }}>
-                    {type
-                      .filter((t) => t !== 'n/a')
-                      .map((t) => (
-                        <Tag key={t}>{t}</Tag>
-                      ))}
-                    {type.length === 1 && type[0] === 'n/a' && 'n/a'}
-                  </Flex>
+                  <List values={type} />
                 </ExpandedColumn>
                 <ExpandedColumn
                   start={[1, 1, 5, 5]}
@@ -166,14 +171,7 @@ const Entry = ({
                   tooltip={legend.category}
                   sx={{ mt: [3, 3, 0, 0] }}
                 >
-                  <Flex sx={{ gap: 2 }}>
-                    {category
-                      .filter((c) => c !== 'n/a')
-                      .map((c) => (
-                        <Tag key={c}>{c}</Tag>
-                      ))}
-                    {category.length === 1 && category[0] === 'n/a' && 'n/a'}
-                  </Flex>
+                  <List values={category} />
                 </ExpandedColumn>
                 <ExpandedColumn
                   start={[4, 4, 7, 7]}
@@ -182,11 +180,7 @@ const Entry = ({
                   tooltip={legend.impacts}
                   sx={{ mt: [3, 3, 0, 0] }}
                 >
-                  {impacts.map(
-                    (impact, i) =>
-                      `${impact}${i < impacts.length - 1 ? ', ' : ''}`,
-                  )}
-                  {impacts.length === 0 && 'n/a'}
+                  <List values={impacts} />
                 </ExpandedColumn>
                 <ExpandedColumn
                   start={1}
