@@ -53,6 +53,7 @@ const TableHeader = ({
               p: 0,
               width: 10,
               cursor: 'pointer',
+              '&:hover svg': { stroke: 'primary' },
             }}
             onClick={(e) => {
               e.stopPropagation()
@@ -62,7 +63,7 @@ const TableHeader = ({
             <Triangle
               sx={{
                 transition: 'stroke 0.15s',
-                stroke: active ? 'primary' : 'muted',
+                stroke: active ? 'primary' : 'secondary',
                 fill: 'none',
                 width: 10,
                 height: 10,
