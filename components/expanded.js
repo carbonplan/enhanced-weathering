@@ -63,7 +63,8 @@ export const ExpandedRow = ({
     <Row
       columns={[6, 8, 10, 10]}
       sx={{
-        py: 4,
+        pt: 4,
+        pb: 5,
         mb: 4,
         bg: 'muted',
         fontSize: [1, 1, 1, 2],
