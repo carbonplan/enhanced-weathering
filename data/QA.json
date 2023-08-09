@@ -138,13 +138,13 @@
   },
   {
     "quant_approach": {
-      "target": "Greenhouse gas fluxes (CO\u2082, CH\u2084, N\u2082O)",
+      "target": "Greenhouse gas fluxes",
       "tool": "Various (e.g. chamber, Eddy covariance flux tower, remote sensing)",
       "type": ["measurement"],
       "category": ["gas"],
       "transient": "yes",
       "impacts": [],
-      "notes": "Fluxes of greenhouse gases may change in response to rock weathering at various points in the system (field, watershed, ocean). Gas flux measurements could inform understanding of the effects of enhanced weathering on the total carbon budget of the ecosystem, or indicated changes to other gases fluxes such as N\u2082O emissions, which may be reduced as a result of pH increases from enhanced weathering. GHG fluxes may be measured directly at field scale and should be compared to areas without rock application.",
+      "notes": "Fluxes of greenhouse gases may change in response to rock weathering at various points in the system (field, watershed, ocean). Gas flux measurements could inform understanding of the effects of enhanced weathering on the total carbon budget of the ecosystem, or indicate changes to other gases fluxes such as N\u2082O emissions, which may be reduced as a result of pH increases from enhanced weathering. GHG fluxes may be measured directly at field scale and should be compared to areas without rock application.",
       "comments": "Gas fluxes can be highly variable over time and in response to environmental conditions. Measurement and modeling approaches must take into account the potential for cycles of absorption and outgassing happening over different timescales, as well as tracking environmental conditions such as temperature and moisture measurements. Ideally, automated chambers are used to capture temporal variability. This approach is likely to be expensive and labor intensive, and should likely be used alongside other quantification approaches to bound weathering outcomes.",
       "references": [
         {
@@ -901,7 +901,7 @@
       "references": [],
       "coverage": {
         "rock": 0,
-        "init_weathering": 3,
+        "init_weathering": 2,
         "field": 0,
         "watershed": 0,
         "ocean": 0
@@ -930,7 +930,7 @@
       ],
       "coverage": {
         "rock": 0,
-        "init_weathering": 3,
+        "init_weathering": 2,
         "field": 3,
         "watershed": 0,
         "ocean": 0
@@ -1033,7 +1033,7 @@
       "transient": "n/a",
       "impacts": [],
       "notes": "Default factors may be used to account for leakage from field, watershed, or ocean processes that result in CO\u2082 outgassing. These default factors may be established via a wide range of processes, for example, by estimating a worst case scenario given a certain set of eligibility criteria and applying it across the board.",
-      "comments": "If large enough and combined with eligibility criteria that appropriately eliminate edge-cases, using default factors may result in adequate discounting for leakage. However, applying default factors rather than explicitly quantifying leakage does not support learning nor geographically-tailored understanding of enhanced weathering deployment.",
+      "comments": "If large enough, default factors may result in adequate discounting for leakage from field processes. However, applying default factors rather than explicitly quantifying leakage does not support learning nor a geographically-tailored understanding of enhanced weathering deployment.",
       "references": [],
       "coverage": {
         "rock": 0,
@@ -1053,7 +1053,7 @@
       "transient": "n/a",
       "impacts": [],
       "notes": "Default factors may be used to account for leakage from field, watershed, or ocean processes that result in CO\u2082 outgassing. These default factors may be established via a wide range of processes, for example, by estimating a worst case scenario given a certain set of eligibility criteria and applying it across the board.",
-      "comments": "If large enough and combined with eligibility criteria that appropriately eliminate edge-cases, using default factors may result in adequate discounting for leakage. However, applying default factors rather than explicitly quantifying leakage does not support learning nor geographically-tailored understanding of enhanced weathering deployment.",
+      "comments": "If large enough, default factors may result in adequate discounting for leakage from ocean processes. However, applying default factors rather than explicitly quantifying leakage does not support learning nor a geographically-tailored understanding of enhanced weathering deployment.",
       "references": [],
       "coverage": {
         "rock": 0,
@@ -1073,7 +1073,7 @@
       "transient": "n/a",
       "impacts": [],
       "notes": "Default factors may be used to account for leakage from field, watershed, or ocean processes that result in CO\u2082 outgassing. These default factors may be established via a wide range of processes, for example, by estimating a worst case scenario given a certain set of eligibility criteria and applying it across the board.",
-      "comments": "If large enough and combined with eligibility criteria that appropriately eliminate edge-cases, using default factors may result in adequate discounting for leakage. However, applying default factors rather than explicitly quantifying leakage does not support learning nor geographically-tailored understanding of enhanced weathering deployment.",
+      "comments": "If large enough, default factors may result in adequate discounting for leakage from river systems. However, applying default factors rather than explicitly quantifying leakage does not support learning nor geographically-tailored understanding of enhanced weathering deployment.",
       "references": [],
       "coverage": {
         "rock": 0,
