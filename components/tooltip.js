@@ -69,7 +69,12 @@ export const TooltipWrapper = ({
   )
 }
 
-export const TooltipContent = ({ expanded, children, sx }) => {
+export const TooltipContent = ({
+  expanded,
+  children,
+  color = 'secondary',
+  sx,
+}) => {
   return (
     <AnimateHeight
       duration={100}
@@ -80,7 +85,7 @@ export const TooltipContent = ({ expanded, children, sx }) => {
         sx={{
           py: 1,
           fontSize: [0, 0, 0, 1],
-          color: 'secondary',
+          color,
           fontFamily: 'body',
           letterSpacing: 'body',
           textTransform: 'none',
@@ -115,7 +120,9 @@ const Tooltip = ({
       >
         {children}
       </TooltipWrapper>
-      <TooltipContent expanded={expanded}>{tooltip}</TooltipContent>
+      <TooltipContent color={color} expanded={expanded}>
+        {tooltip}
+      </TooltipContent>
     </Box>
   )
 }

@@ -3,7 +3,6 @@ import { Triangle } from '@carbonplan/icons'
 import { useState } from 'react'
 import { Box, Flex, IconButton } from 'theme-ui'
 import AnimateHeight from 'react-animate-height'
-import { alpha } from '@theme-ui/color'
 
 import legend from '../data/legend.json'
 import { TooltipButton, TooltipContent } from './tooltip'
