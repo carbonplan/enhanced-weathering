@@ -20,7 +20,7 @@ const description = (
     Below, you can explore what kinds of tools — e.g. measurements, models, or
     records — might play a role in quantifying net carbon removal from enhanced
     weathering. Read more in the accompanying{' '}
-    <Link href="https://drafts.carbonplan.org/research/ew-protocol-review">
+    <Link href="https://drafts.carbonplan.org/research/ew-quantification-explainer">
       explainer
     </Link>
     .

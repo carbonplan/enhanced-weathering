@@ -4,4 +4,4 @@ We map each combination of target and tool to one or more phases of the enhanced
 
 In the table above, you can click to expand several elements to access more detailed information. By clicking the plus sign by a column header, you can read more about the relevance mapping described above. By clicking on any entry within the table, you can see additional information and read our notes and comments. Finally, by clicking on [insert icon] throughout the tool, you can access information notes that provide definitions and extra context.
 
-You can download the full resource as a [CSV](TK) or [JSON](TK) file. These files include all the same data as rendered on this website. Read the accompanying [explainer](https://drafts.carbonplan.org/research/ew-protocol-review) for more details.
+You can download the full resource as a [CSV](TK) or [JSON](TK) file. These files include all the same data as rendered on this website. Read the accompanying [explainer](https://drafts.carbonplan.org/research/ew-quantification-explainer) for more details.
