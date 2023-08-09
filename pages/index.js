@@ -28,7 +28,7 @@ const Index = () => {
           </Column>
           <Column start={[1, 5, 6, 6]} width={[6, 4, 5, 5]}>
             <Box as="h2" variant="styles.h2">
-              Methods
+              Content
             </Box>
             <Methods />
           </Column>
