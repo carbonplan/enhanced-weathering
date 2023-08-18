@@ -24,11 +24,12 @@ const Table = () => {
   const [sort, setSort] = useState('target')
 
   useEffect(() => {
-    if (router.query?.variable && router.query?.method) {
+    if (router.query?.variable) {
       const result = data.find(
         (d) =>
           d.quant_approach.target === router.query.variable &&
-          d.quant_approach.tool === router.query.method,
+          (!router.query.method ||
+            d.quant_approach.tool === router.query.method),
       )
       if (result) {
         setActive(result.quant_approach)
