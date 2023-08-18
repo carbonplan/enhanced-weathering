@@ -1,6 +1,6 @@
 import { Button, Column, Expander, FadeIn, Row } from '@carbonplan/components'
 import { Box, Flex } from 'theme-ui'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { RotatingArrow } from '@carbonplan/icons'
 import AnimateHeight from 'react-animate-height'
 
@@ -54,6 +54,7 @@ const List = ({ values }) => {
 }
 
 const Entry = ({
+  active,
   target,
   tool,
   coverage,
@@ -67,6 +68,7 @@ const Entry = ({
   border,
 }) => {
   const [expanded, setExpanded] = useState(false)
+  const ref = useRef()
   const color = useMemo(() => {
     const result = COVERAGE.reduce(
       (max, { type, color }) => {
@@ -80,6 +82,22 @@ const Entry = ({
     )
     return result.color
   }, [coverage])
+
+  useEffect(() => {
+    if (active) {
+      setExpanded(true)
+    }
+  }, [active])
+
+  useEffect(() => {
+    if (active && ref.current) {
+      window.scrollTo({
+        left: 0,
+        top: ref.current.getBoundingClientRect().top - 240,
+        behavior: 'smooth',
+      })
+    }
+  }, [active])
 
   return (
     <>
@@ -141,7 +159,7 @@ const Entry = ({
         ))}
       </Row>
 
-      <Box as="tr" sx={sx.reset}>
+      <Box as="tr" sx={sx.reset} ref={ref}>
         <td>
           <AnimateHeight
             duration={100}
