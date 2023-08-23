@@ -1,6 +1,35 @@
 [
   {
     "quant_approach": {
+      "target": "Bulk density",
+      "tool": "Various (e.g. Geoprobe sampling, core method, clod method, excavation method)",
+      "type": ["measurement"],
+      "category": ["soil"],
+      "transient": "no",
+      "impacts": [],
+      "notes": "Bulk density refers to the mass of dry soil per unit volume and is influenced by many factors, including soil type and field management. Bulk density measurements are required to rigorously extrapolate soil-based concentration measurements (see e.g. \"Soil total carbon\", \"Soil inorganic carbon\", \"Soil organic carbon\", or \"Trace metals\") to field-scale stock estimates.",
+      "comments": "Various methods exist to estimate bulk density, including the core method, excavation method, and clod method. [Equivalent soil mass accounting](https://carbonplan.org/research/soil-depth-sampling) is a less widely used but more rigorous method for reporting soil stock measurements based on soil mass instead of soil volume.",
+      "references": [
+        {
+          "name": "Sharma et al., 2020",
+          "href": "https://doi.org/10.1002/ael2.2000"
+        },
+        {
+          "name": "Al-shammary et al., 2018",
+          "href": "https://doi.org/10.1016/S1002-0160(18"
+        }
+      ],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 2,
+        "field": 3,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
       "target": "Cation exchange capacity (CEC) and exchange complex cations",
       "tool": "NH\u2084OAc, BaCl\u2082 or appropriate extraction for given soil",
       "type": ["measurement"],
@@ -48,6 +77,39 @@
         "rock": 0,
         "init_weathering": 3,
         "field": 3,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
+      "target": "Crop yield",
+      "tool": "Record keeping, weighing",
+      "type": ["meaurement", "records"],
+      "category": ["crops"],
+      "transient": "no",
+      "impacts": ["Crop health"],
+      "notes": "Changes in yield due to rock application are possible and are generally presumed to be positive, for example by increasing the availability of additional micronutrients or increasing pH. These effects could also potentially be neutral or negative, for example via pH changes that negatively impact nutrient availability. Yield may be determined from farm records of industrial-scale harvesting or using smaller-scale hand harvest approaches.",
+      "comments": "Yield impacts are less likely if rock composition is relatively benign (see \"elemental composition\"), the soil is relatively fertile to begin with, and no changes to fertilizer regime are made (see \"field management\"). Tracking yield changes may not be necessary if a clear positive or neutral relationship is established for a given weathering material, soil type, and crop type.",
+      "references": [
+        {
+          "name": "Shapiro et al., 1989",
+          "href": "https://doi.org/10.1017/S088918930000273"
+        },
+        {
+          "name": "Trout and DeJonge, 2017",
+          "href": "https://doi.org/10.1007/s00271-017-0540-"
+        },
+        {
+          "name": "Swoboda et al., 2022",
+          "href": "https://doi.org/10.1016/j.scitotenv.2021.150976"
+        }
+      ],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 0,
+        "field": 1,
         "watershed": 0,
         "ocean": 0
       }
@@ -109,28 +171,48 @@
   },
   {
     "quant_approach": {
-      "target": "Mobile / immobile element ratios",
-      "tool": "Geochemical mass balance",
-      "type": ["measurement"],
-      "category": ["rock", "soil"],
+      "target": "Field management",
+      "tool": "Record keeping",
+      "type": ["records"],
+      "category": ["management"],
       "transient": "no",
-      "impacts": [],
-      "notes": "Geochemical mass balances allow for determination of chemical weathering rates by comparing the concentrations of immobile elements like titanium (Ti) or ziconium (Zr)  \u2014 which originate in the weathering material and remain in the soil as weathering progresses \u2014 to concentrations of mobile elements, like silicon (Si), calcium (Ca), sodium (Na), or magnesium (Mg),  which are progressively lost. Applying this technique to enhanced weathering can theoretically allow for constraint of initial rock weathering and is time integrated, alleviating the need for continuous monitoring.",
-      "comments": "See Reershemius et al, 2023 for discussion of potential limitations of applying a mass balance approach to EW, including the need for appropriately robust analytical precision. Sufficient differences in immobile element concentration between the soil and rock amendment are also required.",
+      "impacts": ["Ag inputs"],
+      "notes": "Field management affects the field system, and should inform estimates of initial weathering and other field-scale processes. In addition to records characterizing the application of the weathering material (see \"Rock application\"), it is important to track more field management practices such as the application of agricultural lime and fertilizer, tillage patterns, and crop type and rotation.",
+      "comments": "Tracking liming practices is especially important for understanding if the application of the weathering material substitutes for the application of agricultural lime, and how that potential substitution may impact net carbon removal. Tracking fertilizer application is important for understanding the prevalence of fertilizer-derived ions and the likelhood that applied rock is weathered by strong acids rather than carbonic acid.  A system for record keeping should be established up front, as commerical farm record keeping priorities may differ from enhanced weathering needs.",
       "references": [
         {
-          "name": "Reershemius et al., 2023 (preprint)",
-          "href": "preprint"
+          "name": "Oh and Raymond, 2006",
+          "href": "https://doi.org/10.1029/2005GB00256"
         },
         {
-          "name": "Beerling et al., 2023 (preprint)",
-          "href": "preprint"
+          "name": "Larkin et al., 2022",
+          "href": "https://doi.org/10.3389/fclim.2022.959229"
         }
       ],
       "coverage": {
         "rock": 0,
-        "init_weathering": 3,
-        "field": 0,
+        "init_weathering": 4,
+        "field": 4,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
+      "target": "Field outgassing",
+      "tool": "Default discount factor",
+      "type": ["other"],
+      "category": ["n/a"],
+      "transient": "n/a",
+      "impacts": [],
+      "notes": "Default factors may be used to account for leakage from field processes that result in CO\u2082 outgassing (e.g., carbonate precipitation or secondary mineral formation). These default factors could be established, for example, by estimating a worst case scenario given a certain set of eligibility criteria and applying it across the board.",
+      "comments": "If large enough, default factors may result in adequate discounting for leakage from field processes. However, applying default factors rather than explicitly quantifying leakage does not support learning nor a geographically-tailored understanding of enhanced weathering deployment.",
+      "references": [],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 0,
+        "field": 3,
         "watershed": 0,
         "ocean": 0
       }
@@ -171,6 +253,31 @@
   },
   {
     "quant_approach": {
+      "target": "Irrigation",
+      "tool": "Flow meter, record keeping",
+      "type": ["measurement", "records"],
+      "category": ["management"],
+      "transient": "yes",
+      "impacts": [],
+      "notes": "Tracking irrigation data provides context for assessing the water inputs available for weathering reactions. Determining a water balance for the field is important for converting measurements expressed as concentrations (mass / volume) into weathering or carbon removal fluxes (mass / time). In addition to tracking irrigation rates, timing, and methods, keeping records of irrigation water sources and characteristics is also important, particularly because groundwater may be a significant source of alkalinity inputs to the system. This information may be obtained from records, flow meter monitoring of irrigation water, and/or water sample analysis.",
+      "comments": "A system for record keeping should be established up front, as commerical farm record keeping priorities may differ from enhanced weathering needs.",
+      "references": [
+        {
+          "name": "Maher and Chamberlain, 2014",
+          "href": "https://doi.org/10.1126/science.1250770"
+        }
+      ],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 4,
+        "field": 4,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
       "target": "Isotopic tracers",
       "tool": "Various (e.g. MC-ICP-MS)",
       "type": ["measurement"],
@@ -196,51 +303,22 @@
   },
   {
     "quant_approach": {
-      "target": "Total alkalinity (TA)",
-      "tool": "Titrations",
+      "target": "Mobile / immobile element ratios",
+      "tool": "Geochemical mass balance",
       "type": ["measurement"],
-      "category": ["soil", "water"],
-      "transient": "yes",
+      "category": ["rock", "soil"],
+      "transient": "no",
       "impacts": [],
-      "notes": "Changes in total alkalinity (TA) can provide evidence of weathering, as bicarbonate ions are generally the dominant contributor to alkalinity. Alkalinity determinations via acidemetric titration may be made on soil extracts (e.g. saturated paste), soil pore water samples (e.g. from a lysimeter), or in downstream water samples.",
-      "comments": "Bicarbonate alkalinity is subject to fluctuations as pH and other system parameters change, altering carbonate speciation. Therefore, alkalinity measurements are context-dependent and do not necessarily represent lasting outcomes. Continuous monitoring of total alkalinity (TA) would be required to capture the total flux of additional bicarbonate as a result of enhanced weathering. However, this poses a challenge given realistic sampling constraints and equipment interference with farming operations. Care must be taken that other field management changes are not responsible for observed shifts in alkalinity (e.g. changing irrigation source or rate), which emphasizes the importance of establishing a dynamic baseline rather than solely monitoring alkalinity prior to rock application. Alkalinity may also be estimated by measuring cations (see \"Cations / anions\") or potentially by monitoring electrical conductivity as a proxy (see \"Electrical conductivity\").  Note that there may be a delay between initial weathering and a total alkalinity signal as a result of interactions between weathered cations and the soil exchange comples (see \"Cation exchange complex (CEC) and exchange complex cations\").",
+      "notes": "Geochemical mass balances allow for determination of chemical weathering rates by comparing the concentrations of immobile elements like titanium (Ti) or ziconium (Zr)  \u2014 which originate in the weathering material and remain in the soil as weathering progresses \u2014 to concentrations of mobile elements, like silicon (Si), calcium (Ca), sodium (Na), or magnesium (Mg),  which are progressively lost. Applying this technique to enhanced weathering can theoretically allow for constraint of initial rock weathering and is time integrated, alleviating the need for continuous monitoring.",
+      "comments": "See Reershemius et al, 2023 for discussion of potential limitations of applying a mass balance approach to EW, including the need for appropriately robust analytical precision. Sufficient differences in immobile element concentration between the soil and rock amendment are also required.",
       "references": [
         {
-          "name": "Olin Neal, 2001",
-          "href": "https://doi.org/10.1016/S0048-9697(00"
+          "name": "Reershemius et al., 2023 (preprint)",
+          "href": "preprint"
         },
         {
-          "name": "Weiherm\u00fcller, et al., 2007",
-          "href": "https://doi.org/10.2134/jeq2007.0218"
-        }
-      ],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 3,
-        "field": 3,
-        "watershed": 0,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Trace metals",
-      "tool": "ICP-AES, ICP-MS, AAS",
-      "type": ["measurement"],
-      "category": ["soil", "water", "crops"],
-      "transient": "maybe",
-      "impacts": ["Heavy metals"],
-      "notes": "Monitoring changes in trace metal concentrations may inform estimates of initial rock weathering. Measurements of trace metals in the environment should be accompanied by a clear characterization the elemental composition and trace metal content of the applied weathering material (see \"Elemental composition\"). Various forms of spectroscopy can be applied to liquid or solid samples to determine the trace metal content, such as inductively coupled plasma atomic emission spectroscopy or mass spectroscopy (ICP-AES or ICP-MS) or atomic absorption spectropcopy (AAS).",
-      "comments": "It is important to monitor trace metal concentrations like nickel (Ni) and chromium (Cr) in soil, water, and crops to ensure safe levels of heavy metals are maintained. Many jurisdictions regulate allowable concentrations of trace metals, and relevant regulations should thus inform rock application, measurement approaches, and threshold concentrations. If a field is subject to repeated applications of weathering material, cumulative levels of trace metals should be monitored.",
-      "references": [
-        {
-          "name": "Haque et al., 2020",
-          "href": "https://doi.org/10.1515/opag-2020-001"
-        },
-        {
-          "name": "Dupla et al., 2023",
-          "href": "https://doi.org/10.1111/ejss.13343"
+          "name": "Beerling et al., 2023 (preprint)",
+          "href": "preprint"
         }
       ],
       "coverage": {
@@ -254,30 +332,54 @@
   },
   {
     "quant_approach": {
-      "target": "Bulk density",
-      "tool": "Various (e.g. Geoprobe sampling, core method, clod method, excavation method)",
-      "type": ["measurement"],
-      "category": ["soil"],
-      "transient": "no",
+      "target": "Ocean outgassing",
+      "tool": "Default discount factor",
+      "type": ["other"],
+      "category": ["n/a"],
+      "transient": "n/a",
       "impacts": [],
-      "notes": "Bulk density refers to the mass of dry soil per unit volume and is influenced by many factors, including soil type and field management. Bulk density measurements are required to rigorously extrapolate soil-based concentration measurements (see e.g. \"Soil total carbon\", \"Soil inorganic carbon\", \"Soil organic carbon\", or \"Trace metals\") to field-scale stock estimates.",
-      "comments": "Various methods exist to estimate bulk density, including the core method, excavation method, and clod method. [Equivalent soil mass accounting](https://carbonplan.org/research/soil-depth-sampling) is a less widely used but more rigorous method for reporting soil stock measurements based on soil mass instead of soil volume.",
+      "notes": "Default factors may be used to account for leakage from ocean processes that result in CO\u2082 outgassing (e.g., carbonate precipitation or secondary mineral formation). These default factors may be established via a wide range of processes, for example, by estimating a worst case scenario given a certain set of eligibility criteria and applying it across the board.",
+      "comments": "If large enough, default factors may result in adequate discounting for leakage from ocean processes. However, applying default factors rather than explicitly quantifying leakage does not support learning nor a geographically-tailored understanding of enhanced weathering deployment.",
+      "references": [],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 0,
+        "field": 0,
+        "watershed": 0,
+        "ocean": 3
+      }
+    }
+  },
+  {
+    "quant_approach": {
+      "target": "Oceanic outgassing",
+      "tool": "Process or empirical models",
+      "type": ["model"],
+      "category": ["n/a"],
+      "transient": "n/a",
+      "impacts": [],
+      "notes": "Process models of ocean circulation and ocean equilibration with the atmosphere can be used to estimate additional ocean outgassing of CO\u2082 that occurs as a result of enhanced rock weathering. In contrast, empirical models are based on statistical analysis of observed data, and do not contain a mechanistic representation of ocean processes.",
+      "comments": "It is unlikely that smaller-scale projects will be able to estimate ocean leakage based on direct measurement given the large spatial scale and long temporal scale of these processes. However, few ocean models exist today that are tailored to a consideration of ocean outgassing that happens as a result of enhanced weathering. Developing and validating models of these ocean processes is an area of active research. Models used to understand the long-term fate of weathering products in the ocean should be comparable across CDR pathways that account for similar ocean dynamics (e.g. ocean alkalinity enhancement).",
       "references": [
         {
-          "name": "Sharma et al., 2020",
-          "href": "https://doi.org/10.1002/ael2.2000"
+          "name": "Kanzaki et al., 2023",
+          "href": "https://doi.org/10.1093/pnasnexus/pgad05"
         },
         {
-          "name": "Al-shammary et al., 2018",
-          "href": "https://doi.org/10.1016/S1002-0160(18"
+          "name": "Harrington et al., 2022",
+          "href": "https://doi.org/10.1016/j.apgeochem.2023.10564"
+        },
+        {
+          "name": "Fennel et al., 2023 (preprint)",
+          "href": "preprint"
         }
       ],
       "coverage": {
         "rock": 0,
-        "init_weathering": 2,
-        "field": 3,
+        "init_weathering": 0,
+        "field": 0,
         "watershed": 0,
-        "ocean": 0
+        "ocean": 3
       }
     }
   },
@@ -290,8 +392,13 @@
       "transient": "yes",
       "impacts": [],
       "notes": "The partial pressure of CO\u2082 (pCO\u2082) in the soil or watershed influences initial weathering rates, provides information about carbonate equilibria in a system, and may change in response to weathering reactions.",
-      "comments": "None.",
-      "references": [],
+      "comments": "Fluctuations in the partial pressure of CO\u2082 (pCO\u2082) could be driven by a number of factors, including changes in pH, microbial activity, or other environmental factors. Enhanced weathering could plausibly increase or decrease pCO\u2082. This may introduce challenges for using pCO\u2082 measurements as an indicator of weathering.",
+      "references": [
+        {
+          "name": "Dietzen et al. 2018",
+          "href": "https://www.sciencedirect.com/science/article/abs/pii/S1750583618300057"
+        }
+      ],
       "coverage": {
         "rock": 0,
         "init_weathering": 2,
@@ -338,67 +445,89 @@
   },
   {
     "quant_approach": {
-      "target": "Soil and air temperature",
-      "tool": "Sensors, local weather station, record keeping",
+      "target": "Plant cation uptake",
+      "tool": "ICP-AES, ICP-MS, AAS, record keeping",
       "type": ["measurement"],
-      "category": ["soil", "environment"],
-      "transient": "yes",
-      "impacts": [],
-      "notes": "Soil and air temperature measurements could potentially be used to constrain weathering rates and equilibria dynamics. Temperatures may be measured using in situ sensors that are installed permanently for continuous monitoring, or inserted only at time of measurement. These measurements could be critical for the interpretation of other primary measurements, such as GHG fluxes (see \"greenhouse gas fluxes\").",
-      "comments": "Regional temperature data products may provide a some useful context, but can vary in quality and may not be appropriate to use as input data to sophisticated models.",
-      "references": [],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 2,
-        "field": 2,
-        "watershed": 0,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Soil moisture",
-      "tool": "Sensors, soil samples",
-      "type": ["measurement"],
-      "category": ["soil"],
-      "transient": "yes",
-      "impacts": [],
-      "notes": "Soil moisture measurements could potentially be used to inform the water balance and moisture impacts on weathering rates. Soil moisture may be measured using in situ sensors that are installed permanently for continuous monitoring, or based on moisture content of soil samples at specific timepoints.",
-      "comments": "Pre-existing soil moisture data products may provide a some useful context, but can vary in quality and may not be appropriate to use as input data to sophisticated models. Soil moisture may also be affected by the addition of rock dust.",
-      "references": [],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 2,
-        "field": 2,
-        "watershed": 0,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Soil physical properties (water infiltration, aggregate stability)",
-      "tool": "Various (e.g. infiltrometers, wet sieving, ultrasonic dispersion, immersion, SLAKES)",
-      "type": ["measurement"],
-      "category": ["soil"],
+      "category": ["crops"],
       "transient": "no",
-      "impacts": ["Soil health"],
-      "notes": "Characterizing soil physical properties, like water infiltration or aggregate stability, is likely not essential, but could inform an understanding of initial weathering processes as well as changes to the soil to following rock application. It is likely to take time for any changes to soil physical properties to appear. Changes may be more likely if the rock amendment particle size is substantially different from native soil texture (see \"Rock particle size distribution\") or if rock is applied repeatedly (see \"Mineral application\"). The appropriate measurement approach may vary depending on soil type, and care must be taken with measurement timing and frequency.",
-      "comments": "Pre-existing data products characterizing soil physical properties may provide a some useful context, but can vary in quality and may not be appropriate to use as input data to sophisticated models.",
+      "impacts": [],
+      "notes": "If crops engage in luxury consumption of certain nutrients following rock application, this could lead to higher rates of cation removal at the field scale. Changes in yield could also alter cation concentrations in exported biomass. This loss of cations would reduce the potential carbon dioxide removal of the associated enhanced weathering. Plant cation uptake can be measured using plant biomass samples from treated and control plots, which can then be processed via an appropriate digestion followed various forms of spectroscopy, such as inductively coupled plasma atomic emission spectroscopy or mass spectroscopy (ICP-AES or ICP-MS) or atomic absorption spectropcopy (AAS). An appropriate sampling scheme and measurement protocols is required.",
+      "comments": "Tracking plant cation uptake may not be necessary unless there is evidence of luxury consumption or changes in yield. Depending on the rock mineralogy and elemental composition, it's also possible that plants might take up toxic trace metals which would need to be monitored with similar measurements (see \"Rock mineralogy\", \"Rock elemental composition\", and \"Trace metals\").",
       "references": [
         {
-          "name": "Fajardo et al., 2016",
-          "href": "https://doi.org/10.1016/j.still.2016.05.01"
+          "name": "ten Berge et al., 2012",
+          "href": "https://doi.org/10.1371/journal.pone.004209"
         },
         {
-          "name": "Flynn et al., 2020",
-          "href": "https://doi.org/10.1002/saj2.20012"
+          "name": "Ramos et al., 2022",
+          "href": "https://doi.org/10.1016/j.gsf.2021.10118"
+        },
+        {
+          "name": "Calabrese et al., 2022",
+          "href": "https://doi.org/10.1021/acs.est.2c03163"
         }
       ],
       "coverage": {
         "rock": 0,
-        "init_weathering": 2,
+        "init_weathering": 0,
+        "field": 1,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
+      "target": "Precipitation",
+      "tool": "Local weather station, record keeping, or other",
+      "type": ["measurement", "records"],
+      "category": ["environment"],
+      "transient": "yes",
+      "impacts": [],
+      "notes": "Precipitation data provides context to assess water inputs available for weathering. Determining a water balance for the field is important for converting measurements of weathering products or carbon, which are expressed as concentrations (mass / volume), into weathering or carbon removal fluxes (mass / time). This data may be obtained from a local weather monitoring station or site records, if available.",
+      "comments": "Regional precipitation data products may provide a some useful context, but can vary in quality and may not be appropriate to use as input data to sophisticated models.",
+      "references": [
+        {
+          "name": "Maher and Chamberlain, 2014",
+          "href": "https://doi.org/10.1126/science.1250770"
+        }
+      ],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 4,
+        "field": 2,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
+      "target": "Project emissions",
+      "tool": "LCA",
+      "type": ["other"],
+      "category": ["other"],
+      "transient": "n/a",
+      "impacts": [],
+      "notes": "Project emissions must be accounted for when estimating net carbon removal from an enhanced weathering deployment. Key components to consider include transport and application of rock material.",
+      "comments": "At present, few LCAs of enhanced weathering exist in the scientific literature.",
+      "references": [
+        {
+          "name": "Lefebvre et al., 2019",
+          "href": "https://doi.org/10.1016/j.jclepro.2019.06.09"
+        },
+        {
+          "name": "Calabrese et al., 2022",
+          "href": "https://doi.org/10.1021/acs.est.2c0316"
+        },
+        {
+          "name": "Tan and Aviso, 2021",
+          "href": "https://doi.org/10.1016/j.jclepro.2021.125836"
+        }
+      ],
+      "coverage": {
+        "rock": 4,
+        "init_weathering": 0,
         "field": 0,
         "watershed": 0,
         "ocean": 0
@@ -407,39 +536,73 @@
   },
   {
     "quant_approach": {
-      "target": "Soil texture",
-      "tool": "Particle size analyzer, texture by hydrometer",
-      "type": ["measurement"],
-      "category": ["soil"],
-      "transient": "no",
-      "impacts": ["Soil health"],
-      "notes": "Soil texture measurements are important for characterizing the soil system, including its suitability for enhanced weathering, field processes that may influence net carbon removal, and likely impacts of enhanced weathering for soil health. For example, enhanced weathering could impact soil texture via the rock dust incorparation or secondary mineral formation, but these potential impacts are likely to differ depending on the contrast between the native soil texture and the rock amendment. Soil texture measurements are likely not critical, but may be a supporting or explanatory measurement for other indicators. Soil texture may be determined by a particle size analyzer (PSA) or via the hydrometer method.",
-      "comments": "Pre-existing data products characterizing soil texture may provide a some useful context, but can vary in quality and may not be appropriate to use as input data to sophisticated models.",
+      "target": "Riverine outgassing",
+      "tool": "Default discount factor",
+      "type": ["other"],
+      "category": ["n/a"],
+      "transient": "n/a",
+      "impacts": [],
+      "notes": "Default factors may be used to account for leakage from watershed processes that result in CO\u2082 outgassing  (e.g., carbonate precipitation or secondary mineral formation). These default factors may be established, for example, by estimating a worst case scenario given a certain set of eligibility criteria and applying it across the board.",
+      "comments": "If large enough, default factors may result in adequate discounting for leakage from river systems. However, applying default factors rather than explicitly quantifying leakage does not support learning nor geographically-tailored understanding of enhanced weathering deployment.",
       "references": [],
       "coverage": {
         "rock": 0,
-        "init_weathering": 2,
-        "field": 2,
-        "watershed": 0,
+        "init_weathering": 0,
+        "field": 0,
+        "watershed": 3,
         "ocean": 0
       }
     }
   },
   {
     "quant_approach": {
-      "target": "Soil biology",
-      "tool": "Various (e.g. PLFA, DNA sequencing)",
-      "type": ["measurement"],
-      "category": ["soil"],
-      "transient": "no",
-      "impacts": ["Soil health"],
-      "notes": "Enhanced weathering could have impacts on soil biology, including microbial diversity and functioning, for example by changing pH or micronutrient availability (see \"pH\" and \"Rock elemental composition\"). Changes to soil biology, such as to the microbial community, might impact weathering rates or other in-field processes, like carbonate precipitation. The interaction between enhanced weathering and soil biology is an area of active research, and could be informed by project-level monitoring. The soil microbial community can be characterized by various techniques, including analysis of phospholipid fatty acids (PLFA) or DNA sequencing.",
-      "comments": "Characterizing soil microbes can be intensive from a sampling perspective and require access to specific facilities (e.g. may require -80 C sample storage), and should be guided by an appropriate microbial sampling protocol.",
-      "references": [],
+      "target": "Riverine outgassing",
+      "tool": "Process or empirical models",
+      "type": ["model"],
+      "category": ["n/a"],
+      "transient": "n/a",
+      "impacts": [],
+      "notes": "Process or empirical models of riverine outgassing may be used to characterize watershed processes that affect net carbon removal, such as carbonate precipitation or evasion, and their impact on carbon removal uncertainty. Empirical models are based on statistical analysis of observed river data. If enhanced weathering deployments scale and signals become detectable at the watershed-to-regional level, process models such as river inversion models could be useful tools for identifying enhanced weathering contributions to river carbon transport.",
+      "comments": "It is unlikely that smaller-scale projects will be able to estimate riverine leakage based on direct measurement given the potentially large spatial scale and long temporal scale of these processes. However, few river models exist today that are tailored to a consideration of riverine outgassing that happens as a result of enhanced weathering. Developing and validating regional models of these river processes is an area of active research.",
+      "references": [
+        {
+          "name": "Marx et al, 2017",
+          "href": "https://doi.org/10.1002/2016RG00054"
+        },
+        {
+          "name": "Saccardi and Winnick, 2021",
+          "href": "https://doi.org/10.1029/2021GB006972"
+        }
+      ],
       "coverage": {
         "rock": 0,
-        "init_weathering": 1,
-        "field": 1,
+        "init_weathering": 0,
+        "field": 0,
+        "watershed": 3,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
+      "target": "Rock application",
+      "tool": "Record keeping, weighing, monitoring",
+      "type": ["measurement", "records"],
+      "category": ["rock", "management"],
+      "transient": "no",
+      "impacts": ["Silicate inhalation"],
+      "notes": "Details about the application of a weathering material \u2014 such as records of application rates, dates, and rock moisture content at the time of application  \u2014 are essential for correctly determining the mass of applied material and its weathering potential.",
+      "comments": "Dust monitoring may be required to understand local environmental hazards of rock application, particularly if the material is especially fine, is drier, or is not being incorporated into the soil. Appropriate health & safety protections should be taken for workers involved in application. System for record keeping should be established up front, as commerical farm record keeping priorities may differ from enhanced weathering needs.",
+      "references": [
+        {
+          "name": "Beerling et al., 2018",
+          "href": "https://doi.org/10.1038/s41477-018-0108-y"
+        }
+      ],
+      "coverage": {
+        "rock": 4,
+        "init_weathering": 0,
+        "field": 0,
         "watershed": 0,
         "ocean": 0
       }
@@ -547,39 +710,6 @@
   },
   {
     "quant_approach": {
-      "target": "Plant cation uptake",
-      "tool": "ICP-AES, ICP-MS, AAS, record keeping",
-      "type": ["measurement"],
-      "category": ["crops"],
-      "transient": "no",
-      "impacts": [],
-      "notes": "If crops engage in luxury consumption of certain nutrients following rock application, this could lead to above-baseline removal of cations at the field scale. Changes in yield could also alter cation concentrations in exported biomass. This loss of cations would reduce the potential carbon dioxide removal of the associated enhanced weathering. Plant cation uptake can be measured using plant biomass samples from treated and control plots, which can then be processed via an appropriate digestion followed various forms of spectroscopy, such as inductively coupled plasma atomic emission spectroscopy or mass spectroscopy (ICP-AES or ICP-MS) or atomic absorption spectropcopy (AAS). An appropriate sampling scheme and measurement protocols is required.",
-      "comments": "Tracking plant cation uptake may not be necessary unless there is evidence of luxury consumption or changes in yield. Depending on the rock mineralogy and elemental composition, it's also possible that plants might take up toxic trace metals which would need to be monitored with similar measurements (see \"Rock mineralogy\", \"Rock elemental composition\", and \"Trace metals\").",
-      "references": [
-        {
-          "name": "ten Berge et al., 2012",
-          "href": "https://doi.org/10.1371/journal.pone.004209"
-        },
-        {
-          "name": "Ramos et al., 2022",
-          "href": "https://doi.org/10.1016/j.gsf.2021.10118"
-        },
-        {
-          "name": "Calabrese et al., 2022",
-          "href": "https://doi.org/10.1021/acs.est.2c03163"
-        }
-      ],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 0,
-        "field": 1,
-        "watershed": 0,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
       "target": "Secondary mineral formation",
       "tool": "Various (e.g. SEM-EDS, TEM, XANES, NanoSIMS, XRD)",
       "type": ["measurement"],
@@ -606,6 +736,46 @@
         "rock": 0,
         "init_weathering": 0,
         "field": 3,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
+      "target": "Soil and air temperature",
+      "tool": "Sensors, local weather station, record keeping",
+      "type": ["measurement"],
+      "category": ["soil", "environment"],
+      "transient": "yes",
+      "impacts": [],
+      "notes": "Soil and air temperature measurements could potentially be used to constrain weathering rates and equilibria dynamics. Temperatures may be measured using in situ sensors that are installed permanently for continuous monitoring, or inserted only at time of measurement. These measurements could be critical for the interpretation of other primary measurements, such as GHG fluxes (see \"greenhouse gas fluxes\").",
+      "comments": "Regional temperature data products may provide a some useful context, but can vary in quality and may not be appropriate to use as input data to sophisticated models.",
+      "references": [],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 2,
+        "field": 2,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
+      "target": "Soil biology",
+      "tool": "Various (e.g. PLFA, DNA sequencing)",
+      "type": ["measurement"],
+      "category": ["soil"],
+      "transient": "no",
+      "impacts": ["Soil health"],
+      "notes": "Enhanced weathering could have impacts on soil biology, including microbial diversity and functioning, for example by changing pH or micronutrient availability (see \"pH\" and \"Rock elemental composition\"). Changes to soil biology, such as to the microbial community, might impact weathering rates or other in-field processes, like carbonate precipitation. The interaction between enhanced weathering and soil biology is an area of active research, and could be informed by project-level monitoring. The soil microbial community can be characterized by various techniques, including analysis of phospholipid fatty acids (PLFA) or DNA sequencing.",
+      "comments": "Characterizing soil microbes can be intensive from a sampling perspective and require access to specific facilities (e.g. may require -80 C sample storage), and should be guided by an appropriate microbial sampling protocol.",
+      "references": [],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 1,
+        "field": 1,
         "watershed": 0,
         "ocean": 0
       }
@@ -642,6 +812,26 @@
   },
   {
     "quant_approach": {
+      "target": "Soil moisture",
+      "tool": "Sensors, soil samples",
+      "type": ["measurement"],
+      "category": ["soil"],
+      "transient": "yes",
+      "impacts": [],
+      "notes": "Soil moisture measurements could potentially be used to inform the water balance and moisture impacts on weathering rates. Soil moisture may be measured using in situ sensors that are installed permanently for continuous monitoring, or based on moisture content of soil samples at specific timepoints.",
+      "comments": "Pre-existing soil moisture data products may provide a some useful context, but can vary in quality and may not be appropriate to use as input data to sophisticated models. Soil moisture may also be affected by the addition of rock dust.",
+      "references": [],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 2,
+        "field": 2,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
       "target": "Soil organic carbon",
       "tool": "Various (e.g. EA, LOI; can be combined with methods for isolating SOC fractions)",
       "type": ["measurement"],
@@ -660,6 +850,55 @@
         "rock": 0,
         "init_weathering": 0,
         "field": 1,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
+      "target": "Soil physical properties (water infiltration, aggregate stability)",
+      "tool": "Various (e.g. infiltrometers, wet sieving, ultrasonic dispersion, immersion, SLAKES)",
+      "type": ["measurement"],
+      "category": ["soil"],
+      "transient": "no",
+      "impacts": ["Soil health"],
+      "notes": "Characterizing soil physical properties, like water infiltration or aggregate stability, is likely not essential, but could inform an understanding of initial weathering processes as well as changes to the soil to following rock application. It is likely to take time for any changes to soil physical properties to appear. Changes may be more likely if the rock amendment particle size is substantially different from native soil texture (see \"Rock particle size distribution\") or if rock is applied repeatedly (see \"Mineral application\"). The appropriate measurement approach may vary depending on soil type, and care must be taken with measurement timing and frequency.",
+      "comments": "Pre-existing data products characterizing soil physical properties may provide a some useful context, but can vary in quality and may not be appropriate to use as input data to sophisticated models.",
+      "references": [
+        {
+          "name": "Fajardo et al., 2016",
+          "href": "https://doi.org/10.1016/j.still.2016.05.01"
+        },
+        {
+          "name": "Flynn et al., 2020",
+          "href": "https://doi.org/10.1002/saj2.20012"
+        }
+      ],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 2,
+        "field": 0,
+        "watershed": 0,
+        "ocean": 0
+      }
+    }
+  },
+  {
+    "quant_approach": {
+      "target": "Soil texture",
+      "tool": "Particle size analyzer, texture by hydrometer",
+      "type": ["measurement"],
+      "category": ["soil"],
+      "transient": "no",
+      "impacts": ["Soil health"],
+      "notes": "Soil texture measurements are important for characterizing the soil system, including its suitability for enhanced weathering, field processes that may influence net carbon removal, and likely impacts of enhanced weathering for soil health. For example, enhanced weathering could impact soil texture via the rock dust incorparation or secondary mineral formation, but these potential impacts are likely to differ depending on the contrast between the native soil texture and the rock amendment. Soil texture measurements are likely not critical, but may be a supporting or explanatory measurement for other indicators. Soil texture may be determined by a particle size analyzer (PSA) or via the hydrometer method.",
+      "comments": "Pre-existing data products characterizing soil texture may provide a some useful context, but can vary in quality and may not be appropriate to use as input data to sophisticated models.",
+      "references": [],
+      "coverage": {
+        "rock": 0,
+        "init_weathering": 2,
+        "field": 2,
         "watershed": 0,
         "ocean": 0
       }
@@ -687,24 +926,28 @@
   },
   {
     "quant_approach": {
-      "target": "Irrigation",
-      "tool": "Flow meter, record keeping",
-      "type": ["measurement", "records"],
-      "category": ["management"],
+      "target": "Total alkalinity (TA)",
+      "tool": "Titrations",
+      "type": ["measurement"],
+      "category": ["soil", "water"],
       "transient": "yes",
       "impacts": [],
-      "notes": "Tracking irrigation data provides context for assessing the water inputs available for weathering reactions. Determining a water balance for the field is important for converting measurements expressed as concentrations (mass / volume) into weathering or carbon removal fluxes (mass / time). In addition to tracking irrigation rates, timing, and methods, keeping records of irrigation water sources and characteristics is also important, particularly because groundwater may be a significant source of alkalinity inputs to the system. This information may be obtained from records, flow meter monitoring of irrigation water, and/or water sample analysis.",
-      "comments": "A system for record keeping should be established up front, as commerical farm record keeping priorities may differ from enhanced weathering needs.",
+      "notes": "Changes in total alkalinity (TA) can provide evidence of weathering, as bicarbonate ions are generally the dominant contributor to alkalinity. Alkalinity determinations via acidemetric titration may be made on soil extracts (e.g. saturated paste), soil pore water samples (e.g. from a lysimeter), or in downstream water samples.",
+      "comments": "Bicarbonate alkalinity is subject to fluctuations as pH and other system parameters change, altering carbonate speciation. Therefore, alkalinity measurements are context-dependent and do not necessarily represent lasting outcomes. Continuous monitoring of total alkalinity (TA) would be required to capture the total flux of additional bicarbonate as a result of enhanced weathering. However, this poses a challenge given realistic sampling constraints and equipment interference with farming operations. Care must be taken that other field management changes are not responsible for observed shifts in alkalinity (e.g. changing irrigation source or rate), which emphasizes the importance of establishing a dynamic baseline rather than solely monitoring alkalinity prior to rock application. Alkalinity may also be estimated by measuring cations (see \"Cations / anions\") or potentially by monitoring electrical conductivity as a proxy (see \"Electrical conductivity\").  Note that there may be a delay between initial weathering and a total alkalinity signal as a result of interactions between weathered cations and the soil exchange comples (see \"Cation exchange complex (CEC) and exchange complex cations\").",
       "references": [
         {
-          "name": "Maher and Chamberlain, 2014",
-          "href": "https://doi.org/10.1126/science.1250770"
+          "name": "Olin Neal, 2001",
+          "href": "https://doi.org/10.1016/S0048-9697(00"
+        },
+        {
+          "name": "Weiherm\u00fcller, et al., 2007",
+          "href": "https://doi.org/10.2134/jeq2007.0218"
         }
       ],
       "coverage": {
         "rock": 0,
-        "init_weathering": 4,
-        "field": 4,
+        "init_weathering": 3,
+        "field": 3,
         "watershed": 0,
         "ocean": 0
       }
@@ -712,143 +955,27 @@
   },
   {
     "quant_approach": {
-      "target": "Precipitation",
-      "tool": "Local weather station, record keeping, or other",
-      "type": ["measurement", "records"],
-      "category": ["environment"],
-      "transient": "yes",
-      "impacts": [],
-      "notes": "Precipitation data provides context to assess water inputs available for weathering. Determining a water balance for the field is important for converting measurements of weathering products or carbon, which are expressed as concentrations (mass / volume), into weathering or carbon removal fluxes (mass / time). This data may be obtained from a local weather monitoring station or site records, if available.",
-      "comments": "Regional precipitation data products may provide a some useful context, but can vary in quality and may not be appropriate to use as input data to sophisticated models.",
+      "target": "Trace metals",
+      "tool": "ICP-AES, ICP-MS, AAS",
+      "type": ["measurement"],
+      "category": ["soil", "water", "crops"],
+      "transient": "maybe",
+      "impacts": ["Heavy metals"],
+      "notes": "Monitoring changes in trace metal concentrations may inform estimates of initial rock weathering. Measurements of trace metals in the environment should be accompanied by a clear characterization the elemental composition and trace metal content of the applied weathering material (see \"Elemental composition\"). Various forms of spectroscopy can be applied to liquid or solid samples to determine the trace metal content, such as inductively coupled plasma atomic emission spectroscopy or mass spectroscopy (ICP-AES or ICP-MS) or atomic absorption spectropcopy (AAS).",
+      "comments": "It is important to monitor trace metal concentrations like nickel (Ni) and chromium (Cr) in soil, water, and crops to ensure safe levels of heavy metals are maintained. Many jurisdictions regulate allowable concentrations of trace metals, and relevant regulations should thus inform rock application, measurement approaches, and threshold concentrations. If a field is subject to repeated applications of weathering material, cumulative levels of trace metals should be monitored.",
       "references": [
         {
-          "name": "Maher and Chamberlain, 2014",
-          "href": "https://doi.org/10.1126/science.1250770"
+          "name": "Haque et al., 2020",
+          "href": "https://doi.org/10.1515/opag-2020-001"
+        },
+        {
+          "name": "Dupla et al., 2023",
+          "href": "https://doi.org/10.1111/ejss.13343"
         }
       ],
       "coverage": {
         "rock": 0,
-        "init_weathering": 4,
-        "field": 2,
-        "watershed": 0,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Field management",
-      "tool": "Record keeping",
-      "type": ["records"],
-      "category": ["management"],
-      "transient": "no",
-      "impacts": ["Ag inputs"],
-      "notes": "Field management affects the field system, and should inform estimates of initial weathering and other field-scale processes. In addition to records characterizing the application of the weathering material (see \"Rock application\"), it is important to track more field management practices such as the application of agricultural lime and fertilizer, tillage patterns, and crop type and rotation.",
-      "comments": "Tracking liming practices is especially important for understanding if the application of the weathering material substitutes for the application of agricultural lime, and how that potential substitution may impact net carbon removal. Tracking fertilizer application is important for understanding the prevalence of fertilizer-derived ions and the likelhood that applied rock is weathered by strong acids rather than carbonic acid.  A system for record keeping should be established up front, as commerical farm record keeping priorities may differ from enhanced weathering needs.",
-      "references": [
-        {
-          "name": "Oh and Raymond, 2006",
-          "href": "https://doi.org/10.1029/2005GB00256"
-        },
-        {
-          "name": "Larkin et al., 2022",
-          "href": "https://doi.org/10.3389/fclim.2022.959229"
-        }
-      ],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 4,
-        "field": 4,
-        "watershed": 0,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Rock application",
-      "tool": "Record keeping, weighing, monitoring",
-      "type": ["measurement", "records"],
-      "category": ["rock", "management"],
-      "transient": "no",
-      "impacts": ["Silicate inhalation"],
-      "notes": "Details about the application of a weathering material \u2014 such as records of application rates, dates, and rock moisture content at the time of application  \u2014 are essential for correctly determining the mass of applied material and its weathering potential.",
-      "comments": "Dust monitoring may be required to understand local environmental hazards of rock application, particularly if the material is especially fine, is drier, or is not being incorporated into the soil. Appropriate health & safety protections should be taken for workers involved in application. System for record keeping should be established up front, as commerical farm record keeping priorities may differ from enhanced weathering needs.",
-      "references": [
-        {
-          "name": "Beerling et al., 2018",
-          "href": "https://doi.org/10.1038/s41477-018-0108-y"
-        }
-      ],
-      "coverage": {
-        "rock": 4,
-        "init_weathering": 0,
-        "field": 0,
-        "watershed": 0,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Crop yield",
-      "tool": "Record keeping, weighing",
-      "type": ["meaurement", "records"],
-      "category": ["crops"],
-      "transient": "no",
-      "impacts": ["Crop health"],
-      "notes": "Changes in yield due to rock application are possible and are generally presumed to be positive, for example by increasing the availability of additional micronutrients or increasing pH. These effects could also potentially be neutral or negative, for example via pH changes that negatively impact nutrient availability. Yield may be determined from farm records of industrial-scale harvesting or using smaller-scale hand harvest approaches.",
-      "comments": "Yield impacts are less likely if rock composition is relatively benign (see \"elemental composition\"), the soil is relatively fertile to begin with, and no changes to fertilizer regime are made (see \"field management\"). Tracking yield changes may not be necessary if a clear positive or neutral relationship is established for a given weathering material, soil type, and crop type.",
-      "references": [
-        {
-          "name": "Shapiro et al., 1989",
-          "href": "https://doi.org/10.1017/S088918930000273"
-        },
-        {
-          "name": "Trout and DeJonge, 2017",
-          "href": "https://doi.org/10.1007/s00271-017-0540-"
-        },
-        {
-          "name": "Swoboda et al., 2022",
-          "href": "https://doi.org/10.1016/j.scitotenv.2021.150976"
-        }
-      ],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 0,
-        "field": 1,
-        "watershed": 0,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Project emissions",
-      "tool": "LCA",
-      "type": ["other"],
-      "category": ["other"],
-      "transient": "n/a",
-      "impacts": [],
-      "notes": "Project emissions must be accounted for when estimating net carbon removal from an enhanced weathering deployment. Key components to consider include transport and application of rock material.",
-      "comments": "At present, few LCAs of enhanced weathering exist in the scientific literature.",
-      "references": [
-        {
-          "name": "Lefebvre et al., 2019",
-          "href": "https://doi.org/10.1016/j.jclepro.2019.06.09"
-        },
-        {
-          "name": "Calabrese et al., 2022",
-          "href": "https://doi.org/10.1021/acs.est.2c0316"
-        },
-        {
-          "name": "Tan and Aviso, 2021",
-          "href": "https://doi.org/10.1016/j.jclepro.2021.125836"
-        }
-      ],
-      "coverage": {
-        "rock": 4,
-        "init_weathering": 0,
+        "init_weathering": 3,
         "field": 0,
         "watershed": 0,
         "ocean": 0
@@ -890,34 +1017,14 @@
   },
   {
     "quant_approach": {
-      "target": "Weathering rate",
-      "tool": "Empirical models (e.g. kinetics-based)",
+      "target": "Weathering rate and field outgassing",
+      "tool": "Process or empirical models",
       "type": ["model"],
       "category": ["n/a"],
       "transient": "n/a",
       "impacts": [],
-      "notes": "Empirical models, such as a shrinking particle model, may be used to inform estimates of inital rock dissolution based on statistical analysis of observed data.",
-      "comments": "There is broad consensus that empirical models alone are insufficient to characterize initial rock dissolution. Any empirical model used should be validated by in-field measurements.",
-      "references": [],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 2,
-        "field": 0,
-        "watershed": 0,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Weathering rate",
-      "tool": "Process models (e.g. reactive transport)",
-      "type": ["model"],
-      "category": ["n/a"],
-      "transient": "n/a",
-      "impacts": [],
-      "notes": "Process models, like reactive transport models, can be used characterize inital rock dissolution and subsequent reactions as weathering products move within the soil column. Reactive transport models can be designed at various levels of spatial complexity (1D, 2D or 3D), and represent different combinations of in-field, biogeochemical processes that influence net carbon removal explicitly.",
-      "comments": "There is broad consensus that alone models are insufficient to rigorously characterize initial rock dissolution and field processes. Any models used should be validated by in-field measurement.",
+      "notes": "Process models like reactive transport models can be used to characterize initial rock dissolution and subsequent reactions as weathering products move within the soil column. Reactive transport models can be designed at various levels of spatial complexity (1D, 2D or 3D), and explicitly represent different combinations of biogeochemical processes and deployment practices that influence net carbon removal. In contrast, empirical models are based on statistical analysis of observed data, and do not contain a mechanistic representation of initial weathering or field processes.",
+      "comments": "There is broad consensus that models are not sufficiently rigorously to characterize initial weathering or field processes on their own. Any models used should be validated by in-field measurement. Empirical models based on mesocosm or greenhouse studies are unlikely to generalize well to field deployments.",
       "references": [
         {
           "name": "Kanzaki et al. 2022",
@@ -929,7 +1036,11 @@
         },
         {
           "name": "Kelland et al., 2020",
-          "href": "https://doi.org/10.1111/gcb.15089"
+          "href": "https://doi.org/10.1111/gcb.1508"
+        },
+        {
+          "name": "Maher and Chamberlain, 2014",
+          "href": "https://doi.org/10.1126/science.1250770"
         }
       ],
       "coverage": {
@@ -938,157 +1049,6 @@
         "field": 3,
         "watershed": 0,
         "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Riverine outgassing",
-      "tool": "Empirical models",
-      "type": ["model"],
-      "category": ["n/a"],
-      "transient": "n/a",
-      "impacts": [],
-      "notes": "Empirical models of riverine outgassing may be used to characterize watershed processes that affect net carbon removal, such as carbonate precipitation or evasion. Empirical models are based on statistical analysis of observed river data.",
-      "comments": "It is unlikely that projects will be able to estimate riverine leakage based on direct measurement given the potentially large spatial scale and long temporal scale of these processes. However, few river models exist today that are tailored to a consideration of riverine outgassing that happens as a result of enhanced weathering. Developing and validating regional models of these river processes is an area of active research.",
-      "references": [
-        {
-          "name": "Marx et al, 2017",
-          "href": "https://doi.org/10.1002/2016RG00054"
-        },
-        {
-          "name": "Zhang et al., 2022",
-          "href": "https://doi.org/10.1002/lno.12244"
-        }
-      ],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 0,
-        "field": 0,
-        "watershed": 3,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Oceanic outgassing",
-      "tool": "Empirical models",
-      "type": ["model"],
-      "category": ["n/a"],
-      "transient": "n/a",
-      "impacts": [],
-      "notes": "Empirical models of ocean outgassing may be used to characterize ocean processes that affect net carbon removal, such as re-equilibration as river waters enter the ocean or long-term carbonate precipitation. Empirical models are based on statistical analysis of observed ocean data.",
-      "comments": "It is unlikely that projects will be able to estimate ocean leakage based on direct measurement given the large spatial scale and long temporal scale of these processes. However, few ocean models exist today that are tailored to a consideration of ocean outgassing that happens as a result of enhanced weathering. Developing and validating models of these ocean processes is an area of active research. Models used to understand the long-term fate of weathering products in the ocean should be comparable across CDR pathways that account for similar ocean dynamics (e.g. ocean alkalinity enhancement).",
-      "references": [
-        {
-          "name": "Kanzaki et al., 2023",
-          "href": "https://doi.org/10.1093/pnasnexus/pgad05"
-        },
-        {
-          "name": "Harrington et al., 2022",
-          "href": "https://doi.org/10.1016/j.apgeochem.2023.105643"
-        }
-      ],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 0,
-        "field": 0,
-        "watershed": 0,
-        "ocean": 3
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Oceanic outgassing",
-      "tool": "Process models",
-      "type": ["model"],
-      "category": ["n/a"],
-      "transient": "n/a",
-      "impacts": [],
-      "notes": "Process models of ocean circulation and ocean equilibration with the atmosphere can be used to estimate additional ocean outgassing of CO\u2082 that occurs as a result of enhanced rock weathering.",
-      "comments": "It is unlikely that projects will be able to estimate ocean leakage based on direct measurement given the large spatial scale and long temporal scale of these processes. However, few ocean models exist today that are tailored to a consideration of ocean outgassing that happens as a result of enhanced weathering. Developing and validating models of these ocean processes is an area of active research. Models used to understand the long-term fate of weathering products in the ocean should be comparable across CDR pathways that account for similar ocean dynamics (e.g. ocean alkalinity enhancement).",
-      "references": [
-        {
-          "name": "Kanzaki et al., 2023",
-          "href": "https://doi.org/10.1093/pnasnexus/pgad05"
-        },
-        {
-          "name": "Harrington et al., 2022",
-          "href": "https://doi.org/10.1016/j.apgeochem.2023.10564"
-        },
-        {
-          "name": "Fennel et al., 2023 (preprint)",
-          "href": "preprint"
-        }
-      ],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 0,
-        "field": 0,
-        "watershed": 0,
-        "ocean": 3
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Field outgassing",
-      "tool": "Default discount factor",
-      "type": ["other"],
-      "category": ["n/a"],
-      "transient": "n/a",
-      "impacts": [],
-      "notes": "Default factors may be used to account for leakage from field, watershed, or ocean processes that result in CO\u2082 outgassing. These default factors may be established via a wide range of processes, for example, by estimating a worst case scenario given a certain set of eligibility criteria and applying it across the board.",
-      "comments": "If large enough, default factors may result in adequate discounting for leakage from field processes. However, applying default factors rather than explicitly quantifying leakage does not support learning nor a geographically-tailored understanding of enhanced weathering deployment.",
-      "references": [],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 0,
-        "field": 3,
-        "watershed": 0,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Riverine outgassing",
-      "tool": "Default discount factor",
-      "type": ["other"],
-      "category": ["n/a"],
-      "transient": "n/a",
-      "impacts": [],
-      "notes": "Default factors may be used to account for leakage from field, watershed, or ocean processes that result in CO\u2082 outgassing. These default factors may be established via a wide range of processes, for example, by estimating a worst case scenario given a certain set of eligibility criteria and applying it across the board.",
-      "comments": "If large enough, default factors may result in adequate discounting for leakage from river systems. However, applying default factors rather than explicitly quantifying leakage does not support learning nor geographically-tailored understanding of enhanced weathering deployment.",
-      "references": [],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 0,
-        "field": 0,
-        "watershed": 3,
-        "ocean": 0
-      }
-    }
-  },
-  {
-    "quant_approach": {
-      "target": "Ocean outgassing",
-      "tool": "Default discount factor",
-      "type": ["other"],
-      "category": ["n/a"],
-      "transient": "n/a",
-      "impacts": [],
-      "notes": "Default factors may be used to account for leakage from field, watershed, or ocean processes that result in CO\u2082 outgassing. These default factors may be established via a wide range of processes, for example, by estimating a worst case scenario given a certain set of eligibility criteria and applying it across the board.",
-      "comments": "If large enough, default factors may result in adequate discounting for leakage from ocean processes. However, applying default factors rather than explicitly quantifying leakage does not support learning nor a geographically-tailored understanding of enhanced weathering deployment.",
-      "references": [],
-      "coverage": {
-        "rock": 0,
-        "init_weathering": 0,
-        "field": 0,
-        "watershed": 0,
-        "ocean": 3
       }
     }
   }
