@@ -11,7 +11,7 @@ const meta = {
   path: 'TK',
   color: 'grey',
   quickLook:
-    'A resource for exploring different tools that could be used in enhanced weathering MRV',
+    'A tool for exploring different quantitative methods that could be used in enhanced weathering MRV',
   summary: 'TK',
 }
 
