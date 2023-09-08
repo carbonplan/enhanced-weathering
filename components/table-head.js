@@ -74,7 +74,7 @@ const TableHeader = ({
         <Flex
           sx={{
             gap: 1,
-            alignItems: 'flex-end',
+            alignItems: 'center',
             flexDirection: ['row-reverse', 'row', 'row', 'row'],
             '&:hover svg': { stroke: color },
             cursor: onExpand ? 'pointer' : 'inherit',
