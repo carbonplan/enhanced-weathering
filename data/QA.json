@@ -62,8 +62,12 @@
       "transient": "yes",
       "impacts": [],
       "notes": "Direct measurements of ions in soil water or downstream export can provide evidence of weathering at the field or watershed scale. These measurements require samples from soil pore water (e.g. from a lysimeter) or downstream waters, specific sampling techniques (e.g. sample acidification with nitric acid), and analysis using tools such as inductively coupled plasma atomic emission spectroscopy or mass spectroscopy (ICP-AES or ICP-MS), atomic absorption spectropcopy (AAS), or ion chromatography (IC).",
-      "comments": "Measuring cations can provide the basis for estimating total alkalinity. In contrast to measuring alkalinity or dissolved inorganic carbon (DIC), however, the cations associated with rock weathering (e.g. Na+, Ca2+, Mg2+) are conserved and not subject to the same dynamic shifts as DIC. The additional flux of ions as a result of enhanced weathering is a continuous process and can be highly variable over time. As a result, there are major challenges associated with taking intermittent measurements and trying to integrate them to characterize overall ion flux. Isolating the effects of rock weathering on ion fluxes requires a rigorously constructed baseline and counterfactual scenario.",
+      "comments": "Measuring cations can provide the basis for estimating weathering or potential carbon removal. In contrast to total alkalinity or dissolved inorganic carbon (DIC), the cations associated with rock weathering (e.g. Na+, Ca2+, Mg2+) are conserved and not subject to the same dynamic shifts as DIC. Cation or anion measurements can also be used to estimate alkalinity and interpret total alkalinity data, and certain anions (e.g. NO3-) can be useful for considering effects of strong acids. Ion flux as a result of enhanced weathering is a continuous process and can be highly variable over time. As a result, there are major challenges associated with taking intermittent measurements and trying to integrate them to characterize overall ion flux. Isolating the effects of rock weathering on ion fluxes requires a rigorously constructed baseline and counterfactual scenario.",
       "references": [
+        {
+          "name": "Campbell et al, 2023",
+          "href": "https://doi.org/10.17861/2GE7-RE08"
+        },
         {
           "name": "Calabrese et al., 2022",
           "href": "https://doi.org/10.1021/acs.est.2c03163"
@@ -288,6 +292,10 @@
       "comments": "Sufficient differences in the isotopic signature between the soil and rock amendment are required.",
       "references": [
         {
+          "name": "Campbell et al, 2023",
+          "href": "https://doi.org/10.17861/2GE7-RE08"
+        },
+        {
           "name": "Paytan et al., 2021",
           "href": "https://doi.org/10.1126/science.aaz9266"
         }
@@ -455,6 +463,10 @@
       "comments": "Tracking plant cation uptake may not be necessary unless there is evidence of luxury consumption or changes in yield. Depending on the rock mineralogy and elemental composition, it's also possible that plants might take up toxic trace metals which would need to be monitored with similar measurements (see \"Rock mineralogy\", \"Rock elemental composition\", and \"Trace metals\").",
       "references": [
         {
+          "name": "Campbell et al, 2023",
+          "href": "https://doi.org/10.17861/2GE7-RE08"
+        },
+        {
           "name": "ten Berge et al., 2012",
           "href": "https://doi.org/10.1371/journal.pone.0042098"
         },
@@ -620,6 +632,10 @@
       "comments": "This measurement should be performed prior to applying the weathering material to determine its suitability for enhanced weathering. Care should be taken to construct a sampling regime that appropriately accounts for the potential variability of the weathering material.",
       "references": [
         {
+          "name": "Campbell et al, 2023",
+          "href": "https://doi.org/10.17861/2GE7-RE08"
+        },
+        {
           "name": "Almaraz et al., 2022",
           "href": "https://doi.org/10.3389/fclim.2022.970429"
         }
@@ -645,6 +661,10 @@
       "comments": "This measurement should be performed prior to applying the weathering material to determine its suitability for enhanced weathering. Care should be taken to construct a sampling regime that appropriately accounts for the potential variability of the weathering material.",
       "references": [
         {
+          "name": "Campbell et al, 2023",
+          "href": "https://doi.org/10.17861/2GE7-RE08"
+        },
+        {
           "name": "Silva et al., 2021",
           "href": "https://doi.org/10.1016/j.jsames.2021.103634"
         }
@@ -661,7 +681,7 @@
   {
     "quant_approach": {
       "variable": "Rock particle size distribution",
-      "method": "Particle size analyzer",
+      "method": "Particle size analyzer or sieve method",
       "type": ["measurement"],
       "category": ["rock"],
       "transient": "no",
@@ -669,6 +689,10 @@
       "notes": "Particle size distribution is valuable for estimating weathering potential and suitability of rock material, as coarser material will weather more slowly. Various methods exist to characterize particle size distribution, but particle size analyzers (PSA) using laser diffraction are typical.",
       "comments": "This measurement should be performed prior to applying the weathering material and requires a small rock sample. Care should be taken to construct a sampling regime that appropriately accounts for the potential variability of the weathering material. Particle size distribution may also be used to consider potential impacts on soil physical properties, for example if the texture is signficantly coarser or finer than the native soil texture. Mass fraction sieving or texture-by-hydrometer may be used to provide more general insight into particle size if a particle size analyzer is not available.",
       "references": [
+        {
+          "name": "Campbell et al, 2023",
+          "href": "https://doi.org/10.17861/2GE7-RE08"
+        },
         {
           "name": "Almaraz et al., 2022",
           "href": "https://doi.org/10.3389/fclim.2022.970429"
@@ -695,6 +719,10 @@
       "comments": "This measurement should be performed prior to applying the weathering material and requires a small rock sample. Care should be taken to construct a sampling regime that appropriately accounts for the potential variability of the weathering material.",
       "references": [
         {
+          "name": "Campbell et al, 2023",
+          "href": "https://doi.org/10.17861/2GE7-RE08"
+        },
+        {
           "name": "Almaraz et al., 2022",
           "href": "https://doi.org/10.3389/fclim.2022.970429"
         }
@@ -719,6 +747,10 @@
       "notes": "A variety of approaches may be used to characterize secondary mineral formation, which can bind up cations released during initial rock weathering and therefore reduce net carbon removal. Some methods examine changes to soil mineralogy as a whole, for example using x-ray diffraction (XRD). Others examine secondary mineral formation processes at a small scale, for example on the surface of a weathering mineral, with approaches like transmission electron microscopy (TEM), scanning electron microscopy with energy dispersive spectroscopy (SEM-EDS), nanoscale secondary ion mass spectrometry (NanoSIMS), or synchrotron x-ray absorption spectroscopy.",
       "comments": "If the approach to measuring initial weathering is focused on observing direct evidence of rock dissolution (see, e.g. \"Isotopic tracers\" and \"Mobile / immobile element ratios\"), it is important to characterize the secondary mineral formation that may take place in the field. However, if initial weathering is characterized by observing weathering product run-off (see, e.g. \"Cations / anions\", \"Total alkalinity\", or \"Dissolved inorganic carbon\"), the impacts of secondary mineral formation may be captured in those measurements. Any soil-sample based measurement should be accompanied by bulk density measurements in order to rigorously extrapolate to field-scale stock estimates (see \"Bulk density\"). The possibility of secondary mineral formation in estuaries and oceans must also be accounted for \u2014 often called \"reverse weathering\" in scientific literature \u2014 and will likely be characterized by models (see \"Riverine outgassing\").",
       "references": [
+        {
+          "name": "Campbell et al, 2023",
+          "href": "https://doi.org/10.17861/2GE7-RE08"
+        },
         {
           "name": "Haque et al., 2020",
           "href": "https://doi.org/10.1016/j.ijggc.2020.103017"
@@ -936,6 +968,10 @@
       "comments": "Bicarbonate alkalinity is subject to fluctuations as pH and other system parameters change, altering carbonate speciation. Therefore, alkalinity measurements are context-dependent and do not necessarily represent lasting outcomes. Continuous monitoring of total alkalinity (TA) would be required to capture the total flux of additional bicarbonate as a result of enhanced weathering. However, this poses a challenge given realistic sampling constraints and equipment interference with farming operations. Care must be taken that other field management changes are not responsible for observed shifts in alkalinity (e.g. changing irrigation source or rate), which emphasizes the importance of establishing a dynamic baseline rather than solely monitoring alkalinity prior to rock application. Alkalinity may also be estimated by measuring cations (see \"Cations / anions\") or potentially by monitoring electrical conductivity as a proxy (see \"Electrical conductivity\").  Note that there may be a delay between initial weathering and a total alkalinity signal as a result of interactions between weathered cations and the soil exchange comples (see \"Cation exchange complex (CEC) and exchange complex cations\").",
       "references": [
         {
+          "name": "Campbell et al, 2023",
+          "href": "https://doi.org/10.17861/2GE7-RE08"
+        },
+        {
           "name": "Olin Neal, 2001",
           "href": "https://doi.org/10.1016/S0048-9697(00)00652-5"
         },
@@ -964,6 +1000,10 @@
       "notes": "Monitoring changes in trace metal concentrations may inform estimates of initial rock weathering. Measurements of trace metals in the environment should be accompanied by a clear characterization the elemental composition and trace metal content of the applied weathering material (see \"Elemental composition\"). Various forms of spectroscopy can be applied to liquid or solid samples to determine the trace metal content, such as inductively coupled plasma atomic emission spectroscopy or mass spectroscopy (ICP-AES or ICP-MS) or atomic absorption spectropcopy (AAS).",
       "comments": "It is important to monitor trace metal concentrations like nickel (Ni) and chromium (Cr) in soil, water, and crops to ensure safe levels of heavy metals are maintained. Many jurisdictions regulate allowable concentrations of trace metals, and relevant regulations should thus inform rock application, measurement approaches, and threshold concentrations. If a field is subject to repeated applications of weathering material, cumulative levels of trace metals should be monitored.",
       "references": [
+        {
+          "name": "Campbell et al, 2023",
+          "href": "https://doi.org/10.17861/2GE7-RE08"
+        },
         {
           "name": "Haque et al., 2020",
           "href": "https://doi.org/10.1515/opag-2020-0016"
