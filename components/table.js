@@ -21,15 +21,15 @@ const sx = {
 const Table = () => {
   const router = useRouter()
   const [active, setActive] = useState(null)
-  const [sort, setSort] = useState('target')
+  const [sort, setSort] = useState('variable')
 
   useEffect(() => {
     if (router.query?.variable) {
       const result = data.find(
         (d) =>
-          d.quant_approach.target === router.query.variable &&
+          d.quant_approach.variable === router.query.variable &&
           (!router.query.method ||
-            d.quant_approach.tool === router.query.method),
+            d.quant_approach.method === router.query.method),
       )
       if (result) {
         setActive(result.quant_approach)
@@ -38,7 +38,7 @@ const Table = () => {
   }, [router.query?.variable])
 
   const sortedData = useMemo(() => {
-    const sorter = ['target', 'tool'].includes(sort)
+    const sorter = ['variable', 'method'].includes(sort)
       ? (a, b) => a[sort].localeCompare(b[sort])
       : (a, b) => b.coverage[sort] - a.coverage[sort]
     return data.map((d) => d.quant_approach).sort(sorter)
@@ -51,8 +51,10 @@ const Table = () => {
       <Box as="tbody" sx={sx.reset}>
         {sortedData.map((d, i) => (
           <Entry
-            key={`${d.target}-${d.tool}`}
-            active={d.target === active?.target && d.tool === active?.tool}
+            key={`${d.variable}-${d.method}`}
+            active={
+              d.variable === active?.variable && d.method === active?.method
+            }
             border={i > 0}
             {...d}
           />

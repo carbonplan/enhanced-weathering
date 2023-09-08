@@ -55,8 +55,8 @@ const List = ({ values }) => {
 
 const Entry = ({
   active,
-  target,
-  tool,
+  variable,
+  method,
   coverage,
   transient,
   type,
@@ -132,7 +132,7 @@ const Entry = ({
             }}
             onClick={() => setExpanded(!expanded)}
           />
-          {target}
+          {variable}
         </Column>
         <Column
           as="td"
@@ -144,7 +144,7 @@ const Entry = ({
             order: [0, 1, 0, 0],
           }}
         >
-          {tool}
+          {method}
         </Column>
         {COVERAGE.map(({ type }, i) => (
           <Column

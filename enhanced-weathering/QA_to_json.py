@@ -1,9 +1,10 @@
 import copy
 import json
 import pathlib
-import regex 
+
 import gspread  # type: ignore
 import pandas as pd  # type: ignore
+import regex
 from oauth2client.service_account import ServiceAccountCredentials  # type: ignore
 from schemas import qa_dict
 
@@ -24,8 +25,8 @@ def get_qa_df(gsheet_doc_name: str) -> pd.DataFrame:
     sheet = sh.worksheet("[ACTIVE] Quantification Approaches")
     data_dict = sheet.get_all_records()
     cols = [
-        "target",
-        "tool",
+        "variable",
+        "method",
         "type",
         "category",
         "transient",
@@ -61,12 +62,12 @@ def munge_qa_df(df: pd.DataFrame) -> pd.DataFrame:
 
     # splits each row into seperate refs, then splits each ref into name, href
     def parse_refs(ref_row):
-        paren_pattern = '\\(([^()]|(?R))*\\)'
-        bracket_pattern = '\[(.*?)\]'
+        paren_pattern = "\\(([^()]|(?R))*\\)"
+        bracket_pattern = r"\[(.*?)\]"
         if ref_row == [""]:
             return []
         else:
-            ref_item = [ref+')'.strip() for ref in ref_row]
+            ref_item = [ref + ")".strip() for ref in ref_row]
             return [
                 {
                     "name": regex.search(bracket_pattern, ref)[0][1:-1],
@@ -74,6 +75,7 @@ def munge_qa_df(df: pd.DataFrame) -> pd.DataFrame:
                 }
                 for ref in ref_item
             ]
+
     df["references"] = df["references"].str.split(r"\),").apply(parse_refs)
 
     return df
@@ -84,8 +86,8 @@ def build_qa_schema(df: pd.DataFrame) -> dict:
     for index, row in df.iterrows():
         subschema = copy.deepcopy(qa_dict)
 
-        subschema["quant_approach"]["target"] = row["target"]
-        subschema["quant_approach"]["tool"] = row["tool"]
+        subschema["quant_approach"]["variable"] = row["variable"]
+        subschema["quant_approach"]["method"] = row["method"]
         subschema["quant_approach"]["type"] = row["type"]
         subschema["quant_approach"]["category"] = row["category"]
         subschema["quant_approach"]["transient"] = row["transient"]
