@@ -145,8 +145,8 @@ const TableHead = ({ sort, setSort }) => {
         }}
       >
         <TableHeader
-          onClick={() => setSort('target')}
-          active={sort === 'target'}
+          onClick={() => setSort('variable')}
+          active={sort === 'variable'}
           start={1}
           width={[3, 3, 2, 2]}
           sx={{ display: ['inherit', 'none', 'inherit', 'inherit'] }}
@@ -154,8 +154,8 @@ const TableHead = ({ sort, setSort }) => {
           Variable
         </TableHeader>
         <TableHeader
-          onClick={() => setSort('tool')}
-          active={sort === 'tool'}
+          onClick={() => setSort('method')}
+          active={sort === 'method'}
           start={[4, 1, 3, 3]}
           width={[3, 0, 3, 3]}
           sx={{ display: ['inherit', 'none', 'inherit', 'inherit'] }}
