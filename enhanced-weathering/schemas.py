@@ -1,7 +1,7 @@
 qa_dict = {
     "quant_approach": {
-        "target": "",
-        "tool": "",
+        "variable": "",
+        "method": "",
         "type": [],
         "category": [],
         "transient": "",
