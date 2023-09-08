@@ -24,7 +24,6 @@ const sx = {
 const TableHeader = ({
   info,
   expanded,
-  expander = 'expander',
   onExpand,
   children,
   onClick,
@@ -74,42 +73,34 @@ const TableHeader = ({
 
         <Flex
           sx={{
-            gap: expander === 'expander' ? 1 : 2,
+            gap: 1,
             alignItems: 'flex-end',
             flexDirection: ['row-reverse', 'row', 'row', 'row'],
-            '&:hover svg': expander === 'expander' ? { stroke: color } : {},
-            cursor: expander === 'expander' ? 'pointer' : 'inherit',
+            '&:hover svg': { stroke: color },
+            cursor: onExpand ? 'pointer' : 'inherit',
           }}
           onClick={() => {
-            if (expander === 'expander' && onExpand) {
+            if (onExpand) {
               onExpand()
             }
           }}
         >
-          {onExpand &&
-            (expander === 'expander' ? (
-              <Expander
-                value={expanded}
-                sx={{
-                  flexShrink: 0,
-                  ml: '-22px',
-                  width: '18px',
-                  height: '18px',
-                  '&:hover svg': {
-                    stroke: color,
-                  },
-                }}
-                onClick={onExpand}
-              />
-            ) : (
-              <TooltipButton
-                color="muted"
-                expanded={expanded}
-                setExpanded={onExpand}
-                sx={{ mb: -1, ml: [0, '-24px', '-24px', '-24px'] }}
-              />
-            ))}
-          {children}
+          {onExpand && (
+            <Expander
+              value={expanded}
+              sx={{
+                flexShrink: 0,
+                ml: '-22px',
+                width: '18px',
+                height: '18px',
+                '&:hover svg': {
+                  stroke: color,
+                },
+              }}
+              onClick={onExpand}
+            />
+          )}
+          <Box sx={{ ml: '-22px', pl: '22px' }}>{children}</Box>
         </Flex>
       </Flex>
     </Column>
