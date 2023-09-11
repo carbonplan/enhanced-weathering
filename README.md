@@ -18,7 +18,6 @@
 - this site: https://carbonplan.org/research/ew-quantification
 - explainer article: https://carbonplan.org/research/ew-quantification-explainer
 
-
 ## to build the site locally
 
 Assuming you already have `Node.js` installed, you can install the build dependencies as:
@@ -33,7 +32,7 @@ To start a development version of the site, simply run:
 npm run dev
 ```
 
-and then visit `http://localhost:5001` in your browser.
+and then visit `http://localhost:5001/research/ew-quantification` in your browser.
 
 ## to build the EW data
 
