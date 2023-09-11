@@ -4,7 +4,6 @@ import pathlib
 
 import gspread  # type: ignore
 import pandas as pd  # type: ignore
-import regex
 from oauth2client.service_account import ServiceAccountCredentials  # type: ignore
 from schemas import qa_dict
 
@@ -62,16 +61,17 @@ def munge_qa_df(df: pd.DataFrame) -> pd.DataFrame:
 
     # splits each row into seperate refs, then splits each ref into name, href
     def parse_refs(ref_row):
-        paren_pattern = "\\(([^()]|(?R))*\\)"
-        bracket_pattern = r"\[(.*?)\]"
         if ref_row == [""]:
             return []
         else:
-            ref_item = [ref + ")".strip() for ref in ref_row]
+            ref_item = [
+                (ref + ")" if i != len(ref_row) - 1 else ref).strip()
+                for i, ref in enumerate(ref_row)
+            ]
             return [
                 {
-                    "name": regex.search(bracket_pattern, ref)[0][1:-1],
-                    "href": regex.search(paren_pattern, ref)[0][1:-1],
+                    "name": ref.split("](")[0][1:],
+                    "href": len(ref.split("](")) > 1 and ref.split("](")[1][:-1],
                 }
                 for ref in ref_item
             ]
