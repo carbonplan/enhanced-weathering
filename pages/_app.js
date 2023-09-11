@@ -7,12 +7,11 @@ import { Link } from '@carbonplan/components'
 
 const meta = {
   title: 'Quantifying enhanced weathering',
-  card: 'TK',
-  path: 'TK',
+  card: 'ew-quantification',
+  path: '/research/ew-quantification',
   color: 'grey',
   quickLook:
     'A tool for exploring different quantitative methods that could be used in enhanced weathering MRV',
-  summary: 'TK',
 }
 
 const description = (
