@@ -5,10 +5,19 @@
 </picture>
 </p>
 
-# carbonplan / enhanced weathering
+# carbonplan / quantifying enhanced weathering
+
+a tool for exploring different quantitative methods that could be used in enhanced weathering MRV
 
 [![CI](https://github.com/carbonplan/python-project-template/actions/workflows/main.yaml/badge.svg)](https://github.com/carbonplan/python-project-template/actions/workflows/main.yaml)
 [![License](https://img.shields.io/github/license/carbonplan/python-project-template?style=flat)](https://github.com/carbonplan/python-project-template/blob/main/LICENSE)
+
+## resources
+
+- main website: https://carbonplan.org/
+- this site: https://carbonplan.org/research/ew-quantification
+- explainer article: https://carbonplan.org/research/ew-quantification-explainer
+
 
 ## to build the site locally
 
