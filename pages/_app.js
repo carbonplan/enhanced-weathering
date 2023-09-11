@@ -20,7 +20,7 @@ const description = (
     Below, you can explore what kinds of quantitative methods that might play a
     role in estimating net carbon removal from enhanced weathering. Read more in
     the accompanying{' '}
-    <Link href="https://drafts.carbonplan.org/research/ew-quantification-explainer">
+    <Link href="https://carbonplan.org/research/ew-quantification-explainer">
       explainer
     </Link>
     .
