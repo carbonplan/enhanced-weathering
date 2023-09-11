@@ -3,9 +3,9 @@ import { Box, Divider } from 'theme-ui'
 import { useThemedStylesWithMdx } from '@theme-ui/mdx'
 import { MDXProvider, useMDXComponents } from '@mdx-js/react'
 
-import Table from '../components/table'
-import About from '../components/about.md'
-import Methods from '../components/methods.md'
+import Table from '../../../components/table'
+import About from '../../../components/about.md'
+import Methods from '../../../components/methods.md'
 
 const Index = () => {
   const components = useThemedStylesWithMdx(useMDXComponents())
