@@ -6,7 +6,7 @@ import AnimateHeight from 'react-animate-height'
 
 import Coverage from './coverage'
 import { ExpandedColumn, ExpandedRow } from './expanded'
-import legend from '../data/legend.json'
+import legend from '../public/research/ew-quantification/legend.json'
 
 const sx = {
   reset: {

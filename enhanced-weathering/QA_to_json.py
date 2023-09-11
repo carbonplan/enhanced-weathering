@@ -114,7 +114,7 @@ def build_qa_schema(df: pd.DataFrame) -> dict:
 
 
 def write_combined_list_json(combined_dict_list: list):
-    sample_file = pathlib.Path("../data") / "QA.json"
+    sample_file = pathlib.Path("../public/research/ew-quantification") / "quant-methods.json"
     sample_file.parent.mkdir(exist_ok=True)
     with sample_file.open("w", encoding="utf-8") as fp:
         json.dump(combined_dict_list, fp, indent=4)
@@ -137,7 +137,7 @@ def get_legend_df(gsheet_doc_name: str) -> pd.DataFrame:
 
 def write_legend_df(df: pd.DataFrame):
     # Write legend dataframe to json
-    sample_file = pathlib.Path("../data") / "legend.json"
+    sample_file = pathlib.Path("../public/research/ew-quantification") / "legend.json"
     df.set_index("key")["value"].to_json(sample_file, indent=4)
 
 

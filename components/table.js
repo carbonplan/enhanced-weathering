@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Box } from 'theme-ui'
 
-import data from '../data/QA.json'
+import data from '../public/research/ew-quantification/quant-methods.json'
 import TableHead from './table-head'
 import Entry from './entry'
 

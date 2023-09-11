@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { Box, Flex, IconButton } from 'theme-ui'
 import AnimateHeight from 'react-animate-height'
 
-import legend from '../data/legend.json'
-import { TooltipButton, TooltipContent } from './tooltip'
+import legend from '../public/research/ew-quantification/legend.json'
+import { TooltipContent } from './tooltip'
 import { ExpandedColumn, ExpandedRow } from './expanded'
 
 const sx = {
