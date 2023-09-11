@@ -113,7 +113,7 @@ def build_qa_schema(df: pd.DataFrame) -> dict:
     return combined
 
 
-def write_combined_protocol_list_json(combined_dict_list: list):
+def write_combined_list_json(combined_dict_list: list):
     sample_file = pathlib.Path("../data") / "QA.json"
     sample_file.parent.mkdir(exist_ok=True)
     with sample_file.open("w", encoding="utf-8") as fp:
@@ -146,4 +146,4 @@ write_legend_df(ldf)
 df = get_qa_df(gsheet_doc_name)
 df = munge_qa_df(df)
 combined = build_qa_schema(df)
-write_combined_protocol_list_json(combined)
+write_combined_list_json(combined)
