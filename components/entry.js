@@ -180,7 +180,11 @@ const Entry = ({
                     }}
                     label={label}
                   >
-                    <Coverage type={type} value={coverage[type]} />
+                    <Coverage
+                      type={type}
+                      value={coverage[type]}
+                      color={color}
+                    />
                   </ExpandedColumn>
                 ))}
                 <ExpandedColumn

@@ -18,11 +18,15 @@ const LABELS = {
   4: 'Essential',
 }
 
-const Coverage = ({ type, value }) => {
+const Coverage = ({ type, value, color }) => {
   if (value === 0) {
-    return <Box sx={{ color: alpha(COLORS[type], 0.4) }}>{LABELS[value]}</Box>
+    return (
+      <Box sx={{ color: alpha(color ?? COLORS[type], 0.4) }}>
+        {LABELS[value]}
+      </Box>
+    )
   } else {
-    return <Badge sx={{ color: COLORS[type] }}>{LABELS[value]}</Badge>
+    return <Badge sx={{ color: color ?? COLORS[type] }}>{LABELS[value]}</Badge>
   }
 }
 
