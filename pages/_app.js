@@ -11,7 +11,7 @@ const meta = {
   path: '/research/ew-quantification',
   color: 'grey',
   quickLook:
-    'A tool for exploring different quantitative methods that could be used in enhanced weathering MRV',
+    'A tool for exploring methods used to quantify enhanced weathering outcomes',
 }
 
 const description = (
