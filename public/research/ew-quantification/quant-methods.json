@@ -113,7 +113,7 @@
       "coverage": {
         "rock": 0,
         "init_weathering": 0,
-        "field": 4,
+        "field": 1,
         "watershed": 0,
         "ocean": 0
       }
