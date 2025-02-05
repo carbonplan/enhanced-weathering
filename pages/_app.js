@@ -1,3 +1,5 @@
+import React from 'react'
+import PlausibleProvider from 'next-plausible'
 import { ThemeProvider } from 'theme-ui'
 import '@carbonplan/components/fonts.css'
 import '@carbonplan/components/globals.css'
@@ -28,17 +30,19 @@ const description = (
 
 const App = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <Tool
-        meta={meta}
-        description={description}
-        contentWidth={[6, 8, 10, 10]}
-        descriptionWidth={[6, 7, 7, 7]}
-        quickLookStart={9}
-      >
-        <Component {...pageProps} />
-      </Tool>
-    </ThemeProvider>
+    <PlausibleProvider domain="carbonplan.org">
+      <ThemeProvider theme={theme}>
+        <Tool
+          meta={meta}
+          description={description}
+          contentWidth={[6, 8, 10, 10]}
+          descriptionWidth={[6, 7, 7, 7]}
+          quickLookStart={9}
+        >
+          <Component {...pageProps} />
+        </Tool>
+      </ThemeProvider>
+    </PlausibleProvider>
   )
 }
 
