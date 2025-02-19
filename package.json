@@ -27,9 +27,9 @@
     "prettier": "2.2.1"
   },
   "dependencies": {
-    "@carbonplan/components": "^12.5.0",
+    "@carbonplan/components": "^13.1.1",
     "@carbonplan/icons": "^2.0.0",
-    "@carbonplan/layouts": "^4.0.0",
+    "@carbonplan/layouts": "^5.1.0",
     "@carbonplan/theme": "^8.0.0",
     "@mdx-js/loader": "^2.1.5",
     "@mdx-js/react": "^2.1.5",
